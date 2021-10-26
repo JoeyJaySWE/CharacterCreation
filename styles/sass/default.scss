@@ -1,0 +1,53 @@
+@import url("css-reset.css");
+
+$textBlueColor: #00C7F8;
+$boxHeaderColor: #C4C4C4;
+$infoTextColor: #FF4B4B;
+$boxBorderColor: #909090;
+$slectedDefaultBtnBg: radial-gradient(50% 50% at 50% 50%, #00CAD7 0%, rgba(0, 202, 215, 0.75) 100%);
+$defaultBtnBg: radial-gradient(50% 50% at 50% 50%, #05949D 0%, rgba(5, 157, 148, 0.75) 100%);
+$boxBg: rgba(0,0,0,0.75);
+
+html{
+    font-family: "Titillium Web", sans-serif;
+    font-size: 16px;
+}
+
+body{
+    background-image: radial-gradient(circle at center,#333333,#101010);
+}
+
+#wrapper {
+    height: auto;
+    width: 100vw;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url("../../../../img/Flag_logo_free_15o.svg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 600px;
+}
+
+#userBox {
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 3px solid #909090;
+    width: 290px;
+    height: 395px;
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+
+
+    h1{
+        color: $textBlueColor;
+        font-family: 'Moonhouse';
+        font-size:2rem;
+        text-align: center;
+        margin-top: 30px;
+        width: 200px;
+    }
+}
