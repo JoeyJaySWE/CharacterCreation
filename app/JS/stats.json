@@ -1,0 +1,533 @@
+{
+    "dexterity":{
+        "min": 0,
+        "max": 0,
+        "dice": 0,
+        "pips": 0,
+        "skills":{
+            "acrobatic": {
+                "name": "Acrobatic",
+                "dice": 0,
+                "pips": 0
+            },
+            "archaicGuns": {
+                "name": "Archaic Guns",
+                "dice": 0,
+                "pips": 0
+            },
+            "artillery": {
+                "name":"Artillery",
+                "dice": 0,
+                "pips": 0
+            },
+            "blasters": {
+                "name":"Blasters",
+                "dice": 0,
+                "pips": 0
+            },
+            "blasterArtillery": {
+                "name":"Blaster Artillery",
+                "dice": 0,
+                "pips": 0
+            },
+            "bowcaster": {
+                "name":"Bowcaster",
+                "dice": 0,
+                "pips": 0
+            },
+            "bows": {
+                "name":"Bows",
+                "dice": 0,
+                "pips": 0
+            },
+            "brawlingParry": {
+                "name":"Brawling Parry",
+                "dice": 0,
+                "pips": 0
+            },
+            "dodge": {
+                "name":"Dodge",
+                "dice": 0,
+                "pips": 0
+            },
+            "firearms": {
+                "name":"Firearms",
+                "dice": 0,
+                "pips": 0
+            },
+            "flamethrower": {
+                "name":"flamethrower",
+                "dice": 0,
+                "pips": 0
+            },
+            "granade": {
+                "name":"Granade",
+                "dice": 0,
+                "pips": 0
+            },
+            "lightsaber": {
+                "name":"Lightsaber",
+                "dice": 0,
+                "pips": 0
+            },
+            "meeleCombat": {
+                "name":"Melee Combat",
+                "dice": 0,
+                "pips": 0
+            },
+            "meleeParry": {
+                "name":"Melee Parry",
+                "dice": 0,
+                "pips": 0
+            },
+            "missleWeapons": {
+                "name":"Missle Weapons",
+                "dice": 0,
+                "pips": 0
+            },
+            "pickPocket": {
+                "name": "Pick Pocket",
+                "dice": 0,
+                "pips": 0
+            },
+            "running": {
+                "name": "Running",
+                "dice": 0,
+                "pips": 0
+            },
+            "thrownWeapons": {
+                "name": "Trown Weapons",
+                "dice": 0,
+                "pips": 0
+            },
+            "vehicleBlasters": {
+                "name": "Vehicle Blasters",
+                "dice": 0,
+                "pips": 0
+            },
+            "specilisedSkill": {
+                "name": "Specialiced Skill",
+                "specialSkills": {
+                    "name": "",
+                    "dice": 0,
+                    "pips": 0
+                }
+            }
+        }
+    },
+    "knowledge": {
+        "min": 0,
+        "max": 0,
+        "dice": 0,
+        "pips": 0,
+        "skills": {
+            "alienSpecies": {
+                "name": "Alien Species",
+                "dice": 0,
+                "pips": 0
+            },
+            "bureaucracy": {
+                "name": "Bureaucracy",
+                "dice": 0,
+                "pips": 0
+            },
+            "buisness": {
+                "name": "Buisness",
+                "dice": 0,
+                "pips": 0
+            },
+            "cultures": {
+                "name": "Cultures",
+                "dice": 0,
+                "pips": 0
+            },
+            "intimidation": {
+                "name": "intimidation",
+                "dice": 0,
+                "pips": 0
+            },
+            "languages": {
+                "name": "Languages",
+                "dice": 0,
+                "pips": 0
+            },
+            "lawEnforcement": {
+                "name": "Law Enforcement",
+                "dice": 0,
+                "pips": 0
+            },
+            "planterySystems": {
+                "name": "Planetary Systems",
+                "dice": 0,
+                "pips": 0
+            },
+            "scholar": {
+                "name": "Scholar",
+                "dice": 0,
+                "pips": 0
+            },
+            "streetwise": {
+                "name": "Streetwsie",
+                "dice": 0,
+                "pips": 0
+            },
+            "survival": {
+                "name": "Survival",
+                "dice": 0,
+                "pips": 0
+            },
+            "tactics": {
+                "name": "Tactics",
+                "dice": 0,
+                "pips": 0
+            },
+            "valueSkill": {
+                "name": "Value",
+                "dice": 0,
+                "pips": 0
+            },
+            "willpower": {
+                "name": "Willpower",
+                "dice": 0,
+                "pips": 0
+            }
+        }
+    },
+    "mechanical": {
+        "min": 0,
+        "max": 0,
+        "dice": 0,
+        "pips": 0,
+        "skills": {
+            "aquaticVehicleOperation": {
+                "name": "Aquatic Vehicle Operation",
+                "dice": 0,
+                "pips": 0
+            },
+            "archaicStarshipPiloting": {
+                "name": "Archaic Starship Piloting",
+                "dice": 0,
+                "pips": 0
+            },
+            "astrogation": {
+                "name": "Astrogation",
+                "dice": 0,
+                "pips": 0
+            },
+            "beastRiding": {
+                "name": "Beast Riding",
+                "dice": 0,
+                "pips": 0
+            },
+            "capitalShipGunnery": {
+                "name": "Capital Ship Gunnery",
+                "dice": 0,
+                "pips": 0
+            },
+            "capitalShipPiloting": {
+                "name": "Capital Ship Piloting",
+                "dice": 0,
+                "pips": 0
+            },
+            "capitalShipShielding": {
+                "name": "Capital Ship Shielding",
+                "dice": 0,
+                "pips": 0
+            },
+            "communications": {
+                "name": "Communications",
+                "dice": 0,
+                "pips": 0
+            },
+            "groundVehicleOperation": {
+                "name": "Ground Vehicle Operation",
+                "dice": 0,
+                "pips": 0
+            },
+            "hoverVehicleOperation": {
+                "name": "Hover Vehicle Operation",
+                "dice": 0,
+                "pips": 0
+            },
+            "jetPackOperation": {
+                "name": "Jet Pack Operation",
+                "dice": 0,
+                "pips": 0
+            },
+            "podRacerOperation": {
+                "name": "Pod Racer Operation",
+                "dice": 0,
+                "pips": 0
+            },
+            "powersuitOperation": {
+                "name": "Powersuit Operation",
+                "dice": 0,
+                "pips": 0
+            },
+            "repulsorliftOperation": {
+                "name": "repulsorlift Operation",
+                "dice": 0,
+                "pips": 0
+            },
+            "rocketPackOperation": {
+                "name": "Rocket Pack Operation",
+                "dice": 0,
+                "pips": 0
+            },
+            "sensors": {
+                "name": "Seonsors",
+                "dice": 0,
+                "pips": 0
+            },
+            "spaceTransports": {
+                "name": "Space Transports",
+                "dice": 0,
+                "pips": 0
+            },
+            "starfighterPiloting": {
+                "name": "Starfighter Piloting",
+                "dice": 0,
+                "pips": 0
+            },
+            "starshipGunnery": {
+                "name": "Starship Gunnery",
+                "dice": 0,
+                "pips": 0
+            },
+            "starshipShields": {
+                "name": "Starship Shields",
+                "dice": 0,
+                "pips": 0
+            },
+            "submersibleVehicleOperation": {
+                "name": "Submersible Vehicle Operation",
+                "dice": 0,
+                "pips": 0
+            },
+            "swoopOperation": {
+                "name": "Swoop Operation",
+                "dice": 0,
+                "pips": 0
+            },
+            "walkerOperation": {
+                "name": "Walker Operation",
+                "dice": 0,
+                "pips": 0
+            }
+        }
+    },
+    "perception": {
+        "min": 0,
+        "max": 0,
+        "dice": 0,
+        "pips": 0,
+        "skills": {
+            "bargain": {
+                "name": "Bargain",
+                "dice": 0,
+                "pips": 0
+            },
+            "command": {
+                "name": "Command",
+                "dice": 0,
+                "pips": 0
+            },
+            "con": {
+                "name": "Con",
+                "dice": 0,
+                "pips": 0
+            },
+            "forgery": {
+                "name": "Forgery",
+                "dice": 0,
+                "pips": 0
+            },
+            "gambling": {
+                "name": "Gambling",
+                "dice": 0,
+                "pips": 0
+            },
+            "hide": {
+                "name": "Hide",
+                "dice": 0,
+                "pips": 0
+            },
+            "investigation": {
+                "name": "Investigation",
+                "dice": 0,
+                "pips": 0
+            },
+            "persuasion": {
+                "name": "Persuasion",
+                "dice": 0,
+                "pips": 0
+            },
+            "search": {
+                "name": "Search",
+                "dice": 0,
+                "pips": 0
+            },
+            "sneak": {
+                "name": "Sneak",
+                "dice": 0,
+                "pips": 0
+            }
+        }
+    },
+    "strength": {
+        "min": 0,
+        "max": 0,
+        "dice": 0,
+        "pips": 0,
+        "skills": {
+            "brawling": {
+                "name": "Brawling",
+                "dice": 0,
+                "pips": 0
+            },
+            "climbingJumping": {
+                "name": "Climbing / Jumping",
+                "dice": 0,
+                "pips": 0
+            },
+            "lifting": {
+                "name": "Lifting",
+                "dice": 0,
+                "pips": 0
+            },
+            "stamina": {
+                "name": "Stamina",
+                "dice": 0,
+                "pips": 0
+            },
+            "swimming": {
+                "name": "Swimming",
+                "dice": 0,
+                "pips": 0
+            }
+        }
+    },
+    "technical": {
+        "min": 0,
+        "max": 0,
+        "dice": 0,
+        "pips": 0,
+        "skills": {
+            "aquaticVehicleRepair": {
+                "name": "Aquatic Vehicle Repair",
+                "dice": 0,
+                "pips": 0
+            },
+            "armorRepair": {
+                "name": "Armor Repair",
+                "dice": 0,
+                "pips": 0
+            },
+            "blasterRepair": {
+                "name": "Blaster Repair",
+                "dice": 0,
+                "pips": 0
+            },
+            "capitalShipRepair": {
+                "name": "Capital Ship Repair",
+                "dice": 0,
+                "pips": 0
+            },
+            "capitalShipWeaponsRepair": {
+                "name": "Capital Ship Weapons Repair",
+                "dice": 0,
+                "pips": 0
+            },
+            "computerPrgrammingRepair": {
+                "name": "Computer Programming Repair",
+                "dice": 0,
+                "pips": 0
+            },
+            "demolitions": {
+                "name": "Demolitions",
+                "dice": 0,
+                "pips": 0
+            },
+            "driodProgramming": {
+                "name": "Droid Programming",
+                "dice": 0,
+                "pips": 0
+            },
+            "droidRepair": {
+                "name": "Droid Repair",
+                "dice": 0,
+                "pips": 0
+            },
+            "engineering": {
+                "name": "Engineering",
+                "dice": 0,
+                "pips": 0
+            },
+            "equipmentRepair": {
+                "name": "Equipment Repair",
+                "dice": 0,
+                "pips": 0
+            },
+            "firstAid": {
+                "name": "First Aid",
+                "dice": 0,
+                "pips": 0
+            },
+            "groundVehicleRepair": {
+                "name": "Ground Vehicle Repair",
+                "dice": 0,
+                "pips": 0
+            },
+            "hooverVehicleRepair": {
+                "name": "Hoover Vehicle Repair",
+                "dice": 0,
+                "pips": 0
+            },
+            "lightsaberCraftingEngineering": {
+                "name": "Lightsaber Crafting Engineering",
+                "dice": 0,
+                "pips": 0
+            },
+            "medicine": {
+                "name": "Medicine",
+                "dice": 0,
+                "pips": 0
+            },
+            "repulsorliftRepair": {
+                "name": "Repolsorlift Repair",
+                "dice": 0,
+                "pips": 0
+            },
+            "security": {
+                "name": "security",
+                "dice": 0,
+                "pips": 0
+            },
+            "spaceTransportRepair": {
+                "name": "Space Transport Repair",
+                "dice": 0,
+                "pips": 0
+            },
+            "starfighterRepair": {
+                "name": "Starfighter Repair",
+                "dice": 0,
+                "pips": 0
+            },
+            "starshipWeaponRepair": {
+                "name": "Starship Weapon Repair",
+                "dice": 0,
+                "pips": 0
+            },
+            "submersiveVehicleRepair": {
+                "name": "Submersive Vehicle Repair",
+                "dice": 0,
+                "pips": 0
+            },
+            "walkerRepair": {
+                "name": "Walker Repair",
+                "dice": 0,
+                "pips": 0
+            }
+        }
+    }
+}

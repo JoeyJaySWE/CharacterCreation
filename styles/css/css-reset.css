@@ -19,6 +19,7 @@ time, mark, audio, video,a:-webkit-any-link {
 	vertical-align: baseline;
 	text-decoration: none;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -45,6 +46,29 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+button {
+	background: transparent;
+	box-shadow: 0px 0px 0px transparent;
+	border: 0px solid transparent;
+	text-shadow: 0px 0px 0px transparent;
+  }
+  
+  button:hover {
+	background: transparent;
+	box-shadow: 0px 0px 0px transparent;
+	border: 0px solid transparent;
+	text-shadow: 0px 0px 0px transparent;
+  }
+  
+  button:active {
+	outline: none;
+	border: none;
+  }
+  
+  button:focus {
+	outline: 0;
+  }
 
 
 @font-face {
@@ -73,5 +97,27 @@ table {
 }
 
 *{
-	box-sizing: content-box;
+	box-sizing: border-box;
+}
+
+.button,button{
+    transition: background-image 700ms ease-in-out, background-color 700ms ease-in-out;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    display: flex;
+    color: #FFF;
+    padding: 10px 13px;
+    min-width: 73px;
+    min-height: 25px;
+    justify-content: center;
+    align-items: center;
+	line-height: 1.5rem;
+	font-size: 1rem;
+
+}
+
+br{
+	flex-basis: 100%;
+	height: 0;
 }
