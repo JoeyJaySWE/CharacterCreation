@@ -1,13 +1,13 @@
 <?php
 
 
-function get_skills_dropdown_menu(array $skills)
+function get_dropdown_menu(array $menuItems)
 {
-    foreach ($skills as $skill) :
+    foreach ($menuItems as $item) :
         // die(var_dump($skill["name"]));
 ?>
-        <option value="<?= $skill["name"] ?>"><?= $skill["name"] ?></option>
-        <!-- <?= $skill["name"] ?> -->
+        <option value="<?= $item["name"] ?>"><?= $item["name"] ?></option>
+        <!-- <?= $item["name"] ?> -->
         <br />
 <?php
     endforeach;

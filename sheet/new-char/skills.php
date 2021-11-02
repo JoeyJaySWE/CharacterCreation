@@ -52,7 +52,7 @@ include __DIR__ . "/../../views/header.php";
             <section>
                 <select class="fieldLabel" name="dexSkill1">
                     <?php
-                    get_skills_dropdown_menu($dexteritySkills);
+                    get_dropdown_menu($dexteritySkills);
                     ?>
                 </select>
                 <section class="statsVlues">
@@ -68,66 +68,7 @@ include __DIR__ . "/../../views/header.php";
 
             <section>
                 <select class="fieldLabel" name="dexSkill2">
-                    <option value="acrobatic">
-                        Acrobatic
-                    </option>
-                    <option value="archaicGuns">
-                        Archaic Guns
-                    </option>
-                    <option value="artillery">
-                        Artillery
-                    </option>
-                    <option value="blasters">
-                        Blasters
-                    </option>
-                    <option value="blasterArtillery">
-                        Blaster Artillery
-                    </option>
-                    <option value="bowcaster">
-                        Bowcaster
-                    </option>
-                    <option value="bows">
-                        Bows
-                    </option>
-                    <option value="brawlingParry">
-                        Brawling Parry
-                    </option>
-                    <option value="dodge">
-                        Dodge
-                    </option>
-                    <option value="firearms">
-                        Firearms
-                    </option>
-                    <option value="flamethrower">
-                        Flamethrower
-                    </option>
-                    <option value="granade">
-                        Granade
-                    </option>
-                    <option value="lightsaber">
-                        Lightsaber
-                    </option>
-                    <option value="meeleCombat" selected>
-                        Meele Combat
-                    </option>
-                    <option value="meleeParry">
-                        Melee Parry
-                    </option>
-                    <option value="missleWeapons">
-                        Missle Weapons
-                    </option>
-                    <option value="pickPocket">
-                        Pick Pocket
-                    </option>
-                    <option value="running">
-                        Running
-                    </option>
-                    <option value="thrownWeapons">
-                        Thrown Weapons
-                    </option>
-                    <option value="vehicleBlasters">
-                        Vehicle Blasters
-                    </option>
+                    <?php get_dropdown_menu($dexteritySkills); ?>
                 </select>
                 <section class="statsVlues">
                     <span class="dValue">
@@ -149,7 +90,7 @@ include __DIR__ . "/../../views/header.php";
             <section style="color:aqua">
                 <select class="fieldLabel" name="dexSkill1">
                     <?php
-                    get_skills_dropdown_menu($knowledgeSkills);
+                    get_dropdown_menu($knowledgeSkills);
                     ?>
                 </select>
                 <section class="statsVlues">
@@ -172,7 +113,7 @@ include __DIR__ . "/../../views/header.php";
             <section style="color:aqua">
                 <select class="fieldLabel" name="mechSkill1">
                     <?php
-                    get_skills_dropdown_menu($mechanicalSkills);
+                    get_dropdown_menu($mechanicalSkills);
                     ?>
                 </select>
                 <section class="statsVlues">
@@ -195,7 +136,7 @@ include __DIR__ . "/../../views/header.php";
             <section style="color:aqua">
                 <select class="fieldLabel" name="percSkill1">
                     <?php
-                    get_skills_dropdown_menu($perceptionSkills);
+                    get_dropdown_menu($perceptionSkills);
                     ?>
                 </select>
                 <section class="statsVlues">
@@ -218,7 +159,7 @@ include __DIR__ . "/../../views/header.php";
             <section style="color:aqua">
                 <select class="fieldLabel" name="strSkill1">
                     <?php
-                    get_skills_dropdown_menu($strengthSkills);
+                    get_dropdown_menu($strengthSkills);
                     ?>
                 </select>
                 <section class="statsVlues">
@@ -241,7 +182,7 @@ include __DIR__ . "/../../views/header.php";
             <section style="color:aqua">
                 <select class="fieldLabel" name="strSkill1">
                     <?php
-                    get_skills_dropdown_menu($technicalSkills);
+                    get_dropdown_menu($technicalSkills);
                     ?>
                 </select>
                 <section class="statsVlues">
@@ -336,7 +277,7 @@ include __DIR__ . "/../../views/header.php";
         <section class="navigation">
             <a href="<?= $previousPageUrl; ?>" class="button yellowBtn">&lt; <?= $previousPage; ?></a>
             <a href="../../user.php" class="cancelBtn">X</a>
-            <a href="<?= $previousPageUrl; ?>" class="button greenBtn"><?= $nextPage; ?> &gt;</a>
+            <a href="<?= $nextPageUrl; ?>" class="button greenBtn"><?= $nextPage; ?> &gt;</a>
         </section>
     </form>
 </section>
