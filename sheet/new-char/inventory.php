@@ -2,7 +2,7 @@
 
 // ----------------- [ PAGE VARIABLES ] ------------------ 
 
-$page_title = "Crew Sheets - skills";
+$page_title = "Crew Sheets - Inventory";
 $style = "../../styles/css/default.css";
 $userName = "Raas/Joya (Gsus)";
 
@@ -16,10 +16,10 @@ $meta_card_alt = "Vengeful Scars";
 
 // -------------------[ NAVIGATIONAL DATA ]-----------------------
 
-$previousPageUrl = "stats.php";
-$previousPage = "Stats";
-$nextPageUrl = "inventory.php";
-$nextPage = "Ineventory";
+$previousPageUrl = "skills.php";
+$previousPage = "Skills";
+$nextPageUrl = "biography.php";
+$nextPage = "Biography";
 
 // ----------------------------------------------------------------
 
@@ -55,10 +55,6 @@ include __DIR__ . "/../../views/header.php";
                     get_skills_dropdown_menu($dexteritySkills);
                     ?>
                 </select>
-                <span class="fieldLabel">
-                    <input type="checkbox" value="specialacrobatic" id="specAcrobatic">
-                    Specialised Skill?
-                </span>
                 <section class="statsVlues">
                     <span class="dValue">
                         <input name="dex1DValue" value="3" type="number" min="2">
@@ -133,10 +129,6 @@ include __DIR__ . "/../../views/header.php";
                         Vehicle Blasters
                     </option>
                 </select>
-                <span class="fieldLabel">
-                    <input type="checkbox" value="specialacrobatic" id="specAcrobatic">
-                    Specialised Skill?
-                </span>
                 <section class="statsVlues">
                     <span class="dValue">
                         <input name="dex2DValue" value="4" type="number" min="2">
@@ -160,10 +152,6 @@ include __DIR__ . "/../../views/header.php";
                     get_skills_dropdown_menu($knowledgeSkills);
                     ?>
                 </select>
-                <span class="fieldLabel">
-                    <input type="checkbox" value="specialacrobatic">
-                    Specialised Skill?
-                </span>
                 <section class="statsVlues">
                     <span class="dValue">
                         <input name="dex1DValue" value="3" type="number" min="2">
@@ -187,10 +175,6 @@ include __DIR__ . "/../../views/header.php";
                     get_skills_dropdown_menu($mechanicalSkills);
                     ?>
                 </select>
-                <span class="fieldLabel">
-                    <input type="checkbox" value="specialacrobatic">
-                    Specialised Skill?
-                </span>
                 <section class="statsVlues">
                     <span class="dValue">
                         <input name="mech1DValue" value="3" type="number" min="2">
@@ -214,10 +198,6 @@ include __DIR__ . "/../../views/header.php";
                     get_skills_dropdown_menu($perceptionSkills);
                     ?>
                 </select>
-                <span class="fieldLabel">
-                    <input type="checkbox" value="specialacrobatic">
-                    Specialised Skill?
-                </span>
                 <section class="statsVlues">
                     <span class="dValue">
                         <input name="perc1DValue" value="3" type="number" min="2">
@@ -241,10 +221,6 @@ include __DIR__ . "/../../views/header.php";
                     get_skills_dropdown_menu($strengthSkills);
                     ?>
                 </select>
-                <span class="fieldLabel">
-                    <input type="checkbox" value="specialacrobatic">
-                    Specialised Skill?
-                </span>
                 <section class="statsVlues">
                     <span class="dValue">
                         <input name="str1DValue" value="3" type="number" min="2">
@@ -268,10 +244,6 @@ include __DIR__ . "/../../views/header.php";
                     get_skills_dropdown_menu($technicalSkills);
                     ?>
                 </select>
-                <span class="fieldLabel">
-                    <input type="checkbox" value="specialacrobatic">
-                    Specialised Skill?
-                </span>
                 <section class="statsVlues">
                     <span class="dValue">
                         <input name="tech1DValue" value="3" type="number" min="2">
@@ -292,7 +264,7 @@ include __DIR__ . "/../../views/header.php";
         </section>
 
         <!-- Controll -->
-        <details>
+        <details style="display:none">
             <summary class="defaultBtn button">Controll<span></span></summary>
             <section style="color:aqua">
                 <input type="text" name="controlSkill1" placeholder="Skill1">
@@ -315,7 +287,7 @@ include __DIR__ . "/../../views/header.php";
         </details>
 
         <!-- Sence -->
-        <details>
+        <details style="display:none">
             <summary class="defaultBtn button">Sence<span></span></summary>
             <section style="color:aqua">
                 <input type="text" name="senceSkill1" placeholder="Skill1">
@@ -338,7 +310,7 @@ include __DIR__ . "/../../views/header.php";
         </details>
 
         <!-- Alter -->
-        <details>
+        <details style="display:none">
             <summary class="defaultBtn button">Alter<span></span></summary>
             <section style="color:aqua">
                 <input type="text" name="alterSkill1" placeholder="Skill1">
@@ -362,9 +334,9 @@ include __DIR__ . "/../../views/header.php";
 
 
         <section class="navigation">
-            <a href="<?= $previousPageUrl; ?>" class="button yellowBtn">&lt;<?= $previousPage; ?></a>
+            <a href="<?= $previousPageUrl; ?>" class="button yellowBtn">&lt; <?= $previousPage; ?></a>
             <a href="../../user.php" class="cancelBtn">X</a>
-            <a href="<?= $previousPageUrl; ?>" class="button greenBtn"><?= $nextPage; ?> &gt;</a>
+            <a href="<?= $nextPageUrl; ?>" class="button greenBtn"><?= $nextPage; ?> &gt;</a>
         </section>
     </form>
 </section>
