@@ -44,38 +44,125 @@ include __DIR__ . "/../../views/header.php";
 <section id="inputFields">
     <h1>Inventory</h1>
 
-    <form action="skills.php" method="POST" class="skillsFields">
+    <form action="skills.php" method="POST" class="inventoryFields">
 
         <!-- Armor -->
         <details>
-            <summary class="defaultBtn button">Dexterity<span></span></summary>
-            <section>
-                <select class="fieldLabel" name="dexSkill1">
-                    <?php
-                    get_armor_dropdown_menu($dexteritySkills);
-                    ?>
-                </select>
-                <section class="statsVlues">
-                    <span class="dValue">
-                        <input name="dex1DValue" value="3" type="number" min="2">
-                        D
-                    </span>
-                    +
-                    <input name="dex1PipValue" class="pipValue" value="0" type="number" max="2" min="0">
-                    <button class="cancelBtn">X</button>
+            <summary class="defaultBtn button">Armor<span></span></summary>
+            <button class="cancelBtn">X</button>
+            <details>
+                <summary class="defaultBtn subBtn button">Medium Battle Armor<span></span></summary>
+                <section style="color:aqua">
+                    <select class="fieldLabel" name="armor1">
+                        <?php
+                        get_armor_dropdown_menu($armors);
+                        ?>
+                    </select>
                 </section>
-            </section>
+                <section class="armorStats">
+                    <!-- Head -->
+                    <section class="headArmor">
+                        <h2 class="fieldLabel">Head</h2>
+                        <section class="armorValues physical">
 
+                            <span class="dValue">
+                                <input name="armor1HeadPhysicalDValue" value="3" type="number" min="2">
+                                D
+                            </span>
+                            +
+                            <input name="armor1HeadPhysicalPipValue" class="pipValue" value="0" type="number" max="2" min="0">
+                        </section>
+                        <section class="armorValues energy">
+
+                            <span class="dValue">
+                                <input name="armor1EnergyDValue" value="3" type="number" min="2">
+                                D
+                            </span>
+                            +
+                            <input name="armor1HeadEnergyPipValue" class="pipValue" value="0" type="number" max="2" min="0">
+                        </section>
+                    </section>
+
+                    <!-- Torso -->
+                    <section class="torsoArmor">
+                        <h2 class="fieldLabel">Torso</h2>
+                        <section class="armorValues physical">
+
+                            <span class="dValue">
+                                <input name="armor1TorsoPhysicalDValue" value="3" type="number" min="2">
+                                D
+                            </span>
+                            +
+                            <input name="armor1TorsoPhysicalPipValue" class="pipValue" value="0" type="number" max="2" min="0">
+                        </section>
+                        <section class="armorValues energy">
+
+                            <span class="dValue">
+                                <input name="armor1TorsoEnergyDValue" value="3" type="number" min="2">
+                                D
+                            </span>
+                            +
+                            <input name="armor1TorsoEnergyPipValue" class="pipValue" value="0" type="number" max="2" min="0">
+                        </section>
+                    </section>
+
+                    <!-- Arms -->
+                    <section class="armsArmor">
+                        <h2 class="fieldLabel">Arms</h2>
+                        <section class="armorValues physical">
+
+                            <span class="dValue">
+                                <input name="armor1ArmsPhysicalDValue" value="3" type="number" min="2">
+                                D
+                            </span>
+                            +
+                            <input name="armor1ArmsPhysicalPipValue" class="pipValue" value="0" type="number" max="2" min="0">
+                        </section>
+                        <section class="armorValues energy">
+
+                            <span class="dValue">
+                                <input name="armor1ArmsEnergyDValue" value="3" type="number" min="2">
+                                D
+                            </span>
+                            +
+                            <input name="armor1ArmsEnergyPipValue" class="pipValue" value="0" type="number" max="2" min="0">
+                        </section>
+                    </section>
+
+                    <!-- Legs -->
+                    <section class="legArmor">
+                        <h2 class="fieldLabel">Legs</h2>
+                        <section class="armorValues physical">
+
+                            <span class="dValue">
+                                <input name="armor1LegsPhysicalDValue" value="3" type="number" min="2">
+                                D
+                            </span>
+                            +
+                            <input name="armor1LegsPhysicalPipValue" class="pipValue" value="0" type="number" max="2" min="0">
+                        </section>
+                        <section class="armorValues energy">
+
+                            <span class="dValue">
+                                <input name="armor1LegsEnergyDValue" value="3" type="number" min="2">
+                                D
+                            </span>
+                            +
+                            <input name="armor1LegsEnergyPipValue" class="pipValue" value="0" type="number" max="2" min="0">
+                        </section>
+                    </section>
+                </section>
+            </details>
             <button class="button greenBtn">+ Add</button>
         </details>
 
         <!-- Weapons -->
         <details>
-            <summary class="defaultBtn button">Dexterity<span></span></summary>
+            <summary class="defaultBtn button">Weapons<span></span></summary>
             <section>
                 <select class="fieldLabel" name="dexSkill1">
                     <?php
-                    get_skills_dropdown_menu($dexteritySkills);
+                    get_weapons_dropdown_menu($weapons);
                     ?>
                 </select>
                 <section class="statsVlues">
@@ -94,7 +181,7 @@ include __DIR__ . "/../../views/header.php";
 
         <!-- Field Gear -->
         <details>
-            <summary class="defaultBtn button">Dexterity<span></span></summary>
+            <summary class="defaultBtn button">Field Gear<span></span></summary>
             <section>
                 <select class="fieldLabel" name="dexSkill1">
                     <?php
@@ -117,7 +204,7 @@ include __DIR__ . "/../../views/header.php";
 
         <!-- Personal Gear -->
         <details>
-            <summary class="defaultBtn button">Dexterity<span></span></summary>
+            <summary class="defaultBtn button">Personal Gear<span></span></summary>
             <section>
                 <select class="fieldLabel" name="dexSkill1">
                     <?php

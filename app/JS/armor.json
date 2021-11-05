@@ -1,6 +1,6 @@
 {
     "mediumBattleArmor": {
-        "description": "",
+        "description": "Battle armor combines protective metal or composite plates with a padded jumpsuit to form a layer of protection. While off-the-rack battle armor is available, most users cobble together their gear from various sources.",
         "name": "Medium Battle Armor",
         "cost": 2000,
         "availabillity": "Specilized Armor",
@@ -96,10 +96,7 @@
         "gameNote": ""
     },
     "armoredFlightSuit": {
-        "description": "A combat-ready flight suit that provides additional protection against vacuum for limited periods, this armor comes in
-        various models, including the Corellian TX-3 (favored by various
-        pirate gangs) and the Imperial TIE flight suit (worn by TIE fighter
-        pilots throughout the Empire).",
+        "description": "A combat-ready flight suit that provides additional protection against vacuum for limited periods, this armor comes in various models, including the Corellian TX-3 (favored by various pirate gangs) and the Imperial TIE flight suit (worn by TIE fighter pilots throughout the Empire).",
         "name": "Armored Flight Suit",
         "cost": 4000,
         "availabillity": "Normally Available",
@@ -192,15 +189,11 @@
                 "pip": null
             }
         },
-        "gameNote": "An armored flight suit provides up to 10 hours of life
-        support, allowing its wearer to survive in the vacuum of space or
-        any other hostile environment.
-        Utility Belt: Ion flares, one week concentrated rations, spare comlink,
-        water packs, 1 medpac."
+        "gameNote": "An armored flight suit provides up to 10 hours of life support, allowing its wearer to survive in the vacuum of space or any other hostile environment. Utility Belt: Ion flares, one week concentrated rations, spare comlink, water packs, 1 medpac."
     },
      "custom": {
         "description": "",
-        "name": "Armor Name",
+        "name": "Custom Armor",
         "cost": null,
         "availabillity": "Rare Armor",
         "protection": {
