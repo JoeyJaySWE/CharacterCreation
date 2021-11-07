@@ -159,24 +159,47 @@ include __DIR__ . "/../../views/header.php";
         <!-- Weapons -->
         <details>
             <summary class="defaultBtn button">Weapons<span></span></summary>
-            <section>
-                <select class="fieldLabel" name="dexSkill1">
-                    <?php
-                    get_weapons_dropdown_menu($weapons);
-                    ?>
-                </select>
-                <section class="statsVlues">
-                    <span class="dValue">
-                        <input name="dex1DValue" value="3" type="number" min="2">
-                        D
-                    </span>
-                    +
-                    <input name="dex1PipValue" class="pipValue" value="0" type="number" max="2" min="0">
-                    <button class="cancelBtn">X</button>
-                </section>
+            <section class="subBtnSection">
+                <button class="cancelBtn">X</button>
+                <details>
+                    <summary class="defaultBtn subBtn button">Fragmentation Granade<span></span></summary>
+                    <section style="color:aqua">
+                        <section class="statsVlues">
+
+                            <?php get_weapons_data($weapons, $weapons['explosives']['weapons']['fragGrande']['name']); ?>
+                            <!-- <span class="dValue">
+                                <input name="dex1DValue" value="3" type="number" min="2">
+                                D
+                            </span>
+                            +
+                            <input name="dex1PipValue" class="pipValue" value="0" type="number" max="2" min="0">
+                            <button class="cancelBtn">X</button> -->
+                        </section>
+                    </section>
+                </details>
             </section>
 
-            <button class="button greenBtn">+ Add</button>
+            <section class="subBtnSection">
+                <button class="cancelBtn">X</button>
+                <details>
+                    <summary class="defaultBtn subBtn button">Explosive Charge<span></span></summary>
+                    <section style="color:aqua">
+                        <section class="statsVlues">
+
+                            <?php get_weapons_data($weapons, $weapons['explosives']['weapons']['exlosiveChrage']['name']); ?>
+                            <!-- <span class="dValue">
+                                <input name="dex1DValue" value="3" type="number" min="2">
+                                D
+                            </span>
+                            +
+                            <input name="dex1PipValue" class="pipValue" value="0" type="number" max="2" min="0">
+                            <button class="cancelBtn">X</button> -->
+                        </section>
+                    </section>
+                </details>
+
+                <button class="button greenBtn">+ Add</button>
+            </section>
         </details>
 
         <!-- Field Gear -->
