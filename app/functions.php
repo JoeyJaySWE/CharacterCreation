@@ -39,7 +39,7 @@ function get_weapons_dropdown_menu(array $menuItems, string $selected = null, st
             <?php
         endif;
         foreach ($weapon['weapons'] as $weapon) :
-            if ($weapon["skill"][0] === $selected || $weapon['name'] === $weaponName) : ?>
+            if ($weapon["skill"][0] === $selected || $weapon['name'] === $weaponName || $weapon['name'] = "Custom Weapon") : ?>
                 <option selected value="<?= $weapon["name"] ?>"><?= $weapon["name"] ?> &dash; <?= number_format($weapon['cost']); ?> credits</option>
             <?php else : ?>
 
@@ -67,8 +67,12 @@ function find_weapon($name, $array)
 }
 function get_weapons_data(array $weapons, string $weapon)
 {
-    $weaponData = find_weapon($weapon, $weapons);
-    $weapon = $weaponData;
+    if ($weapon !== "Custom Weapon") {
+        $weaponData = find_weapon($weapon, $weapons);
+        $weapon = $weaponData;
+    } else {
+        $weapon = $weapons['custom']['weapon'];
+    }
     if ($weapon['type'] === 'explosive') :
 
 
@@ -216,6 +220,8 @@ function get_weapons_data(array $weapons, string $weapon)
             </section>
         <?php
         endif;
+
+    // Ranged
     elseif ($weapon['type'] === "ranged") : ?>
         <section class="rangedData">
             <section>
@@ -272,12 +278,13 @@ function get_weapons_data(array $weapons, string $weapon)
             </section>
 
             <section class="statsVlues">
+                <label class="fieldLabel">Damage:</label>
                 <span class="dValue">
                     <input name="weaponDamgeDValue" value="3" type="number" min="2">
                     D
+                    +
+                    <input name="weaponDamgePipValue" class="pipValue" value="0" type="number" max="2" min="0">
                 </span>
-                +
-                <input name="weaponDamgePipValue" class="pipValue" value="0" type="number" max="2" min="0">
             </section>
 
             <?php if ($weapon['gameNote'] !== "") : ?>
@@ -292,7 +299,9 @@ function get_weapons_data(array $weapons, string $weapon)
             <?php endif; ?>
         </section>
 
-    <?php elseif ($weapon['type'] === "mixed") : ?>
+    <?php
+    // Mixed
+    elseif ($weapon['type'] === "mixed") : ?>
         <section class="mixedData">
             <section>
                 <label class="fieldLabel">Type:</label>
@@ -318,7 +327,7 @@ function get_weapons_data(array $weapons, string $weapon)
 
             <section>
                 <label class="fieldLabel">Difficulty:</label>
-                <input type="text" value="<?= number_format($weapon['difficulty']); ?>" />
+                <input type="text" value="<?= $weapon['difficulty'] ?>" />
             </section>
 
             <section>
@@ -350,27 +359,27 @@ function get_weapons_data(array $weapons, string $weapon)
             <section class="statsVlues">
                 <label class="fieldLabel">Damage Melee:</label>
                 <span class="dValue">
-                    <?php if ($weapon['damage']['meele']['attribute'] !== "") : ?>
-                        <?= $weapon['damage']['meele']['attribute']; ?> +
+                    <?php if ($weapon['damage']['melee']['attribute'] !== "") : ?>
+                        <?= $weapon['damage']['melee']['attribute']; ?> +
                     <?php endif; ?>
                     <input name="weaponDamgeDValue" value="<?= $weapon['damage']['melee']['dice'] ?>" type="number" min="2">
                     D
+                    +
+                    <input name="weaponDamgePipValue" class="pipValue" value="<?= $weapon['damage']['melee']['pips'] ?>" type="number" max="2" min="0">
+                    <?php
+                    if ($weapon['damage']['melee']['maxDice'] !== null) : ?>
+                        &lpar;max <?= $weapon['damage']['melee']['maxDice']; ?>D&rpar;
+                    <?php endif; ?>
                 </span>
-                +
-                <input name="weaponDamgePipValue" class="pipValue" value="<?= $weapon['damage']['melee']['pips'] ?>" type="number" max="2" min="0">
-                <?php
-                if ($weapon['damage']['meele']['maxDice'] !== null) : ?>
-                    &lpar;max <?= $weapon['damage']['meele']['maxDice']; ?>D&rpar;
-                <?php endif; ?>
             </section>
             <section class="statsVlues">
                 <label class="fieldLabel">Damage Trhwon:</label>
                 <span class="dValue">
                     <input name="weaponDamgeDValue" value="<?= $weapon['damage']['thrown']['dice'] ?>" type="number" min="2">
                     D
+                    +
+                    <input name="weaponDamgePipValue" class="pipValue" value="<?= $weapon['damage']['thrown']['pips'] ?>" type="number" max="2" min="0">
                 </span>
-                +
-                <input name="weaponDamgePipValue" class="pipValue" value="<?= $weapon['damage']['thrown']['pips'] ?>" type="number" max="2" min="0">
             </section>
 
             <?php if ($weapon['gameNote'] !== "") : ?>
@@ -384,7 +393,10 @@ function get_weapons_data(array $weapons, string $weapon)
                 </section>
             <?php endif; ?>
         </section>
-    <?php elseif ($weapon['type'] === "melee") : ?>
+
+    <?php
+    // Melee
+    elseif ($weapon['type'] === "melee") : ?>
         <section class="mixedData">
             <section>
                 <label class="fieldLabel">Type:</label>
@@ -410,7 +422,7 @@ function get_weapons_data(array $weapons, string $weapon)
 
             <section>
                 <label class="fieldLabel">Difficulty:</label>
-                <input type="text" value="<?= number_format($weapon['difficulty']); ?>" />
+                <input type="text" value="<?= $weapon['difficulty']; ?>" />
             </section>
 
             <section>
@@ -423,37 +435,21 @@ function get_weapons_data(array $weapons, string $weapon)
                 </select>
             </section>
 
-            <section>
-                <label class="fieldLabel">Range:</label>
-                <section class="statsVlues">
-                    <span class="dValue">
-                        <input name="shortMinValue" value="<?= $weapon['range']['short']['min'] ?>" type="number" min="0" max="<?= $weapon['range']['short']['max'] ?>">
-                        -
-                        <input name="shortMaxValue" value="<?= $weapon['range']['short']['max'] ?>" type="number" min="<?= $weapon['range']['short']['min'] ?>">
-                        /
-                        <input name="mediumMaxValue" value="<?= $weapon['range']['medium']['max'] ?>" type="number" min="<?= $weapon['range']['medium']['min'] ?>">
-                        /
-                        <input name="longMaxValue" value="<?= $weapon['range']['long']['max'] ?>" type="number" min="<?= $weapon['range']['long']['min'] ?>">
-                        m
-                    </span>
-                </section>
-            </section>
-
             <section class="statsVlues">
-                <label class="fieldLabel">Damage Melee:</label>
+                <label class="fieldLabel">Damage:</label>
                 <span class="dValue">
-                    <?php if ($weapon['damage']['meele']['attribute'] !== "") : ?>
-                        <?= $weapon['damage']['meele']['attribute']; ?> +
+                    <?php if ($weapon['damage']['attribute'] !== "") : ?>
+                        <?= $weapon['damage']['attribute']; ?> +
                     <?php endif; ?>
-                    <input name="weaponDamgeDValue" value="<?= $weapon['damage']['melee']['dice'] ?>" type="number" min="2">
+                    <input name="weaponDamgeDValue" value="<?= $weapon['damage']['dice'] ?>" type="number" min="2">
                     D
+                    +
+                    <input name="weaponDamgePipValue" class="pipValue" value="<?= $weapon['damage']['pips'] ?>" type="number" max="2" min="0">
+                    <?php
+                    if ($weapon['damage']['maxDice'] !== null) : ?>
+                        &lpar;max <?= $weapon['damage']['maxDice']; ?>D&rpar;
+                    <?php endif; ?>
                 </span>
-                +
-                <input name="weaponDamgePipValue" class="pipValue" value="<?= $weapon['damage']['melee']['pips'] ?>" type="number" max="2" min="0">
-                <?php
-                if ($weapon['damage']['meele']['maxDice'] !== null) : ?>
-                    &lpar;max <?= $weapon['damage']['meele']['maxDice']; ?>D&rpar;
-                <?php endif; ?>
             </section>
 
             <?php if ($weapon['gameNote'] !== "") : ?>
@@ -467,17 +463,19 @@ function get_weapons_data(array $weapons, string $weapon)
                 </section>
             <?php endif; ?>
         </section>
-    <?php else : ?>
+    <?php
+    // Custom
+    else : ?>
         <section class="customSection">
             <section>
                 <label class="fieldLabel">Name:</label>
-                <input type="text" value="<?= number_format($weapon['name']); ?>" />
+                <input type="text" value="<?= $weapon['name']; ?>" />
             </section>
 
             <section>
                 <label class="fieldLabel">Base:</label>
                 <select>
-                    <?php get_weapons_dropdown_menu($weapons, "", $weapon['name']); ?>
+                    <?php get_weapons_dropdown_menu($weapons, "", "CUSTOm WEAPON"); ?>
                 </select>
             </section>
         </section>

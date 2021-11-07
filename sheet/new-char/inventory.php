@@ -197,9 +197,71 @@ include __DIR__ . "/../../views/header.php";
                         </section>
                     </section>
                 </details>
-
-                <button class="button greenBtn">+ Add</button>
             </section>
+            <!-- Spear -->
+            <section class="subBtnSection">
+                <button class="cancelBtn">X</button>
+                <details>
+                    <summary class="defaultBtn subBtn button">Spear<span></span></summary>
+                    <section style="color:aqua">
+                        <section class="statsVlues">
+
+                            <?php get_weapons_data($weapons, $weapons['melee']['weapons']['spear']['name']); ?>
+                            <!-- <span class="dValue">
+                                <input name="dex1DValue" value="3" type="number" min="2">
+                                D
+                            </span>
+                            +
+                            <input name="dex1PipValue" class="pipValue" value="0" type="number" max="2" min="0">
+                            <button class="cancelBtn">X</button> -->
+                        </section>
+                    </section>
+                </details>
+            </section>
+
+            <!-- Vibrosword -->
+            <section class="subBtnSection">
+                <button class="cancelBtn">X</button>
+                <details>
+                    <summary class="defaultBtn subBtn button">Vibroblade<span></span></summary>
+                    <section style="color:aqua">
+                        <section class="statsVlues">
+
+                            <?php get_weapons_data($weapons, $weapons['melee']['weapons']['vibroblade']['name']); ?>
+                        </section>
+                    </section>
+                </details>
+            </section>
+            <!-- Blaster Pistol -->
+            <section class="subBtnSection">
+                <button class="cancelBtn">X</button>
+                <details>
+                    <summary class="defaultBtn subBtn button">Blaster Pistol<span></span></summary>
+                    <section style="color:aqua">
+                        <section class="statsVlues">
+
+                            <?php get_weapons_data($weapons, $weapons['blasters']['weapons']['blasterPistol']['name']); ?>
+
+                        </section>
+                    </section>
+                </details>
+            </section>
+
+            <!-- Custom -->
+            <section class="subBtnSection">
+                <button class="cancelBtn">X</button>
+                <details>
+                    <summary class="defaultBtn subBtn button">Xantha<span></span></summary>
+                    <section style="color:aqua">
+                        <section class="statsVlues">
+
+                            <?php get_weapons_data($weapons, $weapons['custom']['weapon']['name']); ?>
+
+                        </section>
+                    </section>
+                </details>
+            </section>
+            <button class="button greenBtn">+ Add</button>
         </details>
 
         <!-- Field Gear -->
