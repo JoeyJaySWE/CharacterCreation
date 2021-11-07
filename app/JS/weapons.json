@@ -649,6 +649,7 @@
         "category": "Misc. Weapons",
         "weapons": {
             "flamethrower":{
+                "type": "ranged",
                 "name": "Flamethrower",
                 "cost": 700,
                 "skill": [
@@ -681,6 +682,7 @@
                 "gameNote": "5D+1 only on 1sr round, 4D damage each consequitive round."
             },
             "stunPistol": {
+                "type": "ranged",
                 "name": "Stun Pistol",
                 "cost": 200,
                 "ammo": 50,
