@@ -3,16 +3,14 @@
         "category": "Melee",
         "weapons": {
             "club":{
+                "type": "melee",
                 "name": "Club / Batton",
                 "cost": 15,
                 "skill": [
                     "Melee Combat: Club "
                 ],
                 "availability": "Readily Available",
-                "description": "Powered by the wielder’s brute strength, clubs break an
-                opponent’s bones, or worse. They are the favored weapons of
-                thugs. Batons (a variety of the club) are used by police forces on
-                relatively peaceful worlds in crowd-control situations.",
+                "description": "Powered by the wielder’s brute strength, clubs break an opponent’s bones, or worse. They are the favored weapons of thugs. Batons (a variety of the club) are used by police forces on relatively peaceful worlds in crowd-control situations.",
                 "difficulty": "Very Easy",
                 "damage": {
                     "attribute": "STR",
@@ -23,16 +21,14 @@
                 "gameNote": ""
             },
             "electorstaff":{
+                "type": "melee",
                 "name": "Electrostaff",
                 "cost": 5750,
                 "skill": [
                     "Melee Combat: electrostaff "
                 ],
                 "availability": "Specialized Weapon",
-                "description": "An electrostaff is a double weapon: Each end has an electromagnetic pulse generator that discharges upon impact, allowing
-                it to deal blunt-force wounds. If desired, either electromagnetic
-                pulse can be set to stun its target instead. An electrostaff
-                requires two energy cells to operate.",
+                "description": "An electrostaff is a double weapon: Each end has an electromagnetic pulse generator that discharges upon impact, allowing it to deal blunt-force wounds. If desired, either electromagnetic pulse can be set to stun its target instead. An electrostaff requires two energy cells to operate.",
                 "difficulty": "Difficult",
                 "damage": {
                     "attribute": "STR",
@@ -40,21 +36,18 @@
                     "pips": 0,
                     "maxDice": 6
                 },
-                "gameNote": "Characters with the melee combat: electrostaff specialization gain a +5 bonus to melee parry rolls. This weapon can parry
-                lightsabers without taking damage."
+                "gameNote": "Characters with the melee combat: electrostaff specialization gain a +5 bonus to melee parry rolls. This weapon can parry lightsabers without taking damage."
 
             },
             "forcePike":{
+                "type": "melee",
                 "name": "Force Pike",
                 "cost": 500,
                 "skill": [
                     "Melee Combat: force pike "
                 ],
                 "availability": "Normally Available",
-                "description": "Force pikes are one-meter-long poles topped with power tips.
-                A two-setting power dial located near the bottom of the pike
-                allows the user to set the weapon to “lethal” or “stun.” Although
-                primarily a vibro weapon, the force pike also delivers an electrical shock through its tip, dealing both piercing and energy damage. A force pike requires 2 energy cells.",
+                "description": "Force pikes are one-meter-long poles topped with power tips. A two-setting power dial located near the bottom of the pike allows the user to set the weapon to “lethal” or “stun.” Although primarily a vibro weapon, the force pike also delivers an electrical shock through its tip, dealing both piercing and energy damage. A force pike requires 2 energy cells.",
                 "difficulty": "Moderate",
                 "damage": {
                     "attribute": "STR",
@@ -65,16 +58,14 @@
                 "gameNote": ""
             },
             "knife":{
+                "type": "melee",
                 "name": "Knife",
                 "cost": 25,
                 "skill": [
                     "Melee Combat: knife "
                 ],
                 "availability": "Readily Available",
-                "description": "In an age of powered, long-range energy weapons, the main
-                advantage of a knife is that it is easy and cheap to manufacture,
-                concealable, requires no power source beyond sheer physical
-                strength, and possession is rarely regulated by planetary governments. ",
+                "description": "In an age of powered, long-range energy weapons, the main advantage of a knife is that it is easy and cheap to manufacture, concealable, requires no power source beyond sheer physical strength, and possession is rarely regulated by planetary governments. ",
                 "difficulty": "Very Easy",
                 "damage": {
                     "attribute": "STR",
@@ -85,6 +76,7 @@
                 "gameNote": ""
             },
             "spear":{
+                "type": "mixed",
                 "name": "Spear",
                 "cost": 60,
                 "skill": [
@@ -126,15 +118,14 @@
                 "gameNote": ""
             },
             "staff":{
+                "type": "melee",
                 "name": "Staff",
                 "cost": 15,
                 "skill": [
                     "Melee Combat: staff "
                 ],
                 "availability": "Readily Available",
-                "description": " A Staff is made of wood, plasteel, or a metal alloy. A user
-                can strike with either end of the staff, taking full advantage of
-                any openings in an opponent’s defenses.",
+                "description": " A Staff is made of wood, plasteel, or a metal alloy. A user can strike with either end of the staff, taking full advantage of any openings in an opponent’s defenses.",
                 "difficulty": "Very Easy",
                 "damage": {
                     "attribute": "STR",
@@ -145,6 +136,7 @@
                 "gameNote": ""
             },
             "stunGauntlets":{
+                "type": "melee",
                 "name": "Stun Gauntlets",
                 "cost": 300,
                 "skill": [
@@ -152,10 +144,7 @@
                 ],
                 "ammo": 10,
                 "availability": "Normally Available",
-                "description": "Essentially gloves, or apparatuses for the fists, the stun
-                gauntlets can be activated to produce a stunning charge when
-                the user’s fist strikes a target.
-                Stun gauntlets require an energy cell to operate.",
+                "description": "Essentially gloves, or apparatuses for the fists, the stun gauntlets can be activated to produce a stunning charge when the user’s fist strikes a target. Stun gauntlets require an energy cell to operate.",
                 "difficulty": "Easy",
                 "damage": {
                     "attribute": "STR",
@@ -169,15 +158,14 @@
                 "gameNote": ""
             },
             "vibroAx":{
+                "type": "melee",
                 "name": "Vibro-Ax",
                 "cost": 500,
                 "skill": [
                     "Melee Combat: vibro-ax "
                 ],
                 "availability": "Normally Available",
-                "description": "This powerful vibro weapon features an energy cell that
-                causes the blade to vibrate rapidly when activated. This gives
-                the weapon far greater power than a standard axe, with minimal effort from the wielder. A vibro-ax requires an energy cell.",
+                "description": "This powerful vibro weapon features an energy cell that causes the blade to vibrate rapidly when activated. This gives the weapon far greater power than a standard axe, with minimal effort from the wielder. A vibro-ax requires an energy cell.",
                 "difficulty": "Moderate",
                 "damage": {
                     "attribute": "STR",
@@ -188,16 +176,14 @@
                 "gameNote": ""
             },
             "vibroblade":{
+                "type": "melee",
                 "name": "Vibroblade",
                 "cost": 250,
                 "skill": [
                     "Melee Combat: vibroblade "
                 ],
                 "availability": "Normally Available",
-                "description": "The vibroblade is a close-combat weapon favored by soldiers
-                and mercenaries throughout the galaxy. It resembles a short
-                sword with a high-tech look and feel. Vibroblades are illegal in
-                most urban areas. A vibroblade requires an energy cell to operate.",
+                "description": "The vibroblade is a close-combat weapon favored by soldiers and mercenaries throughout the galaxy. It resembles a short sword with a high-tech look and feel. Vibroblades are illegal in most urban areas. A vibroblade requires an energy cell to operate.",
                 "difficulty": "Moderate",
                 "damage": {
                     "attribute": "STR",
@@ -208,31 +194,14 @@
                 "gameNote": ""
             },
             "lightsaber":{
+                "type": "melee",
                 "name": "Lightsaber",
                 "cost": null,
                 "skill": [
                     "Lightsaber"
                 ],
                 "availability": "Rare Weapon",
-                "description": "The lightsaber, simple in design yet difficult to wield and
-                master, features a hand grip hilt that projects a blade of pure
-                energy. The traditional weapon of the Jedi, the lightsaber stands
-                as a symbol of their skill, dedication, and authority.
-                The blade of a lightsaber is generated by an energy cell and
-                focused through crystals within the hilt. The saber can cut
-                through most materials (except another lightsaber blade, an
-                energy shield, or a few exotic materials), given enough time.
-                Because only the hand grip has any weight, unskilled users have
-                difficulty judging the position of the blade. The lightsaber’s true
-                potential becomes apparent in the hands of a fully trained Jedi,
-                who can defend and attack with the weapon, deflecting shots or
-                striking opponents with the glowing blade.
-                A lightsaber requires a special energy cell to operate (the cost
-                is ten times the price of an ordinary energy cell, but it lasts
-                almost indefinitely).
-                The weapons are extremely rare artifacts — they are very
-                rarely found for sale and possession of a lightsaber was highly
-                illegal in the Empire.",
+                "description": "The lightsaber, simple in design yet difficult to wield and master, features a hand grip hilt that projects a blade of pure energy. The traditional weapon of the Jedi, the lightsaber stands as a symbol of their skill, dedication, and authority. The blade of a lightsaber is generated by an energy cell and focused through crystals within the hilt. The saber can cut through most materials (except another lightsaber blade, an energy shield, or a few exotic materials), given enough time. Because only the hand grip has any weight, unskilled users have difficulty judging the position of the blade. The lightsaber’s true potential becomes apparent in the hands of a fully trained Jedi, who can defend and attack with the weapon, deflecting shots or striking opponents with the glowing blade. A lightsaber requires a special energy cell to operate (the cost is ten times the price of an ordinary energy cell, but it lasts almost indefinitely). The weapons are extremely rare artifacts — they are very rarely found for sale and possession of a lightsaber was highly illegal in the Empire.",
                 "difficulty": "Difficult",
                 "damage": {
                     "attribute": "",
@@ -240,786 +209,645 @@
                     "pips": 0,
                     "maxDice": null
                 },
-                "gameNote": "in an attacking character misses the difficulty number
-                by more than 10 points (the base difficulty; not their opponent’s
-                parry total), the character has injured himself with the lightsaber
-                blade. Apply normal damage to the character wielding the blade."
+                "gameNote": "in an attacking character misses the difficulty number by more than 10 points (the base difficulty; not their opponent’s parry total), the character has injured himself with the lightsaber blade. Apply normal damage to the character wielding the blade."
             }
-        },
-        "archaicRanged": {
-            "category": "Archaic Ranged Weapons",
-            "weapons": {
-                "crossbow":{
-                    "name": "crossbow",
+        }
+    },
+    "archaicRanged": {
+        "category": "Archaic Ranged Weapons",
+        "weapons": {
+            "crossbow":{
+                "type": "ranged",
+                "name": "Crossbow",
+                "cost": 200,
+                "skill": [
+                    "Bows: crossbow"
+                ],
+                "availability": "Readily Available",
+                "description": "A crossbow is often a hunting or combat weapon on lowtech worlds, A primitive crossbow and its arrows are made of wood, more advanced models are augmented with metal, while the most high-tech versions tend to be made from durable, lightweight composite materials.",
+                "range": {
+                    "short": {
+                        "min": 3,
+                        "max": 10
+                    },
+                    "medium": {
+                        "min": 10,
+                        "max": 30
+                    },
+                    "long":{
+                        "min": 30,
+                        "max": 50
+                    }
+                },
+                "damage": {
+                    "attribute": "",
+                    "dice": 2,
+                    "pips": 2,
+                    "maxDice": null
+                },
+                "gameNote": "10 bolts: 25 credits"
+            },
+            "longbow":{
+                "type": "ranged",
+                "name": "Longbow",
+                "cost": 200,
+                "skill": [
+                    "Bows: longbow"
+                ],
+                "availability": "Readily Available",
+                "description": "The bow is a typical hunter’s weapon on low-tech worlds, but it is also used for sport on high-tech planets. A primitive bow and its arrows are made of wood and augmented with metal or stone, while more advanced versions tend to be made from durable, lightweight composite materials.",
+                "range": {
+                    "short": {
+                        "min": 3,
+                        "max": 10
+                    },
+                    "medium": {
+                        "min": 10,
+                        "max": 30
+                    },
+                    "long":{
+                        "min": 30,
+                        "max": 100
+                    }
+                },
+                "damage": {
+                    "attribute": "",
+                    "dice": 2,
+                    "pips": 2,
+                    "maxDice": null
+                },
+                "gameNote": ""
+            },
+            "trhowingKnife":{
+                "type": "mixed",
+                "name": "Throwing Knife",
+                "cost": 35,
+                "skill": [
+                    "Thrown weapons: knife"
+                ],
+                "availability": "Readily Available",
+                "description": "In an age of powered, long-range energy weapons, the main advantage of a throwing knife is that it is easy and cheap to manufacture, concealable, requires no power source beyond sheer physical strength, and possession is rarely regulated by planetary governments. A throwing knife can be used as a normal knife in melee combat.",
+                "range": {
+                    "short": {
+                        "min": 2,
+                        "max": 3
+                    },
+                    "medium": {
+                        "min": 3,
+                        "max": 5
+                    },
+                    "long":{
+                        "min": 5,
+                        "max": 10
+                    }
+                },
+                "damage": {
+                    "attribute": "",
+                    "dice": 1,
+                    "pips": 2,
+                    "maxDice": null
+                },
+                "gameNote": "May be used as a normal knife in melee combat. Melee damage is STR+2 (maximum: 6D)."
+            },
+            "slugthorwerrifle":{
+                "type": "ranged",
+                "name": "Slugthrower rifle",
+                "cost": 360,
+                "skill": [
+                    "Firearms: slugthrower rifle"
+                ],
+                "ammo": 15,
+                "availability": "Normally Available",
+                "description": "These primitive projectile weapons are almost never used by most military forces due to their ineffectiveness against modern armor, and their tendency to run out of ammunition quickly. Slugthrowers are most often found on primitive settlements or in pre-spaceflight cultures; occasionally a Rebel unit will find them useful for shock value (they are extremely loud). Conversely, some Rebel units prefer the use of slugthrowers; it is possible to silence a projectile weapon, not a blaster.",
+                "range": {
+                    "short": {
+                        "min": 3,
+                        "max": 10
+                    },
+                    "medium": {
+                        "min": 10,
+                        "max": 30
+                    },
+                    "long":{
+                        "min": 30,
+                        "max": 50
+                    }
+                },
+                "damage": {
+                    "attribute": "",
+                    "dice": 2,
+                    "pips": 2,
+                    "maxDice": null
+                },
+                "gameNote": "Ammo clip: 10 credits.  −1D damage when used on a target with body armor"
+            }
+        }
+    },
+    "blasters": {
+        "category": "Blasters",
+        "weapons": {
+            "holdOutBlaster":{
+                "type": "ranged",
+                "name": "Hold-out Blaster",
+                "cost": 275,
+                "skill": [
+                    "Blaster: hold-out blaster"
+                ],
+                "ammo": 6,
+                "availability": "Normally Available",
+                "fireRate": 1,
+                "description": "Small enough to be hidden in the hand of a human, hold-out blasters are common in urban areas with strict weapon controls and among undercover agents. Hold-out blasters require custom designed power packs and only hold enough blaster gas for a few shots. They are illegal or closely regulated in most systems. Many systems, however, look on them as a “self-defense” alternative to the more powerful types of personal weapons available.",
+                "range": {
+                    "short": {
+                        "min": 3,
+                        "max": 4
+                    },
+                    "medium": {
+                        "min": 4,
+                        "max": 8
+                    },
+                    "long":{
+                        "min": 8,
+                        "max": 12
+                    }
+                },
+                "damage": {
+                    "attribute": "",
+                    "dice": 3,
+                    "pips": 0,
+                    "maxDice": null
+                },
+                "gameNote": ""
+            },
+            "sportingBlaster":{
+                "type": "ranged",
+                "name": "Sporting Blaster",
+                "cost": 350,
+                "skill": [
+                    "Blasters: sporting blaster"
+                ],
+                "ammo": 50,
+                "availability": "Readily Available",
+                "fireRate": 1,
+                "description": "A small, short blaster, often used for small-game hunting or personal defense. Sometimes used for dueling. This is the smallest weapon to use standard power packs. (Princess Leia used a sporting blaster in Star Wars: A New Hope).",
+                "range": {
+                    "short": {
+                        "min": 3,
+                        "max": 10
+                    },
+                    "medium": {
+                        "min": 10,
+                        "max": 30
+                    },
+                    "long":{
+                        "min": 30,
+                        "max": 60
+                    }
+                },
+                "damage": {
+                    "attribute": "",
+                    "dice": 3,
+                    "pips": 1,
+                    "maxDice": null
+                },
+                "gameNote": ""
+            },
+            "blasterPistol":{
+                "type": "ranged",
+                "name": "Blaster Pistol",
+                "cost": 500,
+                "skill": [
+                    "Blasters: blaster pistol"
+                ],
+                "ammo": 100,
+                "availability": "Readily Available",
+                "fireRate": 1,
+                "description": "The word “blaster” is a blanket term for literally thousands of different designs from hundreds of manufacturers, such as the popular BlasTech DL-18. Blasters are popular with urban police forces, traders, and anyone who needs to pack respectable firepower in an easily carried package. Ownership of these weapons is restricted in many systems. Powerpack: 25 credits",
+                "range": {
+                    "short": {
+                        "min": 3,
+                        "max": 10
+                    },
+                    "medium": {
+                        "min": 10,
+                        "max": 30
+                    },
+                    "long":{
+                        "min": 30,
+                        "max": 120
+                    }
+                },
+                "damage": {
+                    "attribute": "",
+                    "dice": 4,
+                    "pips": 0,
+                    "maxDice": null
+                },
+                "gameNote": ""
+            },
+            "heavyBlasterPistol":{
+                "type": "ranged",
+                "name": "Heavy Blaster Pistol",
+                "cost": 200,
+                "skill": [
+                    "Blasters: heavy blaster pistol"
+                ],
+                "ammo": 25,
+                "availability": "Readily Available",
+                "fireRate": 1,
+                "description": "A heavy blaster pistol is a compromise: it gives the user a lot more firepower, but with a very limited range — this is accomplished by draining a lot of energy from the power pack, at the expense of ammo. A heavy blaster pistol is crammed into a standard pistol frame, making it easy to disguise if necessary. These weapons are illegal or heavily restricted in many systems. Han Solo’s favorite weapon is a modified BlasTech DL-44 heavy blaster pistol.",
+                "range": {
+                    "short": {
+                        "min": 3,
+                        "max": 7
+                    },
+                    "medium": {
+                        "min": 7,
+                        "max": 25
+                    },
+                    "long":{
+                        "min": 25,
+                        "max": 50
+                    }
+                },
+                "damage": {
+                    "attribute": "",
+                    "dice": 5,
+                    "pips": 0,
+                    "maxDice": null
+                },
+                "gameNote": ""
+            },
+            "blasterrifle":{
+                "type": "ranged",
+                "name": "Blaster rifle",
+                "cost": 1000,
+                "skill": [
+                    "Blaster: blaster rifle"
+                ],
+                "ammo": 100,
+                "availability": "Normally Available",
+                "fireRate": 1,
+                "description": "The basic blaster rifle is standard issue to soldiers across the galaxy. Some blaster rifles, such as the BlasTech E-11 (or its “clone,” the SoroSuub Stormtrooper One) have a retractable stock. A blaster rifle without a retractable stock costs 900 credits (instead of 1,000 credits).Power pack: 25 credits",
+                "range": {
+                    "short": {
+                        "min": 3,
+                        "max": 30
+                    },
+                    "medium": {
+                        "min": 30,
+                        "max": 100
+                    },
+                    "long":{
+                        "min": 100,
+                        "max": 300
+                    }
+                },
+                "damage": {
+                    "attribute": "",
+                    "dice": 5,
+                    "pips": 0,
+                    "maxDice": null
+                },
+                "gameNote": "If the retractable stock and scope are used for one round of aiming, the character receives an additional +1D to blaster."
+            },
+            "heavyBlasterrifle":{
+                "type": "ranged",
+                "name": "Heavy Blaster rifle",
+                "cost": 1500,
+                "skill": [
+                    "Blaster: blaster rifle"
+                ],
+                "ammo": 100,
+                "availability": "Readily Available",
+                "fireRate": 1,
+                "description": "The heavy blaster rifle is a larger, more powerful version of the blaster rifle often used by clone troopers, stormtroopers, and other troops during battles on open terrain. Because of its size, it is not well suited to close-quarters fighting, but makes an excellent longer range, personal rifle.",
+                "range": {
+                    "short": {
+                        "min": 3,
+                        "max": 40
+                    },
+                    "medium": {
+                        "min": 40,
+                        "max": 120
+                    },
+                    "long":{
+                        "min": 120,
+                        "max": 300
+                    }
+                },
+                "damage": {
+                    "attribute": "",
+                    "dice": 5,
+                    "pips": 1,
+                    "maxDice": null
+                },
+                "gameNote": "If retractable stock and scope are used for one round of aiming, the character receives an additional +1D to blaster."
+            },
+            "sportingBlasterrifle":{
+                "type": "ranged",
+                "name": "Sporting Blaster rifle",
+                "cost": 900,
+                "skill": [
+                    "Blaster: blaster rifle"
+                ],
+                "ammo": 100,
+                "availability": "Readily Available",
+                "fireRate": 1,
+                "description": "Built in an attempt to circumvent restrictions on the blaster rifle, the “sport rifle” is merely a smaller version of its more lethal cousin. It was introduced early in the days of the Empire by groups that worried over the new centralization of power. However, it is just as restricted in use as the blaster rifle.",
+                "range": {
+                    "short": {
+                        "min": 3,
+                        "max": 40
+                    },
+                    "medium": {
+                        "min": 40,
+                        "max": 120
+                    },
+                    "long":{
+                        "min": 120,
+                        "max": 350
+                    }
+                },
+                "damage": {
+                    "attribute": "",
+                    "dice": 4,
+                    "pips": 1,
+                    "maxDice": null
+                },
+                "gameNote": ":If the retractable stock and scope are used for 1 round of aiming, the character receives an additional +1D to blaster. Power packs: 25 credits."
+            },
+            "lightRepeatingBlaster":{
+                "type": "ranged",
+                "name": "Light Repeating Blaster",
+                "cost": 2000,
+                "skill": [
+                    "Blaster: repeating blaster"
+                ],
+                "ammo": 25,
+                "availability": "Normally Available",
+                "fireRate": 1,
+                "description": "Longer and more powerful than blaster rifles, these weapons are for large-scale actions, often supplementing ground squads and providing cover for artillery gunners while their weapons are being set up. These weapons are normally about one to oneand-a-half meters long, and can be run off power packs or attached to generators for unlimited firepower. They are normally available only to the military, but sometimes the odd smuggler, pirate, or bounty hunter manages to “acquire” one through less than legal means.",
+                "range": {
+                    "short": {
+                        "min": 3,
+                        "max": 50
+                    },
+                    "medium": {
+                        "min": 50,
+                        "max": 120
+                    },
+                    "long":{
+                        "min": 120,
+                        "max": 300
+                    }
+                },
+                "damage": {
+                    "attribute": "",
+                    "dice": 6,
+                    "pips": 0,
+                    "maxDice": null
+                },
+                "gameNote": ""
+            },
+            "heavyRepeatingBlaster":{
+                "type": "ranged",
+                "name": "Hevy Repeating Blaster",
+                "cost": 3000,
+                "skill": [
+                    "Blaster: repeating blaster"
+                ],
+                "ammo": 20,
+                "availability": "Normally Available",
+                "fireRate": 1,
+                "description": "The heavy repeating blaster is a fearsome weapon typically operated from a bunker emplacement or mounted on a combat vehicle. The heavy repeating blaster operates only in autofire mode. If you use a heavy repeating blaster without a tripod or other mount, you cannot brace the weapon and suffer a 1D penalty to your skill roll. A heavy repeating blaster requires a power pack to operate. After 20 shots, the power pack must be replaced. This weapon can also be attached to a power generator for longer use. (see E-Web Repeating Blaster on opposite column for power generator rules)",
+                "range": {
+                    "short": {
+                        "min": 3,
+                        "max": 60
+                    },
+                    "medium": {
+                        "min": 60,
+                        "max": 150
+                    },
+                    "long":{
+                        "min": 150,
+                        "max": 400
+                    }
+                },
+                "damage": {
+                    "attribute": "",
+                    "dice": 7,
+                    "pips": 0,
+                    "maxDice": null
+                },
+                "gameNote": ""
+            }
+        }
+    },
+    "misc": {
+        "category": "Misc. Weapons",
+        "weapons": {
+            "flamethrower":{
+                "name": "Flamethrower",
+                "cost": 700,
+                "skill": [
+                    "Flamethrower"
+                ],
+                "ammo": 25,
+                "availability": "Rare Weapon",
+                "fireRate": 0.5,
+                "description": "The flamethrower is a ranged weapon that shoots a cone of burning chemicals. Reloading the flamethrower takes an entire round. Targets continue to take burning damage at 4D per round until the fire is extinguished. Replacement chemical cartridges for the flame-thrower cost 200 credits.",
+                "range": {
+                    "short": {
+                        "min": 3,
+                        "max": 5
+                    },
+                    "medium": {
+                        "min": 5,
+                        "max": 7
+                    },
+                    "long":{
+                        "min": 7,
+                        "max": 10
+                    }
+                },
+                "damage": {
+                    "attribute": "",
+                    "dice": 5,
+                    "pips": 1,
+                    "maxDice": null
+                },
+                "gameNote": "5D+1 only on 1sr round, 4D damage each consequitive round."
+            },
+            "stunPistol": {
+                "name": "Stun Pistol",
+                "cost": 200,
+                "ammo": 50,
+                "skill": [
+                    "Blster: blaster pitols"
+                ],
+                "availability": "Readily Available",
+                "description": "Designed exclusively for nonlethal crowd control, stun-pistol only fire stun bolts, and emit a glowing blue arc that can immobilize an organic target, but causes no damage to inanimate objects.",
+                "range": {
+                    "short": {
+                        "min": 3,
+                        "max": 10
+                    },
+                    "medium": {
+                        "min": 10,
+                        "max": 20
+                    },
+                    "long":{
+                        "min": 20,
+                        "max": 40
+                    }
+                },
+                "damage": {
+                    "attribute": "",
+                    "dice": 3,
+                    "pips": 0,
+                    "maxDice": null
+                },
+                "gameNote": "A stunning weapon that is smaller than a hold-out blaster. Increase the listed price to 1,500 credits for a model that adds +5 to the difficulty of any search or sensors rolls made to detect it."
+            }
+        }
+    },
+    "explosives": {
+        "category": "Explosives",
+        "weapons": {
+                "fragGrande": {
+                    "type": "explosive",
+                    "name": "Fragmentation Granade",
                     "cost": 200,
                     "skill": [
-                        "Bows: crossbow"
+                        "Granade"
                     ],
                     "availability": "Readily Available",
-                    "description": "A crossbow is often a hunting or combat weapon on lowtech worlds, A primitive crossbow and its arrows are made of
-                    wood, more advanced models are augmented with metal, while
-                    the most high-tech versions tend to be made from durable,
-                    lightweight composite materials.",
+                    "description": "Grenades come in a variety of sizes and forms, and can be simple explosives, or may eject noxious gases or smoke or any other number of payloads, depending upon the specific needs of the purchaser",
                     "range": {
                         "short": {
                             "min": 3,
-                            "max": 10
+                            "max": 7
                         },
                         "medium": {
-                            "min": 10,
-                            "max": 30
+                            "min": 7,
+                            "max": 20
                         },
                         "long":{
-                            "min": 30,
-                            "max": 50
+                            "min": 20,
+                            "max": 40
                         }
                     },
-                    "damage": {
-                        "attribute": "",
-                        "dice": 2,
-                        "pips": 2,
-                        "maxDice": null
-                    },
-                    "gameNote": "10 bolts: 25 credits"
-                },
-                "longbow":{
-                    "name": "Longbow",
-                    "cost": 200,
-                    "skill": [
-                        "Bows: longbow"
-                    ],
-                    "availability": "Readily Available",
-                    "description": "The bow is a typical hunter’s weapon on low-tech worlds, but
-                    it is also used for sport on high-tech planets. A primitive bow
-                    and its arrows are made of wood and augmented with metal or
-                    stone, while more advanced versions tend to be made from
-                    durable, lightweight composite materials.",
-                    "range": {
-                        "short": {
-                            "min": 3,
-                            "max": 10
+                    "blastRadious": {
+                        "direct": {
+                            "min": 0,
+                            "max": 2
                         },
-                        "medium": {
-                            "min": 10,
-                            "max": 30
-                        },
-                        "long":{
-                            "min": 30,
-                            "max": 100
-                        }
-                    },
-                    "damage": {
-                        "attribute": "",
-                        "dice": 2,
-                        "pips": 2,
-                        "maxDice": null
-                    },
-                    "gameNote": ""
-                },
-                "trhowingKnife":{
-                    "name": "Throwing Knife",
-                    "cost": 35,
-                    "skill": [
-                        "Thrown weapons: knife"
-                    ],
-                    "availability": "Readily Available",
-                    "description": "In an age of powered, long-range energy weapons, the main
-                    advantage of a throwing knife is that it is easy and cheap to
-                    manufacture, concealable, requires no power source beyond
-                    sheer physical strength, and possession is rarely regulated by
-                    planetary governments. A throwing knife can be used as a normal knife in melee combat.",
-                    "range": {
                         "short": {
                             "min": 2,
-                            "max": 3
+                            "max": 4
                         },
-                        "medium": {
-                            "min": 3,
-                            "max": 5
+                        "medium":{
+                            "min": 4,
+                            "max": 6
                         },
                         "long":{
-                            "min": 5,
+                            "min": 6,
                             "max": 10
                         }
                     },
-                    "damage": {
-                        "attribute": "",
-                        "dice": 1,
-                        "pips": 2,
-                        "maxDice": null
-                    },
-                    "gameNote": "May be used as a normal knife in melee combat. Melee
-                    damage is STR+2 (maximum: 6D)."
-                },
-                "slugthorwerRifel":{
-                    "name": "Slugthrower Rifel",
-                    "cost": 360,
-                    "skill": [
-                        "Firearms: slugthrower rifel"
-                    ],
-                    "ammo": 15,
-                    "availability": "Normally Available",
-                    "description": "These primitive projectile weapons are almost never used by
-                    most military forces due to their ineffectiveness against modern
-                    armor, and their tendency to run out of ammunition quickly.
-                    Slugthrowers are most often found on primitive settlements or
-                    in pre-spaceflight cultures; occasionally a Rebel unit will find
-                    them useful for shock value (they are extremely loud). Conversely, some Rebel units prefer the use of slugthrowers; it is possible
-                    to silence a projectile weapon, not a blaster.",
-                    "range": {
+                    "damageBasedRange": {
+                        "direct": {
+                            "dice": 5,
+                            "pip": null
+                        },
                         "short": {
-                            "min": 3,
-                            "max": 10
+                            "dice": 4,
+                            "pip": null
                         },
-                        "medium": {
-                            "min": 10,
-                            "max": 30
+                        "medium":{
+                            "dice": 5,
+                            "pip": null
                         },
-                        "long":{
-                            "min": 30,
-                            "max": 50
+                        "long": {
+                            "dice": 2,
+                            "pip": null
                         }
-                    },
-                    "damage": {
-                        "attribute": "",
-                        "dice": 2,
-                        "pips": 2,
-                        "maxDice": null
-                    },
-                    "gameNote": "Ammo clip: 10 credits.  −1D damage when used on a target with body armor"
-                },
-                "custom":{
-                    "name": "Your weapons name",
-                    "cost": null,
-                    "skill": [
-                        ""
-                    ],
-                    "availability": "Readily Available",
-                    "description": "",
-                    "range": {
-                        "short": {
-                            "min": null,
-                            "max": null
-                        },
-                        "medium": {
-                            "min": null,
-                            "max": null
-                        },
-                        "long":{
-                            "min": null,
-                            "max": null
-                        }
-                    },
-                    "damage": {
-                        "attribute": "",
-                        "dice": null,
-                        "pips": null,
-                        "maxDice": null
                     },
                     "gameNote": ""
                 },
-            },
-            "blasters": {
-                "category": "Blasters",
-                "weapons": {
-                    "holdOutBlaster":{
-                        "name": "Hold-out Blaster",
-                        "cost": 275,
+                "exlosiveChrage":{
+                        "type": "explosive",
+                        "name": "Explosive Charge",
+                        "cost": 100,
                         "skill": [
-                            "Blaster: hold-out blaster"
+                            "Demolitions: explosive charge"
                         ],
-                        "ammo": 6,
-                        "availability": "Normally Available",
-                        "fireRate": 1,
-                        "description": "Small enough to be hidden in the hand of a human, hold-out
-                        blasters are common in urban areas with strict weapon controls
-                        and among undercover agents.
-                        Hold-out blasters require custom designed power packs and
-                        only hold enough blaster gas for a few shots. They are illegal or
-                        closely regulated in most systems. Many systems, however, look
-                        on them as a “self-defense” alternative to the more powerful
-                        types of personal weapons available.",
-                        "range": {
-                            "short": {
-                                "min": 3,
-                                "max": 4
-                            },
-                            "medium": {
-                                "min": 4,
-                                "max": 8
-                            },
-                            "long":{
-                                "min": 8,
-                                "max": 12
-                            }
-                        },
-                        "damage": {
-                            "attribute": "",
-                            "dice": 3,
-                            "pips": 0,
-                            "maxDice": null
-                        },
-                        "gameNote": ""
-                    },
-                    "sportingBlaster":{
-                        "name": "Sporting Blaster",
-                        "cost": 350,
-                        "skill": [
-                            "Blasters: sporting blaster"
-                        ],
-                        "ammo": 50,
                         "availability": "Readily Available",
-                        "fireRate": 1,
-                        "description": "A small, short blaster, often used for small-game hunting or
-                        personal defense. Sometimes used for dueling. This is the smallest weapon to use standard power packs. (Princess Leia used a
-                        sporting blaster in Star Wars: A New Hope).",
-                        "range": {
-                            "short": {
-                                "min": 3,
-                                "max": 10
-                            },
-                            "medium": {
-                                "min": 10,
-                                "max": 30
-                            },
-                            "long":{
-                                "min": 30,
-                                "max": 60
-                            }
-                        },
+                        "description": "Sometimes a mission calls for the use of more powerful explosives than either grenades or thermal detonators. Set explosives aren’t ranged weapons and can’t be used like grenades When set and activated, the charge’s timer begins counting down. Standard timers can be set with as much as an hour delay. Longer delays require specialized timers. Explosive charges are highly restricted, usually only available to military or law enforcement specialists or specialized construction units. Han Solo and his strike team used proton grenade explosive charges to take out the shield generator on Endor in Episode VI: Return of the Jedi. An explosive charge delivers a lot of destructive energy to  specific point, making it perfect for demolishing structures or clearing rubble. It causes negligible damage beyond its burst radius. Of course, collateral damage and subsequent explosions usually accompany the use of an explosive charge.",
+                        
                         "damage": {
                             "attribute": "",
-                            "dice": 3,
-                            "pips": 1,
+                            "dice": 1,
+                            "pips": null,
                             "maxDice": null
                         },
-                        "gameNote": ""
-                    },
-                    "blasterPistol":{
-                        "name": "Blaster Pistol",
+                        "gameNote": "Used to clear obsticles or destroy equipment."
+                },
+                "detonite":{
+                        "type": "explosive",
+                        "name": "Detonite",
                         "cost": 500,
                         "skill": [
-                            "Blasters: blaster pistol"
+                            "Demolitions: explosive chrages"
                         ],
-                        "ammo": 100,
-                        "availability": "Readily Available",
-                        "fireRate": 1,
-                        "description": "The word “blaster” is a blanket term for literally thousands of
-                        different designs from hundreds of manufacturers, such as the
-                        popular BlasTech DL-18. Blasters are popular with urban police
-                        forces, traders, and anyone who needs to pack respectable firepower in an easily carried package. Ownership of these weapons
-                        is restricted in many systems. Powerpack: 25 credits",
-                        "range": {
-                            "short": {
-                                "min": 3,
-                                "max": 10
-                            },
-                            "medium": {
-                                "min": 10,
-                                "max": 30
-                            },
-                            "long":{
-                                "min": 30,
-                                "max": 120
-                            }
-                        },
-                        "damage": {
-                            "attribute": "",
-                            "dice": 4,
-                            "pips": 0,
-                            "maxDice": null
-                        },
-                        "gameNote": ""
-                    },
-                    "heavyBlasterPistol":{
-                        "name": "Heavy Blaster Pistol",
-                        "cost": 200,
-                        "skill": [
-                            "Blasters: heavy blaster pistol"
-                        ],
-                        "ammo": 25,
-                        "availability": "Readily Available",
-                        "fireRate": 1,
-                        "description": "A heavy blaster pistol is a compromise: it gives the user a lot
-                        more firepower, but with a very limited range — this is accomplished by draining a lot of energy from the power pack, at the
-                        expense of ammo. A heavy blaster pistol is crammed into a standard pistol frame, making it easy to disguise if necessary. These
-                        weapons are illegal or heavily restricted in many systems. Han
-                        Solo’s favorite weapon is a modified BlasTech DL-44 heavy
-                        blaster pistol.",
-                        "range": {
-                            "short": {
-                                "min": 3,
-                                "max": 7
-                            },
-                            "medium": {
-                                "min": 7,
-                                "max": 25
-                            },
-                            "long":{
-                                "min": 25,
-                                "max": 50
-                            }
-                        },
-                        "damage": {
-                            "attribute": "",
-                            "dice": 5,
-                            "pips": 0,
-                            "maxDice": null
-                        },
-                        "gameNote": ""
-                    },
-                    "blasterRifel":{
-                        "name": "Blaster Rifel",
-                        "cost": 1000,
-                        "skill": [
-                            "Blaster: blaster rifel"
-                        ],
-                        "ammo": 100,
                         "availability": "Normally Available",
-                        "fireRate": 1,
-                        "description": "The basic blaster rifle is standard issue to soldiers across the
-                        galaxy. Some blaster rifles, such as the BlasTech E-11 (or its
-                        “clone,” the SoroSuub Stormtrooper One) have a retractable
-                        stock. A blaster rifle without a retractable stock costs 900 credits (instead of 1,000 credits).Power pack: 25 credits",
-                        "range": {
-                            "short": {
-                                "min": 3,
-                                "max": 30
-                            },
-                            "medium": {
-                                "min": 30,
-                                "max": 100
-                            },
-                            "long":{
-                                "min": 100,
-                                "max": 300
-                            }
-                        },
+                        "description": "Detonite is a contact explosive that comes in tiny clay-like blocks. It can be shaped or molded around a target and crammed into small cracks. Detonite is very stable in its normal forms and requires a timer to be set off.",
                         "damage": {
                             "attribute": "",
-                            "dice": 5,
-                            "pips": 0,
-                            "maxDice": null
-                        },
-                        "gameNote": "If the retractable stock and scope are used for one
-                        round of aiming, the character receives an additional +1D to
-                        blaster."
-                    },
-                    "heavyBlasterRifel":{
-                        "name": "Heavy Blaster Rifel",
-                        "cost": 1500,
-                        "skill": [
-                            "Blaster: blaster rifel"
-                        ],
-                        "ammo": 100,
-                        "availability": "Readily Available",
-                        "fireRate": 1,
-                        "description": "The heavy blaster rifle is a larger, more powerful version of
-                        the blaster rifle often used by clone troopers,
-                        stormtroopers, and other troops during battles on open terrain.
-                        Because of its size, it is not well suited to close-quarters fighting, but makes an excellent longer range, personal rifle.",
-                        "range": {
-                            "short": {
-                                "min": 3,
-                                "max": 40
-                            },
-                            "medium": {
-                                "min": 40,
-                                "max": 120
-                            },
-                            "long":{
-                                "min": 120,
-                                "max": 300
-                            }
-                        },
-                        "damage": {
-                            "attribute": "",
-                            "dice": 5,
-                            "pips": 1,
-                            "maxDice": null
-                        },
-                        "gameNote": "If retractable stock and scope are used for one round of
-                        aiming, the character receives an additional +1D to blaster."
-                    },
-                    "sportingBlasterRifel":{
-                        "name": "Sporting Blaster Rifel",
-                        "cost": 900,
-                        "skill": [
-                            "Blaster: blaster rifel"
-                        ],
-                        "ammo": 100,
-                        "availability": "Readily Available",
-                        "fireRate": 1,
-                        "description": "Built in an attempt to circumvent restrictions on the blaster
-                        rifle, the “sport rifle” is merely a smaller version of its more
-                        lethal cousin. It was introduced early in the days of the Empire
-                        by groups that worried over the new centralization of power.
-                        However, it is just as restricted in use as the blaster rifle.",
-                        "range": {
-                            "short": {
-                                "min": 3,
-                                "max": 40
-                            },
-                            "medium": {
-                                "min": 40,
-                                "max": 120
-                            },
-                            "long":{
-                                "min": 120,
-                                "max": 350
-                            }
-                        },
-                        "damage": {
-                            "attribute": "",
-                            "dice": 4,
-                            "pips": 1,
-                            "maxDice": null
-                        },
-                        "gameNote": ":If the retractable stock and scope are used for 1 round
-                        of aiming, the character receives an additional +1D to blaster. Power packs: 25 credits."
-                    },
-                    "lightRepeatingBlaster":{
-                        "name": "Light Repeating Blaster",
-                        "cost": 2000,
-                        "skill": [
-                            "Blaster: repeating blaster"
-                        ],
-                        "ammo": 25,
-                        "availability": "Normally Available",
-                        "fireRate": 1,
-                        "description": "Longer and more powerful than blaster rifles, these weapons
-                        are for large-scale actions, often supplementing ground squads
-                        and providing cover for artillery gunners while their weapons
-                        are being set up. These weapons are normally about one to oneand-a-half meters long, and can be run off power packs or
-                        attached to generators for unlimited firepower. They are normally available
-                        only to the military, but sometimes the odd smuggler, pirate, or
-                        bounty hunter manages to “acquire” one through less than legal
-                        means.",
-                        "range": {
-                            "short": {
-                                "min": 3,
-                                "max": 50
-                            },
-                            "medium": {
-                                "min": 50,
-                                "max": 120
-                            },
-                            "long":{
-                                "min": 120,
-                                "max": 300
-                            }
-                        },
-                        "damage": {
-                            "attribute": "",
-                            "dice": 6,
-                            "pips": 0,
-                            "maxDice": null
-                        },
-                        "gameNote": ""
-                    },
-                    "heavyRepeatingBlaster":{
-                        "name": "Hevy Repeating Blaster",
-                        "cost": 3000,
-                        "skill": [
-                            "Blaster: repeating blaster"
-                        ],
-                        "ammo": 20,
-                        "availability": "Normally Available",
-                        "fireRate": 1,
-                        "description": "The heavy repeating blaster is a fearsome weapon typically
-                        operated from a bunker emplacement or mounted on a combat
-                        vehicle. The heavy repeating blaster operates only in autofire
-                        mode. If you use a heavy repeating blaster without a tripod or
-                        other mount, you cannot brace the weapon and suffer a 1D
-                        penalty to your skill roll.
-                        A heavy repeating blaster requires a power pack to operate.
-                        After 20 shots, the power pack must be replaced. This weapon
-                        can also be attached to a power generator for longer use. (see
-                        E-Web Repeating Blaster on opposite column for power generator rules)",
-                        "range": {
-                            "short": {
-                                "min": 3,
-                                "max": 60
-                            },
-                            "medium": {
-                                "min": 60,
-                                "max": 150
-                            },
-                            "long":{
-                                "min": 150,
-                                "max": 400
-                            }
-                        },
-                        "damage": {
-                            "attribute": "",
-                            "dice": 7,
-                            "pips": 0,
-                            "maxDice": null
-                        },
-                        "gameNote": ""
-                    },
-                    "custom":{
-                        "name": "Your weapons name",
-                        "cost": null,
-                        "skill": [
-                            ""
-                        ],
-                        "availability": "Readily Available",
-                        "description": "",
-                        "range": {
-                            "short": {
-                                "min": null,
-                                "max": null
-                            },
-                            "medium": {
-                                "min": null,
-                                "max": null
-                            },
-                            "long":{
-                                "min": null,
-                                "max": null
-                            }
-                        },
-                        "damage": {
-                            "attribute": "",
-                            "dice": null,
+                            "dice": 1,
                             "pips": null,
                             "maxDice": null
                         },
-                        "gameNote": ""
-                    },
-                },
-                "misc": {
-                    "category": "Misc. Weapons",
-                    "weapons": {
-                        "flamethrower":{
-                            "name": "Flamethrower",
-                            "cost": 700,
-                            "skill": [
-                                "Flamethrower"
-                            ],
-                            "ammo": 25,
-                            "availability": "Rare Weapon",
-                            "fireRate": 0.5,
-                            "description": "The flamethrower is a ranged weapon that shoots a cone of
-                            burning chemicals. Reloading the flamethrower takes an entire
-                            round. Targets continue to take burning damage at 4D per
-                            round until the fire is extinguished. Replacement chemical cartridges for the flame-thrower cost 200 credits.",
-                            "range": {
-                                "short": {
-                                    "min": 3,
-                                    "max": 5
-                                },
-                                "medium": {
-                                    "min": 5,
-                                    "max": 7
-                                },
-                                "long":{
-                                    "min": 7,
-                                    "max": 10
-                                }
-                            },
-                            "damage": {
-                                "attribute": "",
-                                "dice": 5,
-                                "pips": 1,
-                                "maxDice": null
-                            },
-                            "gameNote": "5D+1 only on 1sr round, 4D damage each consequitive round."
-                        },
-                        "stunPistol": {
-                            "name": "Stun Pistol",
-                            "cost": 200,
-                            "ammo": 50,
-                            "skill": [
-                                "Blster: blaster pitols"
-                            ],
-                            "availability": "Readily Available",
-                            "description": "Designed exclusively for nonlethal crowd control, stun-pistols
-                            only fire stun bolts, and emit a glowing blue arc that can immobilize an organic target, but causes no damage to inanimate
-                            objects.",
-                            "range": {
-                                "short": {
-                                    "min": 3,
-                                    "max": 10
-                                },
-                                "medium": {
-                                    "min": 10,
-                                    "max": 20
-                                },
-                                "long":{
-                                    "min": 20,
-                                    "max": 40
-                                }
-                            },
-                            "damage": {
-                                "attribute": "",
-                                "dice": 3,
-                                "pips": 0,
-                                "maxDice": null
-                            },
-                            "gameNote": "A stunning weapon that is smaller than a hold-out
-                            blaster. Increase the listed price to 1,500 credits for a model that
-                            adds +5 to the difficulty of any search or sensors rolls made to
-                            detect it."
-                        }
-                    }
-                },
-                "explosives": {
-                    "category": "Explosives",
-                    "weapons": {
-                            "fragGrande": {
-                                "name": "Fragmentation Granade",
-                                "cost": 200,
-                                "skill": [
-                                    "Granade"
-                                ],
-                                "availability": "Readily Available",
-                                "description": "Grenades come in a variety of sizes and forms, and can be
-                                simple explosives, or may eject noxious gases or smoke or any
-                                other number of payloads, depending upon the specific needs of
-                                the purchaser",
-                                "range": {
-                                    "short": {
-                                        "min": 3,
-                                        "max": 7
-                                    },
-                                    "medium": {
-                                        "min": 7,
-                                        "max": 20
-                                    },
-                                    "long":{
-                                        "min": 20,
-                                        "max": 40
-                                    }
-                                },
-                                "blastRadious": {
-                                    "direct": {
-                                        "min": 0,
-                                        "max": 2
-                                    },
-                                    "short": {
-                                        "min": 2,
-                                        "max": 4
-                                    },
-                                    "medium":{
-                                        "min": 4,
-                                        "max": 6
-                                    },
-                                    "long":{
-                                        "min": 6,
-                                        "max": 10
-                                    }
-                                },
-                                "damageBasedRanged": {
-                                    "direct": {
-                                        "dice": 5,
-                                        "pip": null
-                                    },
-                                    "short": {
-                                        "dice": 4,
-                                        "pip": null
-                                    },
-                                    "medium":{
-                                        "dice": 5,
-                                        "pip": null
-                                    },
-                                    "long": {
-                                        "dice": 2,
-                                        "pip": null
-                                    }
-                                },
-                                "gameNote": ""
-                            },
-                            "exlosiveChrage":{
-                                    "name": "Explosive Charge",
-                                    "cost": 100,
-                                    "skill": [
-                                        "Demolitions: explosive charge"
-                                    ],
-                                    "availability": "Readily Available",
-                                    "description": "Sometimes a mission calls for the use of more powerful
-                                    explosives than either grenades or thermal detonators. Set
-                                    explosives aren’t ranged weapons and can’t be used like
-                                    grenades.
-                                    When set and activated, the charge’s timer begins counting
-                                    down. Standard timers can be set with as much as an hour
-                                    delay. Longer delays require specialized timers.
-                                    Explosive charges are highly restricted, usually only available
-                                    to military or law enforcement specialists or specialized construction units. Han Solo and his strike team used proton
-                                    grenade explosive charges to take out the shield generator on
-                                    Endor in Episode VI: Return of the Jedi.
-                                    An explosive charge delivers a lot of destructive energy to a
-                                    specific point, making it perfect for demolishing structures or
-                                    clearing rubble. It causes negligible damage beyond its burst
-                                    radius. Of course, collateral damage and subsequent explosions
-                                    usually accompany the use of an explosive charge.",
-                                    
-                                    "damage": {
-                                        "attribute": "",
-                                        "dice": 1,
-                                        "pips": null,
-                                        "maxDice": null
-                                    },
-                                    "gameNote": "Used to clear obsticles or destroy equipment."
-                            },
-                            "detonite":{
-                                    "name": "Detonite",
-                                    "cost": 500,
-                                    "skill": [
-                                        "Demolitions: explosive chrages"
-                                    ],
-                                    "availability": "Normally Available",
-                                    "description": "Detonite is a contact explosive that comes in tiny clay-like
-                                    blocks. It can be shaped or molded around a target and
-                                    crammed into small cracks. Detonite is very stable in its normal
-                                    forms and requires a timer to be set off.",
-                                    "damage": {
-                                        "attribute": "",
-                                        "dice": 1,
-                                        "pips": null,
-                                        "maxDice": null
-                                    },
-                                    "gameNote": "Speeder-scale damge"
-                                
-                            }
-                    }
-                },
-                "custom":{
-                    "category": "Choose one",
-                    "weapon": {
-                        "name": "Your weapons name",
-                        "cost": null,
-                        "ammo": null,
-                        "skill": [
-                            ""
-                        ],
-                        "availability": "Readily Available",
-                        "description": "",
-                        "range": {
-                            "short": {
-                                "min": null,
-                                "max": null
-                            },
-                            "medium": {
-                                "min": null,
-                                "max": null
-                            },
-                            "long":{
-                                "min": null,
-                                "max": null
-                            }
-                        },
-                        "damage": {
-                            "attribute": "",
-                            "dice": null,
-                            "pips": null,
-                            "maxDice": null
-                        },
-                        "gameNote": ""
-                    }
+                        "gameNote": "Speeder-scale damge"
+                    
                 }
-            }
+        }
+    },
+    "custom":{
+        "category": "Choose one",
+        "weapon": {
+            "type": "",
+            "name": "Your weapons name",
+            "cost": null,
+            "ammo": null,
+            "skill": [
+                ""
+            ],
+            "availability": "Readily Available",
+            "description": "",
+            "range": {
+                "short": {
+                    "min": null,
+                    "max": null
+                },
+                "medium": {
+                    "min": null,
+                    "max": null
+                },
+                "long":{
+                    "min": null,
+                    "max": null
+                }
+            },
+            "damage": {
+                "attribute": "",
+                "dice": null,
+                "pips": null,
+                "maxDice": null
+            },
+            "gameNote": ""
         }
     }
 }
