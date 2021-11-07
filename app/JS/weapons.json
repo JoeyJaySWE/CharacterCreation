@@ -821,7 +821,7 @@
         "category": "Choose one",
         "weapon": {
             "type": "",
-            "name": "Your weapons name",
+            "name": "Custom Weapon",
             "cost": null,
             "ammo": null,
             "skill": [
