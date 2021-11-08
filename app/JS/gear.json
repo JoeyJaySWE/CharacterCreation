@@ -1,552 +1,544 @@
 {
     "communicationDevices": {
-        "category": "Comunication Devices",
+      "category": "Comunication Devices",
+      "items": {
+        "personalComlink": {
+          "name": "Personal Comlink",
+          "cost": 25,
+          "skill": [
+            "Communications"
+          ],
+          "availability": "Readily Available",
+          "range": 50,
+          "rangeUnity": "km",
+          "description": ""
+        },
+        "militaryComlink": {
+          "name": "Military Comlink",
+          "cost": 100,
+          "skill": [
+            "Communications"
+          ],
+          "availability": "Normally Available",
+          "range": 50,
+          "rangeUnity": "km",
+          "description": "This comset has access to restricted and encrypted military frequencies. Ranges from over land to low orbit in poor weather."
+        },
+        "vehicleComlink": {
+          "name": "Vehicle Comlink",
+          "cost": 250,
+          "skill": [
+            "Communications"
+          ],
+          "availability": "Readily Available",
+          "range": 200,
+          "rangeUnity": "km",
+          "description": "This comset must be installed in a vehicle, or worn as a backpack. Ranges from  surface range, surface-to-orbit in all weather."
+        }
+      },
+      "subspaceTrancivers": {
+        "category": "Subspace Trancivers",
         "items": {
-            "personalComlink": {
-                "name": "Personal Comlink",
-                "cost": 25,
-                "skill": [
-                    "Communications"
-                ],
-                "availability": "Readily Available",
-                "range": 50,
-                "rangeUnity": "km",
-                "description": ""
-            },
-            "militaryComlink": {
-                "name": "Military Comlink",
-                "cost": 100,
-                "skill": [
-                    "Communications"
-                ],
-                "availability": "Normally Available",
-                "range": 50,
-                "rangeUnity": "km",
-                "description": "This comset has access to restricted and encrypted military frequencies. Ranges from over land to low orbit in poor weather."
-            },
-            "vehicleComlink": {
-                "name": "Vehicle Comlink",
-                "cost": 250,
-                "skill": [
-                    "Communications"
-                ],
-                "availability": "Readily Available",
-                "range": 200,
-                "rangeUnity": "km",
-                "description": "This comset must be installed in a vehicle, or worn as a backpack. Ranges from  surface range, surface-to-orbit in all weather."
-            }
-        },
-        "subspaceTrancivers": {
-            "category": "Subspace Trancivers",
-            "items": {
-
-                "subspaceTranciverSmall": {
-                    "name": "Subspace Tranciver (Small)",
-                    "cost": 300,
-                    "skill": [
-                        "Communications: subspace radio"
-                    ],
-                    "availability": "Readily Available",
-                    "range": 3,
-                    "rangeUnity": "Light-years",
-                    "description": ""
-                },
-                "subspaceTranciverLarge": {
-                    "name": "Subspace Tranciver (Large)",
-                    "cost": 1000,
-                    "skill": [
-                        "Communications: subspace radio"
-                    ],
-                    "availability": "Readily Available",
-                    "range": 200,
-                    "rangeUnity": "Light-years",
-                    "description": ""
-                }
-            }
-        },
-
-        "pocketScrambler": {
-            "name": "Pocket Scrambler",
-            "cost": 400,
+          "subspaceTranciverSmall": {
+            "name": "Subspace Tranciver (Small)",
+            "cost": 300,
             "skill": [
-                "Communications"
+              "Communications: subspace radio"
             ],
-            "availability": "Rare Item",
-            "description": "This is a simple add-on device that can be attached to any normal communications device, such as a comlink or subspace transceiver. The pocket scrambler automatically encodes any outgoing message so that it can be read only by a communications device equipped with a linked pocket scrambler.",
-            "gameNote": "An Easy communications roll is required for normal use. Without a similar device and the appropriate code, a Very Difficult communications roll is necessary to decrypt message."
-        },
-
-        "jammerPack": {
-            "name": "Jammer Pack",
+            "availability": "Readily Available",
+            "range": 3,
+            "rangeUnity": "Light-years",
+            "description": ""
+          },
+          "subspaceTranciverLarge": {
+            "name": "Subspace Tranciver (Large)",
             "cost": 1000,
             "skill": [
-                "Communications"
+              "Communications: subspace radio"
             ],
-            "availability": "Illegal",
-            "description": "A jammer pack produces communications-fouling noise that is broadcast in a 150-meter radius from the unit, completely shutting down comlink and holo communication.",
-            "gameNote": "To successfully activate the jammer pack requires a Moderate communications roll. If successful, it produces high-gain white noise on all communications bandwidths, preventing any comlink transmission within a 150-meter radius. The communications roll may also set the difficult for another opposed communication roll by a person attempting to transmit."
-        },
-
-        "translators": {
-            "category": "Translators",
-            "items": {
-
-                "alienEnhancerVoxBox": {
-                    "name": "Alien Enhancer Vox-Box",
-                    "cost": 200,
-                    "skill": [
-                        "Communications"
-                    ],
-                    "availability": "Basic: Normally Available, Others: Specilized item",
-                    "description": "",
-                    "gameNote": "This is a simple audio playback unit with twelve preprogrammed basic phrases (\"Yes\", \"No\", \"Greetings\", \"When?\", \"Where?\", \"How much?\", \"Please take me to someone with authority\", \"I understand\", \"I need medical attention\", \"I mean no harm', \"I’m sorry”, and “I don’t speak Basic”, each with its own button. Useful for species unable to speak Basic. "
-                },
-                "translator": {
-                    "name": "Translator",
-                    "cost": 1200,
-                    "skill": [
-                        "Communications"
-                    ],
-                    "availability": "Specilized item",
-                    "description": "",
-                    "gameNote": " An Easy communications roll is required to properly select up to 20 different languages to be tracked. Device is effective to a range of 10 meters, but aural receptors focus on nearest sounds first. Individual displays of phrase or word translations can either remain in place until manually cleared by user or clear after a pre-set delay period of 15 seconds. This unit’s database contains 500 specific \"common\" languages and dialects. 500 credits for an adittional module that includes 500 additional languages."
-                }
-            }
+            "availability": "Readily Available",
+            "range": 200,
+            "rangeUnity": "Light-years",
+            "description": ""
+          }
         }
-
+      },
+      "pocketScrambler": {
+        "name": "Pocket Scrambler",
+        "cost": 400,
+        "skill": [
+          "Communications"
+        ],
+        "availability": "Rare Item",
+        "description": "This is a simple add-on device that can be attached to any normal communications device, such as a comlink or subspace transceiver. The pocket scrambler automatically encodes any outgoing message so that it can be read only by a communications device equipped with a linked pocket scrambler.",
+        "gameNote": "An Easy communications roll is required for normal use. Without a similar device and the appropriate code, a Very Difficult communications roll is necessary to decrypt message."
+      },
+      "jammerPack": {
+        "name": "Jammer Pack",
+        "cost": 1000,
+        "skill": [
+          "Communications"
+        ],
+        "availability": "Illegal",
+        "description": "A jammer pack produces communications-fouling noise that is broadcast in a 150-meter radius from the unit, completely shutting down comlink and holo communication.",
+        "gameNote": "To successfully activate the jammer pack requires a Moderate communications roll. If successful, it produces high-gain white noise on all communications bandwidths, preventing any comlink transmission within a 150-meter radius. The communications roll may also set the difficult for another opposed communication roll by a person attempting to transmit."
+      },
+      "translators": {
+        "category": "Translators",
+        "items": {
+          "alienEnhancerVoxBox": {
+            "name": "Alien Enhancer Vox-Box",
+            "cost": 200,
+            "skill": [
+              "Communications"
+            ],
+            "availability": "Basic: Normally Available, Others: Specilized item",
+            "description": "",
+            "gameNote": "This is a simple audio playback unit with twelve preprogrammed basic phrases (\"Yes\", \"No\", \"Greetings\", \"When?\", \"Where?\", \"How much?\", \"Please take me to someone with authority\", \"I understand\", \"I need medical attention\", \"I mean no harm', \"I’m sorry”, and “I don’t speak Basic”, each with its own button. Useful for species unable to speak Basic. "
+          },
+          "translator": {
+            "name": "Translator",
+            "cost": 1200,
+            "skill": [
+              "Communications"
+            ],
+            "availability": "Specilized item",
+            "description": "",
+            "gameNote": " An Easy communications roll is required to properly select up to 20 different languages to be tracked. Device is effective to a range of 10 meters, but aural receptors focus on nearest sounds first. Individual displays of phrase or word translations can either remain in place until manually cleared by user or clear after a pre-set delay period of 15 seconds. This unit’s database contains 500 specific \"common\" languages and dialects. 500 credits for an adittional module that includes 500 additional languages."
+          }
+        }
+      }
     },
-
     "computersAndStorage": {
-        "category": "Computers & Storage Devices",
-        "items": {
-            "codeCylinder": {
-                "name": "Code Cylinder",
-                "cost": 500,
-                "skill": [
-                    "Computer programming/repair"
-                ],
-                "availability": "Normally Available",
-                "description": "A compact encoded security device issued to many military, political, or corporate officials, a code cylinder accesses computer data via a droid’s scomp link or provides entry into restricted facilities. Each cylinder features the user’s personal security clearance data. High-ranking personnel may carry more than one cylinder, each with different access codes encrypted within them. Republic citizens, Imperial officers, and New Republic personnel use them to facilitate security measures.",
-                "gameNote": "Code cylinders can be programmed at properly equipped computers by making an Easy computer programming/repair roll. Without such systems the difficulty is Very Difficult. If your computer programming/repair roll fails by 5 or more, the code cylinder’s self-destruct programming activates and ruins the cylinder"
-            },
-            "creditChip": {
-                "name": "Code Cylinder",
-                "cost": 100,
-                "skill": ["none"],
-                "availability": "Readily Available",
-                "description": "The credit chip is a small, flat card that features a security codeout and credit algorithm memory stripes. The chip can hold a specified number of credits appropriate to the government that issued it, or it can draw from a specific account held by the user. Credit chips not only allow quick and easy transfers of 336 ! THE STAR WARS ROLEPLAYING GAME: REVISED • EXPANDED • UPDATED 18 • EQUIPMENT & WEAPONS funds but also protect users from theft. Credit chips are encrypted storage devices. Accessing a credit chip in order to manipulate the credits it will dispense, requires a Very Difficult
-                computer programming/repair roll. If you fail by 5 or more on
-                your roll to access an account, the credit chip’s security program
-                detects the intrusion attempt and self-destructs.
-                Modifying a credit chip so that government and bank computers think that it draws on a different account or that it has a
-                different value stored requires a Heroic computer programming/
-                repair roll. You won’t know if your check succeeded until after
-                you attempt to use the modified credit chip. If you fail, the government or bank computer orders the chip’s self-destruct programming to activate, ruining the chip. If you fail by 10 or
-                more, the chip’s self-destruct programming activates and the
-                government or bank computer has traced your location, dispatching security personnel to apprehend you.",
-                "gameNote": "For a newly purchased chip, a Very Easy computer programming/repair roll is required to encode a password making it
-                accessible only by the owner."
-            },
-            "datacard": {
-                "name": "Datacard",
-                "cost": 10,
-                "skill": [
-                    "Computer programming/repair"
-                ],
-                "availability": "Readily Available",
-                "description": "A datacard is a simple storage device. Intended solely as
-                external storage for a computer, it has no interface for direct
-                display, editing, or entry of data. They are often called “datatapes” in many sectors.",
-            "gameNote": ""
-            },
-            "datapad": {
-                "name": "Datapad",
-                "cost": 100,
-                "skill": [
-                    "Computer programming/repair"
-                ],
-                "availability": "Readily Available",
-                "description": "Datapads are electronic information storage devices noted
-                for their small size and portability. Datapads can store relevant
-                personal data, encyclopedic entries and other basic information,
-                though the microprocessors in such units generally cannot perform higher level computing. Datapads are available in a wide range of configurations —
-                less expensive models are often dedicated to the storage and
-                collation of a single type of data. Smaller, more expensive units
-                can be customized to handle a variety of information types.
-                Some high-priced datapads contain a small holo-projector
-                which gives the user a “heads-up” display rather than the standard flat screen common on lower-end units.",
-                "gameNote": " Datapads may be used to access public information networks or the HoloNet if combined with a comlink or other connection device. It can be loaded with as many as 5 datacards
-                simultaneously."
-            }
-            
-        }
-    },
-
-    "medicalGear":{
-        "category": "Medical Gear",
-        "items": {
-            "medicalKit":{
-                "name": "Medical Backpack",
-                "cost": 600,
-                "skill": [
-                    "First Aide",
-                    "(A) medicine"
-                ],
-                "availability": "Normally Available",
-                "description": "All the stuff you need to perform medical operation in the field.",
-                "gameNote": ""   
-            },
-            "medpac":{
-                "name": "Medpac",
-                "cost": 100,
-                "skill": [
-                    "First Aide"
-                ],
-                "availability": "Readily Available",
-                "description": "A firstaid kit",
-                "gameNote": ""   
-            },
-            "surgeryKit":{
-                "name": "Surgery Kit",
-                "cost": 600,
-                "skill": [
-                    "(A) medicine"
-                ],
-                "availability": "Normally Available",
-                "description": "This small kit contains the instruments a character needs to
-                perform surgery on a wounded character using the (A) medicine
-                skill. Surgery is only required if the gamemaster deems the
-                injury to require it (mangled appendage, internal bleeding,
-                severe burns) and/or there is no access to a bacta tank. You must
-                be trained in the (A) medicine skill to perform surgery using a
-                surgery kit.",
-                "gameNote": ""   
-            }
+      "category": "Computers & Storage Devices",
+      "items": {
+        "codeCylinder": {
+          "name": "Code Cylinder",
+          "cost": 500,
+          "skill": [
+            "Computer programming/repair"
+          ],
+          "availability": "Normally Available",
+          "description": "A compact encoded security device issued to many military, political, or corporate officials, a code cylinder accesses computer data via a droid’s scomp link or provides entry into restricted facilities. Each cylinder features the user’s personal security clearance data. High-ranking personnel may carry more than one cylinder, each with different access codes encrypted within them. Republic citizens, Imperial officers, and New Republic personnel use them to facilitate security measures.",
+          "gameNote": "Code cylinders can be programmed at properly equipped computers by making an Easy computer programming/repair roll. Without such systems the difficulty is Very Difficult. If your computer programming/repair roll fails by 5 or more, the code cylinder’s self-destruct programming activates and ruins the cylinder"
         },
-        "survivalGear": {
-            "category": "Survival Gear",
-            "items": {
-                "fieldKit":{
-                    "name": "Field Kit",
-                    "cost": 1000,
-                    "skill": ["none"],
-                    "availability": "Normally Available",
-                    "description": "Essentially a backpack full of survival gear, the typical field
-                    kit contains various assortments of equipment. Additionally
-                    some kits will contain medpacks and other survival gear.",
-                    "gameNote": "• 2 condensing canteens with water purification. A Very Easy survival
-                    roll is required for use. Average filtration time is 5 minutes. The
-                    unit will notify user when cleansing process is completed.
-                    • a bed roll
-                    • a week’s worth of food rations
-                    • two glow rods
-                    • two breath masks, 24 filters, 12 atmosphere canisters
-                    • and an all-temperature cloak."   
-                },
-                "jetPack":{
-                    "name": "Jet Pack",
-                    "cost": 1800,
-                    "skill": [
-                        "Jet Pack Operation"
-                    ],
-                    "availability": "Speciliced Item",
-                    "description": "Jet packs are an unusual form of conveyance that more commonly see use with military forces or fringe groups (although a
-                    number of commercial jet packs are available). A jet pack is simply a propulsion system that a pilot can strap on, allowing flight
-                    over short distances. Arm and wrist controls are often employed
-                    for maneuvering, and many civilian packs have limited sound
-                    baffles to conform with local noise ordinances; while these baffles reduce noise, they also reduce the unit’s speed as well.",
-                    "gameNote": ": The Arakyd Hush-About AJP-400 is capable of lifting up
-                    to 300 kilograms (total). It moves vertically 200 meters per charge,
-                    horizontally up to 500 meters per charge. A fully charged unit has
-                    10 charges and can be run on continuous charge-feed. During normal operation this unit produces very little noise. Any attempt to
-                    locate a Hush-About using auditory pickups requires a successful
-                    search roll at a +10 penalty to the Difficulty"   
-                },
-                "lqd":{
-                    "name": "Liquid Cable Disapnser",
-                    "cost": 10,
-                    "skill": [
-                        "none"
-                    ],
-                    "availability": "Normally Available",
-                    "description": "Cable dispensers contain a special liquid that instantly solidifies upon contact with either atmosphere or vacuum to form a
-                    tough, lightweight, flexible cable. The dispenser contains
-                    enough liquid for 15 meters of cable and is refillable at authorized outlets.",
-                    "gameNote": "15 meters. Can support 500 kilograms"   
-                },
-                "rocketPack":{
-                    "name": "Rocket Pack",
-                    "cost": 400,
-                    "skill": [
-                        "Rocket Pack Operation"
-                    ],
-                    "availability": "Normally Available",
-                    "description": "Rocket packs are an alternative to jet packs. Where jet packs
-                    pull outside air into an ignition chamber — mixing fuel and air
-                    internally to provide thrust — rocket packs contain combustible
-                    chemical fuel. Because of this, rocket packs do not require outside air to generate thrust, allowing the devices to operate in
-                    space as well as inside an atmosphere.
-                    Rocket packs are heavier and louder than jet packs (due
-                    largely to the onboard chemical fuel cells). As a trade off, rocket
-                    packs are considerably faster, and provide a better “all-environment” flight capability. The main danger in using a rocket pack
-                    in combat is the chemical fuel cell; a stray blaster shot can
-                    cause a rocket pack to explode.",
-                    "gameNote": "The DSP-5 rocket pack can carry up to 60 kilograms and
-                    can move up to 70 meters vertically or 160 meters horizontally in a
-                    single charge. The unit has 12 charges."   
-                },
-                "synthrope":{
-                    "name": "Synthrope",
-                    "cost": 20,
-                    "skill": [
-                        "none"
-                    ],
-                    "availability": "Readily Available",
-                    "description": "Syntherope is — as the name implies — a synthetic, durable
-                    multipurpose cable. Created from high-strength polymers, syntherope is tough, lightweight and flexible, capable of supporting
-                    up to 700 kilograms of weight. Although not as compact and
-                    convenient as a liquid cable dispenser, syntherope is stronger
-                    and more durable. A coil contains 45 meters of syntherope, and
-                    unlike liquid cable it is meant to be reused.",
-                    "gameNote": "45 meters. Can support 700 kilograms."   
-                },
-
-                "securityKit":{
-                    "name": "Security Kit",
-                    "cost": 750,
-                    "skill": [
-                        "Security"
-                    ],
-                    "availability": "Normally Available",
-                    "description": "A security kit is a set of special tools for bypassing electronic
-                    and mechanical locks. It usually includes electronic components
-                    and dedicated sensor devices. On most worlds, possession of a
-                    security kit is illegal for anyone who doesn’t have the proper
-                    permits, such as members of law enforcement agencies and professional security experts",
-                    "gameNote": "This item gives it user a +1D bonus on security rolls. It
-                    also provides a +1D bonus on any repair rolls relating to security
-                    systems. A mastercraft security kit provides a +2D bonus to security and contains a comlink that monitors frequencies typically used
-                    by silent alarms, so the user can know if such an alarm has been
-                    triggered at any point during the operation."   
-                }
-            },
-            "toolKits":{
-                "category": "Tool Kits",
-                "items": {
-
-                    "standardToolKit":{
-                        "name": "Standard Tool Kit",
-                        "cost": 650,
-                        "skill": [
-                            "Various repair skills"
-                        ],
-                        "availability": "Readily Available",
-                        "description": "You may use the various tools in a standard tool kit to reprogram a droid or to repair a damaged starship or vehicle. A standard toolkit is generally required for any use of the “repair”
-                        skills.",
-                        "gameNote": "This toolkit (or a similar arsenal of tools) is required to
-                        use any “repair” skill.
-                        • Vibropick (50 credits): For shorting out electronic components or
-                        soldering wires). Accidental exposure causes 1D damage.
-                        • Fusion cutter (75 credits): Designed for cutting apart durasteel and
-                        similar materials. Accidental exposure causes 5D damage.
-                        • Worklight (25 credits): Illuminates hard-to-see workspaces. Runs
-                        off power cell (12 hours).
-                        • Hydrospanner (50 credits): Tightens and loosen all forms of fasteners)
-                        • Plasma welder (50 credits): Joins two surfaces together. Allows for
-                        welds from 0.2-20 centimeters in diameter.
-                        • Beam Drill (50 credits): For punching precise holes through durasteel and similar materials.
-                        • Power scanner (150 credits): For analyzing circuitry.
-                        • Power prybar (30 credits): For forcing things open. When used to
-                        pry things up, open or apart, this tool adds +1D to +3D to the
-                        users Strength depending on the model.
-                        • Parts (50 credits): Various circuits, wires and small components.
-                        • Vibrosaw (75 credits): Designed for things that don’t call for a
-                        fusion cutter. ) STR+1D damage.
-                        • Welding goggles (35 credits): Do you don’t burn out your eyes.
-                        • Tool harness (10 credits): For holding all of your tools on your person."
-                    },
-                    "enhancedToolKit":{
-                        "name": "Enhanced Tool Kit",
-                        "cost": 500,
-                        "skill": [
-                            "First Aide"
-                        ],
-                        "availability": "Readily Available",
-                        "description": "Enhanced tool kits are designed for use with a specific repair
-                        skill (e.g. repulsorlift repair). Enhanced tool kits contain special,
-                        unique tools and small parts for repairing various systems and
-                        components unique to their specialization. At gamemaster discretion, small components should be included, however, larger
-                        replacement parts will have to be purchased additionally( e.g.
-                        hyperdrives, power couplings etc.).",
-                        "gameNote": "This toolkit gives the user a bonus for repair work on
-                        one specific repair skill (starfighter repair, aquatic vehicle repair,
-                        blaster repair, droid repair, equipment repair, walker repair, repulsorlift repair etc.) ranging from +1 to +1D based on the price
-                        (Requires all of the tools from the \"custom tool kit\")"   
-                    },
-                    "utilityBelt":{
-                        "name": "Utility Belt",
-                        "cost": 500,
-                        "skill": [
-                            "none"
-                        ],
-                        "availability": "Normally Available",
-                        "description": "A utility belt has several pouches containing a three-day supply of food capsules, a medpac, a small tool kit, a spare power
-                        pack, a spare energy cell, a glow rod, a comlink, a liquid cable
-                        dispenser with a small grappling hook, and a couple of empty
-                        pouches for whatever else the wearer wants to add (up to 0.5 kg
-                        per pouch).",
-                        "gameNote": ""   
-                    }
-                },
-                "weaponArmorAccessories": {
-                    "category": "Weapon and Armor Accessories",
-                    "items": {
-                                       
-                        "bandolier":{
-                            "name": "Bandolier",
-                            "cost": 300,
-                            "skill": [
-                                "none"
-                            ],
-                            "availability": "Normally Available",
-                            "description": "Since there are so many types of weapons, there are an
-                            equally large number of ammunition types. Depending upon the
-                            weapons the wearer carries, a bandolier may contain energy
-                            cells or power packs (blasters), clips (slugthrowers), explosive
-                            bolts (bowcasters), magazines (missile launchers), grenades,
-                            knives, or any other forms of ammunition.",
-                            "gameNote": ": A bandolier has 12 slots that can each hold a single
-                            small weapon (such as a grenade or a knife) or a single piece of
-                            equipment weighing up to about 0.5 kg. Any item on the bandolier
-                            can be retrieved as a non-roll action."   
-                        },
-                        "helmetPackage":{
-                            "name": "Helmet Package",
-                            "cost": 4000,
-                            "skill": [
-                                "none"
-                            ],
-                            "availability": "Normally Available",
-                            "description": "When installed in the helmet of a suit of armor, this electronic package allows the armor to grant the wearer a bonus to
-                            Perception checks in low-visibility situations, and a bonus to
-                            ranged weapon skill uses against targets that move more than
-                            10 meters per round. It also includes an integrated hands-free
-                            com link. Stormtrooper armor and its variants include such a
-                            system (MFTAS, or Multi-Frequency Target Acquisition System),
-                            already included in its statistics. Installing a helmet package
-                            takes 1 hour and a Moderate armor repair check.",
-                            "gameNote": "Helmet contains tongue-activated comlink. Targeting
-                            system adds +1D to Perception checks in low-visibility situations,
-                            and +1D to ranged weapon skill uses against targets that move
-                            more than 10 meters per round."   
-                        },
-                        "hipHolster":{
-                            "name": "Holster (Hip)",
-                            "cost": 25,
-                            "skill": [
-                                "none"
-                            ],
-                            "availability": "Readily Available",
-                            "description": "Holsters are generally available for smaller weapons. (Larger
-                            weapons are carried on shoulder straps or other convalescences
-                            that cost as a hip holster.) A holster for a melee weapon is usually called a sheath.",
-                            "gameNote": "This holster holds the weapon in an easily
-                            accessed-and easily seen-location."   
-                        },
-                        "consealedHolster":{
-                            "name": "Holster (Consealed)",
-                            "cost": 50,
-                            "skill": [
-                                "Dexterity"
-                            ],
-                            "availability": "Readily Available",
-                            "description": "Holsters are generally available for smaller weapons. (Larger
-                            weapons are carried on shoulder straps or other convalescences
-                            that cost as a hip holster.) A holster for a melee weapon is usually called a sheath.",
-                            "gameNote": "A concealed holster is designed to help
-                            keep a weapon out of sight. In most cases, this is a shoulder holster (the weapon fits under the wearer’s armpit, presumably
-                            beneath a jacket, vest, or cloak). Small weapons and single-bladed lightsabers can be carried in concealed waistband holsters
-                            (often placed inside the wearer’s waistband in the small of the
-                            back), or carried in ankle, boot, or wrist holsters.
-                            A concealed holster requires an Easy Dexterity skill roll to
-                            draw the weapon, this is considered an action."   
-                        },
-
-                        "stdScope":{
-                            "name": "Standard Scope",
-                            "cost": 100,
-                            "skill": [
-                                "none"
-                            ],
-                            "availability": "Normally Available",
-                            "description": "A targeting scope is a sighting device that makes it easier to
-                            hit distant targets. However, it affords a very limited field of
-                            view, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10
-                            minutes and an Easy equipment or blaster repair skill roll.",
-                            "gameNote": "A standard targeting scope adds a bonus to medium- and long-range shots from blaster and slugthrowing rifles
-                            and carbines. However, you must aim at your target to gain this
-                            benefit, and you lose the benefit if you change targets or lose
-                            line of sight to your target. Projected hologram crosshairs add 1D to blaster (or other ranged weapon skill) for up to long-range."   
-                        },
-                        "stdScopeLowLight":{
-                            "name": "Standard Scope (Low Light Vision)",
-                            "cost": 1000,
-                            "skill": [
-                                "none"
-                            ],
-                            "availability": "Normally Available",
-                            "description": "A targeting scope is a sighting device that makes it easier to
-                            hit distant targets. However, it affords a very limited field of
-                            view, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10
-                            minutes and an Easy equipment or blaster repair skill roll.",
-                            "gameNote": "A low-light targeting scope functions
-                            the same as a standard targeting scope in normal light. However, after aiming at a target, it allows the wielder to ignore cover
-                            (but not complete darkness) from darkness when attacking that
-                            target. Projected hologram crosshairs add 1D to blaster (or other ranged weapon skill) for up to long-range."   
-                        },
-                        "enhancedMacroscope":{
-                            "name": "Enhanced Macroscope",
-                            "cost": 750,
-                            "skill": [
-                                "sensors"
-                            ],
-                            "availability": "Normally Available",
-                            "description": "A targeting scope is a sighting device that makes it easier to
-                            hit distant targets. However, it affords a very limited field of
-                            view, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10
-                            minutes and an Easy equipment or blaster repair skill roll.",
-                            "gameNote": "An enhanced targeting scope adds +3D to medium- and long-range shots from blaster and slugthrowing rifles
-                            and carbines. Requires a Moderate sensors roll to sight-in a target. However, you must aim at your target to gain this benefit,
-                            and you lose the benefit if you change targets or lose line of
-                            sight to your target.Adds +3D to medium- and long-range shots from
-                            blaster and slugthrowing rifles and carbines. Requires a Moderate
-                            sensors roll to sight-in a target."   
-                        },
-                        "enhancedMacroscopeLowLight":{
-                            "name": "Enhanced Macroscope (Low Light Vision)",
-                            "cost": 1650,
-                            "skill": [
-                                "sensors"
-                            ],
-                            "availability": "Normally Available",
-                            "description": "A targeting scope is a sighting device that makes it easier to
-                            hit distant targets. However, it affords a very limited field of
-                            view, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10
-                            minutes and an Easy equipment or blaster repair skill roll.",
-                            "gameNote": "An enhanced targeting scope adds +3D to medium- and long-range shots from blaster and slugthrowing rifles
-                            and carbines. Requires a Moderate sensors roll to sight-in a target. However, you must aim at your target to gain this benefit,
-                            and you lose the benefit if you change targets or lose line of
-                            sight to your target.Adds +3D to medium- and long-range shots from
-                            blaster and slugthrowing rifles and carbines. Requires a Moderate
-                            sensors roll to sight-in a target. A low-light targeting scope functions
-                            the same as a standard targeting scope in normal light. However, after aiming at a target, it allows the wielder to ignore cover
-                            (but not complete darkness) from darkness when attacking that
-                            target."   
-                        }
-
-                    }
-                }
+        "creditChip": {
+          "name": "Code Cylinder",
+          "cost": 100,
+          "skill": [
+            "none"
+          ],
+          "availability": "Readily Available",
+          "description": "The credit chip is a small, flat card that features a security codeout and credit algorithm memory stripes. The chip can hold a specified number of credits appropriate to the government that issued it, or it can draw from a specific account held by the user. Credit chips not only allow quick and easy transfers of 336 ! THE STAR WARS ROLEPLAYING GAME: REVISED • EXPANDED • UPDATED 18 • EQUIPMENT & WEAPONS funds but also protect users from theft. Credit chips are encrypted storage devices. Accessing a credit chip in order to manipulate the credits it will dispense, requires a Very Difficult computer programming/repair roll. If you fail by 5 or more on your roll to access an account, the credit chip’s security program detects the intrusion attempt and self-destructs. Modifying a credit chip so that government and bank computers think that it draws on a different account or that it has  different value stored requires a Heroic computer programming/ repair roll. You won’t know if your check succeeded until after you attempt to use the modified credit chip. If you fail, the government or bank computer orders the chip’s self-destruct programming to activate, ruining the chip. If you fail by 10 or more, the chip’s self-destruct programming activates and the government or bank computer has traced your location, dispatching security personnel to apprehend you.",
+          "gameNote": "For a newly purchased chip, a Very Easy computer programming/repair roll is required to encode a password making it accessible only by the owner."
+        },
+        "datacard": {
+          "name": "Datacard",
+          "cost": 10,
+          "skill": [
+            "Computer programming/repair"
+          ],
+          "availability": "Readily Available",
+          "description": "A datacard is a simple storage device. Intended solely as external storage for a computer, it has no interface for direct display, editing, or entry of data. They are often called “datatapes” in many sectors.",
+          "gameNote": ""
+        },
+        "datapad": {
+          "name": "Datapad",
+          "cost": 100,
+          "skill": [
+            "Computer programming/repair"
+          ],
+          "availability": "Readily Available",
+          "description": "Datapads are electronic information storage devices noted for their small size and portability. Datapads can store relevant personal data, encyclopedic entries and other basic information, though the microprocessors in such units generally cannot perform higher level computing. Datapads are available in a wide range of configurations — less expensive models are often dedicated to the storage and collation of a single type of data. Smaller, more expensive units can be customized to handle a variety of information types. Some high-priced datapads contain a small holo-projector which gives the user a “heads-up” display rather than the standard flat screen common on lower-end units.",
+          "gameNote": " Datapads may be used to access public information networks or the HoloNet if combined with a comlink or other connection device. It can be loaded with as many as 5 datacards simultaneously."
         }
+      }
+    },
+    "medicalGear": {
+      "category": "Medical Gear",
+      "items": {
+        "medicalKit": {
+          "name": "Medical Backpack",
+          "cost": 600,
+          "skill": [
+            "First Aide",
+            "(A) medicine"
+          ],
+          "availability": "Normally Available",
+          "description": "All the stuff you need to perform medical operation in the field.",
+          "gameNote": "",
+          "included": {
+            "handHeldDiagnosticScanner": {
+              "name": "Hand-Held Diagnostics Scanner",
+              "amounts": 1
+            },
+            "medicenes": {
+              "name": "Mdicines",
+              "amounts": 2
+            },
+            "emergencyProcedureDb": {
+              "name": "Emergency Procedure Database",
+              "amounts": 1
+            },
+            "filtrationMask": {
+              "name": "Filtration Mask",
+              "amounts": 1
+            },
+            "heatClosurePacks": {
+              "name": "Heat Closure Packs",
+              "amounts": 5
+            },
+            "laserScalpel": {
+              "name": "Laser Scalpel",
+              "amounts": 1
+            },
+            "medicneDispenser": {
+              "name": "Medicine Dispenser",
+              "amounts": 1
+            },
+            "portableRepulsorStretcher": {
+              "name": "Portable Repulsor-Stretcher",
+              "amounts": 1
+            },
+            "pressureCuffs": {
+              "name": "Pressure Cuffs",
+              "amounts": 2
+            },
+            "sterileHeatingCloth": {
+              "name": "Sterile Heating Cloth",
+              "amounts": 1
+            },
+            "unversalPlasmaFluidSacks": {
+              "name": "Universal Plasma Fluid Sacks",
+              "amounts": 2
+            }
+          }
+        },
+        "medpac": {
+          "name": "Medpac",
+          "cost": 100,
+          "skill": [
+            "First Aide"
+          ],
+          "availability": "Readily Available",
+          "description": "A firstaid kit",
+          "gameNote": ""
+        },
+        "surgeryKit": {
+          "name": "Surgery Kit",
+          "cost": 600,
+          "skill": [
+            "(A) medicine"
+          ],
+          "availability": "Normally Available",
+          "description": "This small kit contains the instruments a character needs to perform surgery on a wounded character using the (A) medicine skill. Surgery is only required if the gamemaster deems the injury to require it (mangled appendage, internal bleeding, severe burns) and/or there is no access to a bacta tank. You must be trained in the (A) medicine skill to perform surgery using a surgery kit.",
+          "gameNote": ""
+        }
+      }
+    },
+    "survivalGear": {
+      "category": "Survival Gear",
+      "items": {
+        "fieldKit": {
+          "name": "Field Kit",
+          "cost": 1000,
+          "skill": [
+            "none"
+          ],
+          "availability": "Normally Available",
+          "description": "Essentially a backpack full of survival gear, the typical field kit contains various assortments of equipment. Additionally some kits will contain medpacks and other survival gear.",
+          "gameNote": "Contains the following\r\n\\u2022 2 condensing canteens with water purification. A Very Easy survival\r\nroll is required for use. Average filtration time is 5 minutes. The\r\nunit will notify user when cleansing process is completed.\r\n\\u2022 a bed roll\r\n\\u2022 a week\\u2019s worth of food rations\r\n\\u2022 two glow rods\r\n\\u2022 two breath masks, 24 filters, 12 atmosphere canisters\r\n\\u2022 and an all-temperature cloak.",
+          "includes": {
+            "condensingCanteen": {
+              "name": "Condensing Canteen",
+              "amount": 2
+            },
+            "bedroll": {
+              "name": "Bedroll",
+              "amount": 1
+            },
+            "foodRations": {
+              "name": "Food Ration Packs",
+              "amount": 7
+            },
+            "glowRod": {
+              "name": "Glow Rod",
+              "amount": 2
+            },
+            "breathMask": {
+              "name": "Breath mask",
+              "amount": 2
+            },
+            "breathMaskFilter": {
+              "name": "Breath Mask Filter",
+              "amount": 24
+            },
+            "atmosphericCanisters": {
+              "name": "Atmospheric Canester",
+              "amount": 2
+            },
+            "allTemperatureCloack": {
+              "name": "All-temperature Cloak",
+              "amount": 1
+            }
+          }
+        },
+        "jetPack": {
+          "name": "Jet Pack",
+          "cost": 1800,
+          "skill": [
+            "Jet Pack Operation"
+          ],
+          "availability": "Speciliced Item",
+          "description": "Jet packs are an unusual form of conveyance that more commonly see use with military forces or fringe groups (although a number of commercial jet packs are available). A jet pack is simply a propulsion system that a pilot can strap on, allowing flight\r\nover short distances. Arm and wrist controls are often employed for maneuvering, and many civilian packs have limited sound\r\nbaffles to conform with local noise ordinances; while these baffles reduce noise, they also reduce the unit\\u2019s speed as well.",
+          "gameNote": "The Arakyd Hush-About AJP-400 is capable of lifting up\r\nto 300 kilograms (total). It moves vertically 200 meters per charge,\r\n horizontally up to 500 meters per charge. A fully charged unit has\r\n10 charges and can be run on continuous charge-feed. During normal operation this unit produces very little noise. Any attempt to\r\nlocate a Hush-About using auditory pickups requires a successful\r\nsearch roll at a +10 penalty to the Difficulty"
+        },
+        "lqd": {
+          "name": "Liquid Cable Disapnser",
+          "cost": 10,
+          "skill": [
+            "none"
+          ],
+          "availability": "Normally Available",
+          "description": "Cable dispensers contain a special liquid that instantly solidifies upon contact with either atmosphere or vacuum to form a \r\ntough, lightweight, flexible cable. The dispenser contains\r\nenough liquid for 15 meters of cable and is refillable at authorized outlets.",
+          "gameNote": "15 meters. Can support 500 kilograms"
+        },
+        "rocketPack": {
+          "name": "Rocket Pack",
+          "cost": 400,
+          "skill": [
+            "Rocket Pack Operation"
+          ],
+          "availability": "Normally Available",
+          "description": "Rocket packs are an alternative to jet packs. Where jet packs\r\npull outside air into an ignition chamber \\u2014 mixing fuel and air\r\ninternally to provide thrust \\u2014 rocket packs contain combustible\r\nchemical fuel. Because of this, rocket packs do not require outside air to generate thrust, allowing the devices to operate in\r\nspace as well as inside an atmosphere.\r\nRocket packs are heavier and louder than jet packs (due\r\nlargely to the onboard chemical fuel cells). As a trade off, rocket\r\npacks are considerably faster, and provide a better \\u201call-environment\\u201d flight capability. The main danger in using a rocket pack\r\nin combat is the chemical fuel cell; a stray blaster shot can\r\ncause a rocket pack to explode.",
+          "gameNote": "The DSP-5 rocket pack can carry up to 60 kilograms and\r\ncan move up to 70 meters vertically or 160 meters horizontally in a\r\nsingle charge. The unit has 12 charges."
+        },
+        "synthrope": {
+          "name": "Synthrope",
+          "cost": 20,
+          "skill": [
+            "none"
+          ],
+          "availability": "Readily Available",
+          "description": "Syntherope is \\u2014 as the name implies \\u2014 a synthetic, durable\r\nmultipurpose cable. Created from high-strength polymers, syntherope is tough, lightweight and flexible, capable of supporting\r\nup to 700 kilograms of weight. Although not as compact and\r\nconvenient as a liquid cable dispenser, syntherope is stronger\r\nand more durable. A coil contains 45 meters of syntherope, and\r\nunlike liquid cable it is meant to be reused.",
+          "gameNote": "45 meters. Can support 700 kilograms."
+        },
+        "securityKit": {
+          "name": "Security Kit",
+          "cost": 750,
+          "skill": [
+            "Security"
+          ],
+          "availability": "Normally Available",
+          "description": "A security kit is a set of special tools for bypassing electronic\r\nand mechanical locks. It usually includes electronic components\r\nand dedicated sensor devices. On most worlds, possession of a\r\nsecurity kit is illegal for anyone who doesn\\u2019t have the proper\r\npermits, such as members of law enforcement agencies and professional security experts",
+          "gameNote": "This item gives it user a +1D bonus on security rolls. It\r\nalso provides a +1D bonus on any repair rolls relating to security\r\nsystems. A mastercraft security kit provides a +2D bonus to security and contains a comlink that monitors frequencies typically used\r\nby silent alarms, so the user can know if such an alarm has been\r\ntriggered at any point during the operation."
+        }
+      }
+    },
+    "toolKits": {
+      "category": "Tool Kits",
+      "items": {
+        "standardToolKit": {
+          "name": "Standard Tool Kit",
+          "cost": 650,
+          "skill": [
+            "Various repair skills"
+          ],
+          "availability": "Readily Available",
+          "description": "You may use the various tools in a standard tool kit to reprogram a droid or to repair a damaged starship or vehicle. A standard toolkit is generally required for any use of the \\u201crepair\\u201d\r\nskills.",
+          "gameNote": "This toolkit (or a similar arsenal of tools) is required to\r\nuse any \\u201crepair\\u201d skill.\r\n\r\n\\u2022 Vibropick (50 credits): For shorting out electronic components or\r\nsoldering wires). Accidental exposure causes 1D damage.\r\n\\u2022 Fusion cutter (75 credits): Designed for cutting apart durasteel and\r\nsimilar materials. Accidental exposure causes 5D damage.\r\n\\u2022 Worklight (25 credits): Illuminates hard-to-see workspaces. Runs\r\noff power cell (12 hours).\r\n\\u2022 Hydrospanner (50 credits): Tightens and loosen all forms of fasteners)\r\n\\u2022 Plasma welder (50 credits): Joins two surfaces together. Allows for\r\nwelds from 0.2-20 centimeters in diameter.\r\n\\u2022 Beam Drill (50 credits): For punching precise holes through durasteel and similar materials.\r\n\\u2022 Power scanner (150 credits): For analyzing circuitry.\r\n\\u2022 Power prybar (30 credits): For forcing things open. When used to\r\npry things up, open or apart, this tool adds +1D to +3D to the\r\nusers Strength depending on the model.\r\n\\u2022 Parts (50 credits): Various circuits, wires and small components.\r\n\\u2022 Vibrosaw (75 credits): Designed for things that don\\u2019t call for a\r\nfusion cutter. ) STR+1D damage.\r\n\\u2022 Welding goggles (35 credits): Do you don\\u2019t burn out your eyes.\r\n\\u2022 Tool harness (10 credits): For holding all of your tools on your person.",
+          "includes": {
+            "vibropick": {
+              "name": "Vibropick",
+              "amount": 1
+            },
+            "fusionCutter": {
+              "name": "Fusion Cutter",
+              "amount": 1
+            },
+            "worklight": {
+              "name": "Worklight",
+              "amount": 1
+            },
+            "hydrospanner": {
+              "name": "Hydrospanner",
+              "amount": 1
+            },
+            "plasmaWielder": {
+              "name": "Plasma Wielder",
+              "amount": 1
+            },
+            "powerScanner": {
+              "name": "Power Scanner",
+              "amount": 1
+            },
+            "powerPrybar": {
+              "name": "Power Prybar",
+              "amount": 1
+            },
+            "ports": {
+              "name": "Ports",
+              "amount": 5
+            },
+            "vibrosaw": {
+              "name": "Vibrosaw",
+              "amount": 1
+            },
+            "wieldingGoggles": {
+              "name": "Wielding Goggles",
+              "amount": 1
+            },
+            "toolHarnes": {
+              "name": "Tool Harness",
+              "amount": 1
+            }
+          }
+        },
+        "enhancedToolKit": {
+          "name": "Enhanced Tool Kit",
+          "cost": 500,
+          "skill": [
+            "First Aide"
+          ],
+          "availability": "Readily Available",
+          "description": "Enhanced tool kits are designed for use with a specific repair\r\nskill (e.g. repulsorlift repair). Enhanced tool kits contain special,\r\nunique tools and small parts for repairing various systems and\r\ncomponents unique to their specialization. At gamemaster discretion, small components should be included, however, larger\r\nreplacement parts will have to be purchased additionally( e.g.\r\nhyperdrives, power couplings etc.).",
+          "gameNote": "This toolkit gives the user a bonus for repair work on\r\none specific repair skill (starfighter repair, aquatic vehicle repair,\r\nblaster repair, droid repair, equipment repair, walker repair, repulsorlift repair etc.) ranging from +1 to +1D based on the price\r\n(Requires all of the tools from the \\\"custom tool kit\\\")"
+        },
+        "utilityBelt": {
+          "name": "Utility Belt",
+          "cost": 500,
+          "skill": [
+            "none"
+          ],
+          "availability": "Normally Available",
+          "description": "A utility belt has several pouches containing a three-day supply of food capsules, a medpac, a small tool kit, a spare power\r\npack, a spare energy cell, a glow rod, a comlink, a liquid cable\r\ndispenser with a small grappling hook, and a couple of empty\r\npouches for whatever else the wearer wants to add (up to 0.5 kg\r\nper pouch).",
+          "gameNote": "",
+          "includes": {
+            "foodCapsule": {
+              "name": "Food Capsule",
+              "amount": 3
+            },
+            "medpac": {
+              "name": "Medpac",
+              "amount": 1
+            },
+            "smallToolKit": {
+              "name": "Small Tool kit",
+              "amount": 1
+            },
+            "powerPack": {
+              "name": "Power Pack",
+              "amount": 1
+            },
+            "energyCell": {
+              "name": "Energy Cell",
+              "amount": 1
+            },
+            "glowRod": {
+              "name": "Glow Rod",
+              "amount": 1
+            },
+            "comlink": {
+              "name": "Comlink",
+              "amount": 1
+            },
+            "lcd": {
+              "name": "Liquid Cable Dispenser",
+              "amount": 1
+            }
+          }
+        }
+      }
+    },
+    "weaponArmorAccessories": {
+      "category": "Weapon and Armor Accessories",
+      "items": {
+        "bandolier": {
+          "name": "Bandolier",
+          "cost": 300,
+          "skill": [
+            "none"
+          ],
+          "availability": "Normally Available",
+          "description": "Since there are so many types of weapons, there are an\r\nequally large number of ammunition types. Depending upon the\r\nweapons the wearer carries, a bandolier may contain energy\r\ncells or power packs (blasters), clips (slugthrowers), explosive\r\nbolts (bowcasters), magazines (missile launchers), grenades,\r\nknives, or any other forms of ammunition.",
+          "gameNote": "A bandolier has 12 slots that can each hold a single\r\nsmall weapon (such as a grenade or a knife) or a single piece of\r\nequipment weighing up to about 0.5 kg. Any item on the bandolier\r\ncan be retrieved as a non-roll action.",
+          "includes": {
+            "holseter": {
+              "name": "Holster",
+              "amount": 12
+            }
+          }
+        },
+        "helmetPackage": {
+          "name": "Helmet Package",
+          "cost": 4000,
+          "skill": [
+            "none"
+          ],
+          "availability": "Normally Available",
+          "description": "When installed in the helmet of a suit of armor, this electronic package allows the armor to grant the wearer a bonus to\r\nPerception checks in low-visibility situations, and a bonus to\r\nranged weapon skill uses against targets that move more than\r\n10 meters per round. It also includes an integrated hands-free\r\ncom link. Stormtrooper armor and its variants include such a\r\nsystem (MFTAS, or Multi-Frequency Target Acquisition System),\r\nalready included in its statistics. Installing a helmet package\r\ntakes 1 hour and a Moderate armor repair check.",
+          "gameNote": "Helmet contains tongue-activated comlink. Targeting\r\nsystem adds +1D to Perception checks in low-visibility situations,\r\nand +1D to ranged weapon skill uses against targets that move\r\nmore than 10 meters per round."
+        },
+        "hipHolster": {
+          "name": "Holster (Hip)",
+          "cost": 25,
+          "skill": [
+            "none"
+          ],
+          "availability": "Readily Available",
+          "description": "Holsters are generally available for smaller weapons. (Larger\r\nweapons are carried on shoulder straps or other convalescence\r\nthat cost as a hip holster.) A holster for a melee weapon is usually called a sheath.",
+          "gameNote": "This holster holds the weapon in an easily\r\naccessed-and easily seen-location."
+        },
+        "consealedHolster": {
+          "name": "Holster (Consealed)",
+          "cost": 50,
+          "skill": [
+            "Dexterity"
+          ],
+          "availability": "Readily Available",
+          "description": "Holsters are generally available for smaller weapons. (Larger\r\nweapons are carried on shoulder straps or other convalescence\r\nthat cost as a hip holster.) A holster for a melee weapon is usually called a sheath.",
+          "gameNote": "A concealed holster is designed to help\r\nkeep a weapon out of sight. In most cases, this is a shoulder holster (the weapon fits under the wearer\\u2019s armpit, presumably\r\nbeneath a jacket, vest, or cloak). Small weapons and single-bladed lightsabers can be carried in concealed waistband holsters\r\n(often placed inside the wearer\\u2019s waistband in the small of the\r\nback), or carried in ankle, boot, or wrist holsters.\r\nA concealed holster requires an Easy Dexterity skill roll to\r\ndraw the weapon, this is considered an action."
+        },
+        "stdScope": {
+          "name": "Standard Scope",
+          "cost": 100,
+          "skill": [
+            "none"
+          ],
+          "availability": "Normally Available",
+          "description": "A targeting scope is a sighting device that makes it easier to\r\nhit distant targets. However, it affords a very limited field of\r\nview, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10\r\nminutes and an Easy equipment or blaster repair skill roll.",
+          "gameNote": "A standard targeting scope adds a bonus to medium- and long-range shots from blaster and slugthrowing rifles\r\nand carbines. However, you must aim at your target to gain this\r\nbenefit, and you lose the benefit if you change targets or lose\r\nline of sight to your target. Projected hologram crosshairs add 1D to blaster (or other ranged weapon skill) for up to long-range."
+        },
+        "stdScopeLowLight": {
+          "name": "Standard Scope (Low Light Vision)",
+          "cost": 1000,
+          "skill": [
+            "none"
+          ],
+          "availability": "Normally Available",
+          "description": "A targeting scope is a sighting device that makes it easier to\r\nhit distant targets. However, it affords a very limited field of\r\nview, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10\r\nminutes and an Easy equipment or blaster repair skill roll.",
+          "gameNote": "A low-light targeting scope functions\r\nthe same as a standard targeting scope in normal light. However, after aiming at a target, it allows the wielder to ignore cover\r\n(but not complete darkness) from darkness when attacking that\r\ntarget. Projected hologram crosshairs add 1D to blaster (or other ranged weapon skill) for up to long-range."
+        },
+        "enhancedMacroscope": {
+          "name": "Enhanced Macroscope",
+          "cost": 750,
+          "skill": [
+            "sensors"
+          ],
+          "availability": "Normally Available",
+          "description": "A targeting scope is a sighting device that makes it easier to\r\nhit distant targets. However, it affords a very limited field of\r\nview, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10\r\nminutes and an Easy equipment or blaster repair skill roll.",
+          "gameNote": "An enhanced targeting scope adds +3D to medium- and long-range shots from blaster and slugthrowing rifles\r\nand carbines. Requires a Moderate sensors roll to sight-in a target. However, you must aim at your target to gain this benefit,\r\nand you lose the benefit if you change targets or lose line of\r\nsight to your target.Adds +3D to medium- and long-range shots from\r\nblaster and slugthrowing rifles and carbines. Requires a Moderate\r\nsensors roll to sight-in a target."
+        },
+        "enhancedMacroscopeLowLight": {
+          "name": "Enhanced Macroscope (Low Light Vision)",
+          "cost": 1650,
+          "skill": [
+            "sensors"
+          ],
+          "availability": "Normally Available",
+          "description": "A targeting scope is a sighting device that makes it easier to\r\nhit distant targets. However, it affords a very limited field of\r\nview, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10\r\nminutes and an Easy equipment or blaster repair skill roll.",
+          "gameNote": "An enhanced targeting scope adds +3D to medium- and long-range shots from blaster and slugthrowing rifles\r\nand carbines. Requires a Moderate sensors roll to sight-in a target. However, you must aim at your target to gain this benefit,\r\nand you lose the benefit if you change targets or lose line of\r\nsight to your target. Adds +3D to medium- and long-range shots from\r\nblaster and slugthrowing rifles and carbines. Requires a Moderate\r\nsensors roll to sight-in a target. A low-light targeting scope functions\r\nthe same as a standard targeting scope in normal light. However, after aiming at a target, it allows the wielder to ignore cover\r\n(but not complete darkness) from darkness when attacking that\r\ntarget."
+        }
+      }
     }
-
-}
+  }
