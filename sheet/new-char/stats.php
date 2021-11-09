@@ -158,6 +158,11 @@ include __DIR__ . "/../../views/header.php";
             </section>
         </section>
 
+        <span class="info dicePool">
+            <h2 class="fieldLabel">Dice Pool: </h2>
+            <input type="number" value="7"> D,
+            <input type="number" value="2"> Pips
+        </span>
 
         <section class="navigation">
             <a href="<?= $previousPageUrl; ?>" class="button yellowBtn">&lt;<?= $previousPage; ?></a>

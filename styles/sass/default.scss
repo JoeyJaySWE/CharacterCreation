@@ -40,6 +40,8 @@ input,select,textarea{
 input::placeholder, select::placeholder, textarea::placeholder{
     color: $textBlueColor;
     opacity: 0.7;
+    font-family: "Titillium Web", sans-serif;
+    font-size: 1rem;
 }
 textarea{
     border:1px solid;
@@ -258,6 +260,11 @@ a.greenBtn:hover, button.greenBtn:hover{
             section:first-child{
                 margin-top: 30px;
             }
+            section.navigation{
+                padding-bottom:15px;
+                width: 100;
+                margin-top: auto;
+            }
         }
         form.statsFields{
             height: 100%;
@@ -341,6 +348,7 @@ a.greenBtn:hover, button.greenBtn:hover{
             flex-direction: column;
             align-items: center;
             align-content: space-around;
+            height: 100%;
             width: 90%;
 
             details{
@@ -469,6 +477,7 @@ a.greenBtn:hover, button.greenBtn:hover{
             flex-direction: column;
             align-items: center;
             align-content: space-around;
+            height: 100%;
             width: 90%;
 
             details{
@@ -580,13 +589,197 @@ a.greenBtn:hover, button.greenBtn:hover{
                 width: 100%;
             }
         }
+        form.portraitFields{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: space-around;
+            width: 90%;
+
+            figure{
+                border: 1px solid aqua;
+                width: 170px;
+                height: 270px;
+                display: flex;
+                margin-top: 30px;
+                flex-direction: column;
+                align-content: center;
+
+                button{
+                    margin-top:100px;
+                }
+            }
+            input{
+                margin-top: 30px;
+                font-size:1.5rem;
+                color:$textBlueColor;
+                font-family: "Moonhouse";
+                border:none;
+            }
+            input+a{
+                margin-top:15px;
+                color:$infoTextColor;
+                margin-bottom: 30px;
+            }
+            details{
+                display: flex;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                width: 100%;
+                
+                textarea{
+                    font-family: "Titillium Web", sans-serif;
+                    font-size: 1rem;
+                    margin: auto;
+                    text-align: start;
+                    height: auto;
+                    padding: 10px;
+                    border:none;
+                    display: flex;
+                }
+                textarea:focus-visible{
+                    outline: none;
+                    border:1px solid;
+                }
+                button.cancelBtn{
+                    margin: unset;
+                    position: absolute;
+                    right: 20px;
+                    margin-top: 25px;
+                }
+
+                summary{
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom:30px;
+                }
+
+                .subBtnSection{
+                    display: flex;
+                    justify-content: flex-start;
+
+                    .subBtn{
+                        margin-bottom:0px;
+                    }
+                    .greenBtn{
+                        margin-top:15px;
+                    }
+                }
+                section{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-around;
+                    color: #00C7F8;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+
+                    section{
+                        margin-bottom:15px;
+
+                        .gameNote{
+                            text-align: start;
+                            width: 90%;
+                        }
+                    }
+                }
+                section.missionObjective{
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: 15px;
+                }
+                .gearSection{
+                    position: relative;
+                    summary{
+                        margin-left: 0px;
+                    }
+                    select{
+                        max-width:200px;
+                    }
+                    h2{
+                        text-align: center;
+                        margin: auto;
+                    }
+                    p{
+                        text-align: start;
+                        padding-bottom: 15px;
+                    }
+                }
+                span.amount{
+                    position: absolute;
+                    margin-left: 140px;
+                    margin-top: 25px;
+                    color: $textBlueColor;
+
+                       
+                }
+                .addGear{
+                    display: none;
+                }
+                .statsValues{
+                    color:$textBlueColor;
+                    display: flex;
+
+                }
+            }
+            details.charBackstory{
+                margin-bottom: 30px;
+            }
+            section.navigation{
+                width: 100%;
+            }
+        }
+        .info{
+            color:$infoTextColor;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            margin-top: 15px;
+        
+            h2{
+                color: inherit;
+                max-width: unset;
+                text-align: center;
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            input[type="number"]{
+                border:none;
+                max-width: unset;
+                color:$infoTextColor;
+                font-size: 1.2rem;
+            }
+        }
+        .info.dicePool{
+            flex-direction: row;
+            align-items: baseline;
+            
+            
+            input[type="number"]{
+                border:none;
+                max-width: 30px;
+                color:$infoTextColor;
+                font-size: 1.2rem;
+            }
+        }
 }
 
 section.navigation{
     padding-bottom:15px;
+    width: 100;
+    margin-top: auto;
 }
 
+
+
 #infoBox{
+    display: none;
     background-color: rgba(0, 0, 0, 0.75);
     border: 3px solid #909090;
     color: #FF4B4B;

@@ -356,7 +356,10 @@ include __DIR__ . "/../../views/header.php";
 
             <button class="button greenBtn">+ Add</button>
         </details>
-
+        <span class="info">
+            <h2 class="fieldLabel">Account Balance: </h2>
+            <input type="number" value="5000"> Credits
+        </span>
         <section class="navigation">
             <a href="<?= $previousPageUrl; ?>" class="button yellowBtn">&lt; <?= $previousPage; ?></a>
             <a href="../../user.php" class="cancelBtn">X</a>
