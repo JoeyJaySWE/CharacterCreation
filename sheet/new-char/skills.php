@@ -336,7 +336,7 @@ include __DIR__ . "/../../views/header.php";
         <section class="navigation">
             <a href="<?= $previousPageUrl; ?>" class="button yellowBtn">&lt; <?= $previousPage; ?></a>
             <a href="../../user.php" class="cancelBtn">X</a>
-            <a href="<?= $previousPageUrl; ?>" class="button greenBtn"><?= $nextPage; ?> &gt;</a>
+            <a href="<?= $nextPageUrl; ?>" class="button greenBtn"><?= $nextPage; ?> &gt;</a>
         </section>
     </form>
 </section>
