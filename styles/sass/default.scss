@@ -1,5 +1,11 @@
 @import url("css-reset.css");
-
+@font-face {
+    font-family: 'Moonhouse';
+    src: url('http://vengefulscars.joeyjaydigital.com/fonts/moonhouse.eot'), /* IE9 Compat Modes */
+              url('http://vengefulscars.joeyjaydigital.com/fonts/moonhouse.woff2') format('woff2'), /* Super Modern Browsers */
+         url('http://vengefulscars.joeyjaydigital.com/fonts/moonhouse.woff') format('woff'), /* Pretty Modern Browsers */
+         url('http://vengefulscars.joeyjaydigital.com/fonts/moonhouse.ttf')  format('truetype'), /* Safari, Android, iOS */
+  }
 $textBlueColor: #00C7F8;
 $boxHeaderColor: #C4C4C4;
 $infoTextColor: #FF4B4B;
@@ -373,6 +379,15 @@ a.greenBtn:hover, button.greenBtn:hover{
 
                 details{
                     padding-bottom:0px;
+
+                    section.headArmor, section.torsoArmor, section.armsArmor, section.legArmor{
+                        flex-direction: row;
+                        align-items: baseline;
+                        section.armorValues{
+                            flex-direction: row;
+                            align-items: baseline;
+                        }
+                    }
                 }
                 details[open]{
                     padding-bottom:30px;
