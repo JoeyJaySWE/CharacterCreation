@@ -145,9 +145,11 @@ a.yellowBtn, button.yellowBtn{
     border:1px solid $yellowBtnBorderColor;
 }
 
-a.subBtn, button.subBtn{
+a.subBtn, button.subBtn, summary.subBtn{
     max-width: 110px;
     margin-top:15px;
+    font-size:0.8rem;
+    text-align: center;
 }
 
 a.yellowBtn:hover, button.yellowBtn:hover{
@@ -324,6 +326,134 @@ a.greenBtn:hover, button.greenBtn:hover{
                 margin-top:15px;
             }
             
+        }
+
+        form.inventoryFields{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: space-around;
+            width: 90%;
+
+            details{
+                display: flex;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                width: 100%;
+                
+
+                button.cancelBtn{
+                    margin: unset;
+                    position: absolute;
+                    right: 20px;
+                    margin-top: 25px;
+                }
+
+                summary{
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                details{
+                    padding-bottom:0px;
+                }
+                details[open]{
+                    padding-bottom:30px;
+                }
+
+                details>summary{
+                    margin-bottom: 30px;
+                }
+                .subBtnSection{
+                    display: flex;
+                    justify-content: flex-start;
+
+                    .subBtn{
+                        margin-bottom:0px;
+                    }
+                    .greenBtn{
+                        margin-top:15px;
+                    }
+                }
+                section{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-around;
+                    color: #00C7F8;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+
+                    section{
+                        margin-bottom:15px;
+
+                        .gameNote{
+                            text-align: start;
+                            width: 90%;
+                        }
+                    }
+                }
+                .gearSection{
+                    position: relative;
+                    summary{
+                        margin-left: 0px;
+                    }
+                    select{
+                        max-width:200px;
+                    }
+                    h2{
+                        text-align: center;
+                        margin: auto;
+                    }
+                    p{
+                        text-align: start;
+                        padding-bottom: 15px;
+                    }
+                }
+                span.amount{
+                    position: absolute;
+                    margin-left: 140px;
+                    margin-top: 25px;
+                    color: $textBlueColor;
+
+                       
+                }
+                .addGear{
+                    display: none;
+                }
+                .armorStats>section{
+                    margin-top:15px;
+                }
+                .physical{
+                    color: $cancelBtnBorderColor;
+
+                    input{
+                        color:$cancelBtnBorderColor;
+                    }
+                }
+                .energy{
+                    color:$yellowBtnBorderColor;
+
+                    input{
+                        color:$yellowBtnBorderColor;
+                    }
+                }
+                section.armorValues{
+                    width:30%;
+                }
+                .statsValues{
+                    color:$textBlueColor;
+                    display: flex;
+
+                }
+            }
+            details.personalGear{
+                margin-bottom: 30px;
+            }
+            section.navigation{
+                width: 100%;
+            }
         }
     
 }

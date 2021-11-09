@@ -1,0 +1,290 @@
+{
+    "mediumBattleArmor": {
+        "description": "Battle armor combines protective metal or composite plates with a padded jumpsuit to form a layer of protection. While off-the-rack battle armor is available, most users cobble together their gear from various sources.",
+        "name": "Medium Battle Armor",
+        "cost": 2000,
+        "availabillity": "Specilized Armor",
+        "protection": {
+            "head": {
+                "physical": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                },
+                "energy": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                }
+            },
+            "torso": {
+                "physical": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                },
+                "energy": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                }
+            },
+            "arms": {
+                "physical": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                },
+                "energy": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                }
+            },
+            "legs": {
+                "physical": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                },
+                "energy": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                }
+            },
+            "element": {
+                "cold": {
+                    "stat": "",
+                    "dice": null,
+                    "pips": null
+                }
+            }
+        },
+        "penalties": {
+            "dexterity": {
+                "skill": "All",
+                "dice": -1,
+                "pip": null
+            },
+            "knowledge": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            },
+            "mechanical": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            },
+            "perception": {
+                "skill": "All",
+                "dice": -1,
+                "pip": null
+            },
+            "strength": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            },
+            "technical": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            }
+        },
+        "gameNote": ""
+    },
+    "armoredFlightSuit": {
+        "description": "A combat-ready flight suit that provides additional protection against vacuum for limited periods, this armor comes in various models, including the Corellian TX-3 (favored by various pirate gangs) and the Imperial TIE flight suit (worn by TIE fighter pilots throughout the Empire).",
+        "name": "Armored Flight Suit",
+        "cost": 4000,
+        "availabillity": "Normally Available",
+        "protection": {
+            "head": {
+                "physical": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                },
+                "energy": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                }
+            },
+            "arms": {
+                "physical": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                },
+                "energy": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                }
+            },
+            "legs": {
+                "physical": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                },
+                "energy": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                }
+            },
+            "torso": {
+                "physical": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                },
+                "energy": {
+                    "stat": "str",
+                    "dice": 1,
+                    "pips": null
+                }
+            },
+            "element": {
+                "cold": {
+                    "stat": "stamina",
+                    "dice": 1,
+                    "pips": 1
+                }
+            }
+        },
+        "penalties": {
+            "dexterity": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            },
+            "knowledge": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            },
+            "mechanical": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            },
+            "perception": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            },
+            "strength": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            },
+            "technical": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            }
+        },
+        "gameNote": "An armored flight suit provides up to 10 hours of life support, allowing its wearer to survive in the vacuum of space or any other hostile environment. Utility Belt: Ion flares, one week concentrated rations, spare comlink, water packs, 1 medpac."
+    },
+     "custom": {
+        "description": "",
+        "name": "Custom Armor",
+        "cost": null,
+        "availabillity": "Rare Armor",
+        "protection": {
+            "head": {
+                "physical": {
+                    "stat": "",
+                    "dice": null,
+                    "pips": null
+                },
+                "energy": {
+                    "stat": "",
+                    "dice": null,
+                    "pips": null
+                }
+            },
+            "arms": {
+                "physical": {
+                    "stat": "",
+                    "dice": null,
+                    "pips": null
+                },
+                "energy": {
+                    "stat": "",
+                    "dice": null,
+                    "pips": null
+                }
+            },
+            "legs": {
+                "physical": {
+                    "stat": "",
+                    "dice": null,
+                    "pips": null
+                },
+                "energy": {
+                    "stat": "",
+                    "dice": null,
+                    "pips": null
+                }
+            },
+            "torso": {
+                "physical": {
+                    "stat": "",
+                    "dice": null,
+                    "pips": null
+                },
+                "energy": {
+                    "stat": "",
+                    "dice": null,
+                    "pips": null
+                }
+            },
+            "element": {
+                "cold": {
+                    "stat": "",
+                    "dice": null,
+                    "pips": null
+                }
+            }
+        },
+        "penalties": {
+            "dexterity": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            },
+            "knowledge": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            },
+            "mechanical": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            },
+            "perception": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            },
+            "strength": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            },
+            "technical": {
+                "skill": "",
+                "dice": null,
+                "pip": null
+            }
+        },
+        "gameNote": ""
+    }
+}
