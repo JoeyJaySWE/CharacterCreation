@@ -119,8 +119,8 @@
             "Computer programming/repair"
           ],
           "availability": "Normally Available",
-          "description": "A compact encoded security device issued to many military, political, or corporate officials, a code cylinder accesses computer data via a droid’s scomp link or provides entry into restricted facilities. Each cylinder features the user’s personal security clearance data. High-ranking personnel may carry more than one cylinder, each with different access codes encrypted within them. Republic citizens, Imperial officers, and New Republic personnel use them to facilitate security measures.",
-          "gameNote": "Code cylinders can be programmed at properly equipped computers by making an Easy computer programming/repair roll. Without such systems the difficulty is Very Difficult. If your computer programming/repair roll fails by 5 or more, the code cylinder’s self-destruct programming activates and ruins the cylinder"
+          "description": "A compact encoded security device issued to many military,\npolitical, or corporate officials, a code cylinder accesses computer data via a droid\u2019s scomp link or provides entry into restricted\nfacilities. Each cylinder features the user\u2019s personal security\nclearance data. High-ranking personnel may carry more than\none cylinder, each with different access codes encrypted within\nthem. Republic citizens, Imperial officers, and New Republic personnel use them to facilitate security measures.",
+          "gameNote": "Code cylinders can be programmed at properly equipped\ncomputers by making an Easy computer programming\/repair roll.\nWithout such systems the difficulty is Very Difficult. If your computer programming\/repair roll fails by 5 or more, the code cylinder\u2019s self-destruct programming activates and ruins the cylinder."
         },
         "creditChip": {
           "name": "Code Cylinder",
@@ -129,8 +129,8 @@
             "none"
           ],
           "availability": "Readily Available",
-          "description": "The credit chip is a small, flat card that features a security codeout and credit algorithm memory stripes. The chip can hold a specified number of credits appropriate to the government that issued it, or it can draw from a specific account held by the user. Credit chips not only allow quick and easy transfers of 336 ! THE STAR WARS ROLEPLAYING GAME: REVISED • EXPANDED • UPDATED 18 • EQUIPMENT & WEAPONS funds but also protect users from theft. Credit chips are encrypted storage devices. Accessing a credit chip in order to manipulate the credits it will dispense, requires a Very Difficult computer programming/repair roll. If you fail by 5 or more on your roll to access an account, the credit chip’s security program detects the intrusion attempt and self-destructs. Modifying a credit chip so that government and bank computers think that it draws on a different account or that it has  different value stored requires a Heroic computer programming/ repair roll. You won’t know if your check succeeded until after you attempt to use the modified credit chip. If you fail, the government or bank computer orders the chip’s self-destruct programming to activate, ruining the chip. If you fail by 10 or more, the chip’s self-destruct programming activates and the government or bank computer has traced your location, dispatching security personnel to apprehend you.",
-          "gameNote": "For a newly purchased chip, a Very Easy computer programming/repair roll is required to encode a password making it accessible only by the owner."
+          "description": "The credit chip is a small, flat card that features a security\n codeout and credit algorithm memory stripes. The chip can hold\n a specified number of credits appropriate to the government\n that issued it, or it can draw from a specific account held by the\n user. Credit chips not only allow quick and easy transfers of\n 336 ! THE STAR WARS ROLEPLAYING GAME: REVISED \u2022 EXPANDED \u2022 UPDATED\n 18 \u2022 EQUIPMENT & WEAPONS\n funds but also protect users from theft. Credit chips are\n encrypted storage devices. Accessing a credit chip in order to\n manipulate the credits it will dispense, requires a Very Difficult\n computer programming\/repair roll. If you fail by 5 or more on\n your roll to access an account, the credit chip\u2019s security program\n detects the intrusion attempt and self-destructs.\n Modifying a credit chip so that government and bank computers think that it draws on a different account or that it has a\n different value stored requires a Heroic computer programming\/\n repair roll. You won\u2019t know if your check succeeded until after\n you attempt to use the modified credit chip. If you fail, the government or bank computer orders the chip\u2019s self-destruct programming to activate, ruining the chip. If you fail by 10 or\n more, the chip\u2019s self-destruct programming activates and the\n government or bank computer has traced your location, dispatching security personnel to apprehend you.",
+          "gameNote": "For a newly purchased chip, a Very Easy computer programming\/repair roll is required to encode a password making it\n accessible only by the owner."
         },
         "datacard": {
           "name": "Datacard",
@@ -139,7 +139,7 @@
             "Computer programming/repair"
           ],
           "availability": "Readily Available",
-          "description": "A datacard is a simple storage device. Intended solely as external storage for a computer, it has no interface for direct display, editing, or entry of data. They are often called “datatapes” in many sectors.",
+          "description": "A datacard is a simple storage device. Intended solely as\n external storage for a computer, it has no interface for direct\n display, editing, or entry of data. They are often called \u201cdatatapes\u201d in many sectors.",
           "gameNote": ""
         },
         "datapad": {
@@ -149,8 +149,8 @@
             "Computer programming/repair"
           ],
           "availability": "Readily Available",
-          "description": "Datapads are electronic information storage devices noted for their small size and portability. Datapads can store relevant personal data, encyclopedic entries and other basic information, though the microprocessors in such units generally cannot perform higher level computing. Datapads are available in a wide range of configurations — less expensive models are often dedicated to the storage and collation of a single type of data. Smaller, more expensive units can be customized to handle a variety of information types. Some high-priced datapads contain a small holo-projector which gives the user a “heads-up” display rather than the standard flat screen common on lower-end units.",
-          "gameNote": " Datapads may be used to access public information networks or the HoloNet if combined with a comlink or other connection device. It can be loaded with as many as 5 datacards simultaneously."
+          "description": "Datapads are electronic information storage devices noted\n for their small size and portability. Datapads can store relevant\n personal data, encyclopedic entries and other basic information,\n though the microprocessors in such units generally cannot perform higher level computing.\n Datapads are available in a wide range of configurations \u2014\n less expensive models are often dedicated to the storage and\n collation of a single type of data. Smaller, more expensive units\n can be customized to handle a variety of information types.\n Some high-priced datapads contain a small holo-projector\n which gives the user a \u201cheads-up\u201d display rather than the standard flat screen common on lower-end units.",
+          "gameNote": "Datapads may be used to access public information networks or the HoloNet if combined with a comlink or other connection device. It can be loaded with as many as 5 datacards\n simultaneously."
         }
       }
     },
@@ -166,7 +166,7 @@
           ],
           "availability": "Normally Available",
           "description": "All the stuff you need to perform medical operation in the field.",
-          "gameNote": "",
+          "gameNote": "Treat all components as requiring a Very Easy (A)\n medicine roll or a Moderate first aid roll unless otherwise noted.",
           "included": {
             "handHeldDiagnosticScanner": {
               "name": "Hand-Held Diagnostics Scanner",
@@ -231,7 +231,7 @@
             "(A) medicine"
           ],
           "availability": "Normally Available",
-          "description": "This small kit contains the instruments a character needs to perform surgery on a wounded character using the (A) medicine skill. Surgery is only required if the gamemaster deems the injury to require it (mangled appendage, internal bleeding, severe burns) and/or there is no access to a bacta tank. You must be trained in the (A) medicine skill to perform surgery using a surgery kit.",
+          "description": "This small kit contains the instruments a character needs to\n perform surgery on a wounded character using the (A) medicine\n skill. Surgery is only required if the gamemaster deems the\n injury to require it (mangled appendage, internal bleeding,\n severe burns) and\/or there is no access to a bacta tank. You must\n be trained in the (A) medicine skill to perform surgery using a\n surgery kit.",
           "gameNote": ""
         }
       }
@@ -290,7 +290,7 @@
             "Jet Pack Operation"
           ],
           "availability": "Speciliced Item",
-          "description": "Jet packs are an unusual form of conveyance that more commonly see use with military forces or fringe groups (although a number of commercial jet packs are available). A jet pack is simply a propulsion system that a pilot can strap on, allowing flight\r\nover short distances. Arm and wrist controls are often employed for maneuvering, and many civilian packs have limited sound\r\nbaffles to conform with local noise ordinances; while these baffles reduce noise, they also reduce the unit\\u2019s speed as well.",
+          "description": "Jet packs are an unusual form of conveyance that more commonly see use with military forces or fringe groups (although a\nnumber of commercial jet packs are available). A jet pack is simply a propulsion system that a pilot can strap on, allowing flight\nover short distances. Arm and wrist controls are often employed\nfor maneuvering, and many civilian packs have limited sound\nbaffles to conform with local noise ordinances; while these baffles reduce noise, they also reduce the unit\u2019s speed as well.",
           "gameNote": "The Arakyd Hush-About AJP-400 is capable of lifting up\r\nto 300 kilograms (total). It moves vertically 200 meters per charge,\r\n horizontally up to 500 meters per charge. A fully charged unit has\r\n10 charges and can be run on continuous charge-feed. During normal operation this unit produces very little noise. Any attempt to\r\nlocate a Hush-About using auditory pickups requires a successful\r\nsearch roll at a +10 penalty to the Difficulty"
         },
         "lqd": {
@@ -300,7 +300,7 @@
             "none"
           ],
           "availability": "Normally Available",
-          "description": "Cable dispensers contain a special liquid that instantly solidifies upon contact with either atmosphere or vacuum to form a \r\ntough, lightweight, flexible cable. The dispenser contains\r\nenough liquid for 15 meters of cable and is refillable at authorized outlets.",
+          "description": "Cable dispensers contain a special liquid that instantly solidifies upon contact with either atmosphere or vacuum to form a\n tough, lightweight, flexible cable. The dispenser contains\n enough liquid for 15 meters of cable and is refillable at authorized outlets.",
           "gameNote": "15 meters. Can support 500 kilograms"
         },
         "rocketPack": {
@@ -310,8 +310,8 @@
             "Rocket Pack Operation"
           ],
           "availability": "Normally Available",
-          "description": "Rocket packs are an alternative to jet packs. Where jet packs\r\npull outside air into an ignition chamber \\u2014 mixing fuel and air\r\ninternally to provide thrust \\u2014 rocket packs contain combustible\r\nchemical fuel. Because of this, rocket packs do not require outside air to generate thrust, allowing the devices to operate in\r\nspace as well as inside an atmosphere.\r\nRocket packs are heavier and louder than jet packs (due\r\nlargely to the onboard chemical fuel cells). As a trade off, rocket\r\npacks are considerably faster, and provide a better \\u201call-environment\\u201d flight capability. The main danger in using a rocket pack\r\nin combat is the chemical fuel cell; a stray blaster shot can\r\ncause a rocket pack to explode.",
-          "gameNote": "The DSP-5 rocket pack can carry up to 60 kilograms and\r\ncan move up to 70 meters vertically or 160 meters horizontally in a\r\nsingle charge. The unit has 12 charges."
+          "description": "Rocket packs are an alternative to jet packs. Where jet packs\n pull outside air into an ignition chamber \u2014 mixing fuel and air\n internally to provide thrust \u2014 rocket packs contain combustible\n chemical fuel. Because of this, rocket packs do not require outside air to generate thrust, allowing the devices to operate in\n space as well as inside an atmosphere.\n Rocket packs are heavier and louder than jet packs (due\n largely to the onboard chemical fuel cells). As a trade off, rocket\n packs are considerably faster, and provide a better \u201call-environment\u201d flight capability. The main danger in using a rocket pack\n in combat is the chemical fuel cell; a stray blaster shot can\n cause a rocket pack to explode.",
+          "gameNote": "The DSP-5 rocket pack can carry up to 60 kilograms and\n can move up to 70 meters vertically or 160 meters horizontally in a\n single charge. The unit has 12 charges."
         },
         "synthrope": {
           "name": "Synthrope",
@@ -320,7 +320,7 @@
             "none"
           ],
           "availability": "Readily Available",
-          "description": "Syntherope is \\u2014 as the name implies \\u2014 a synthetic, durable\r\nmultipurpose cable. Created from high-strength polymers, syntherope is tough, lightweight and flexible, capable of supporting\r\nup to 700 kilograms of weight. Although not as compact and\r\nconvenient as a liquid cable dispenser, syntherope is stronger\r\nand more durable. A coil contains 45 meters of syntherope, and\r\nunlike liquid cable it is meant to be reused.",
+          "description": "Syntherope is \u2014 as the name implies \u2014 a synthetic, durable\n multipurpose cable. Created from high-strength polymers, syntherope is tough, lightweight and flexible, capable of supporting\n up to 700 kilograms of weight. Although not as compact and\n convenient as a liquid cable dispenser, syntherope is stronger\n and more durable. A coil contains 45 meters of syntherope, and\n unlike liquid cable it is meant to be reused.",
           "gameNote": "45 meters. Can support 700 kilograms."
         },
         "securityKit": {
@@ -345,8 +345,8 @@
             "Various repair skills"
           ],
           "availability": "Readily Available",
-          "description": "You may use the various tools in a standard tool kit to reprogram a droid or to repair a damaged starship or vehicle. A standard toolkit is generally required for any use of the \\u201crepair\\u201d\r\nskills.",
-          "gameNote": "This toolkit (or a similar arsenal of tools) is required to\r\nuse any \\u201crepair\\u201d skill.\r\n\r\n\\u2022 Vibropick (50 credits): For shorting out electronic components or\r\nsoldering wires). Accidental exposure causes 1D damage.\r\n\\u2022 Fusion cutter (75 credits): Designed for cutting apart durasteel and\r\nsimilar materials. Accidental exposure causes 5D damage.\r\n\\u2022 Worklight (25 credits): Illuminates hard-to-see workspaces. Runs\r\noff power cell (12 hours).\r\n\\u2022 Hydrospanner (50 credits): Tightens and loosen all forms of fasteners)\r\n\\u2022 Plasma welder (50 credits): Joins two surfaces together. Allows for\r\nwelds from 0.2-20 centimeters in diameter.\r\n\\u2022 Beam Drill (50 credits): For punching precise holes through durasteel and similar materials.\r\n\\u2022 Power scanner (150 credits): For analyzing circuitry.\r\n\\u2022 Power prybar (30 credits): For forcing things open. When used to\r\npry things up, open or apart, this tool adds +1D to +3D to the\r\nusers Strength depending on the model.\r\n\\u2022 Parts (50 credits): Various circuits, wires and small components.\r\n\\u2022 Vibrosaw (75 credits): Designed for things that don\\u2019t call for a\r\nfusion cutter. ) STR+1D damage.\r\n\\u2022 Welding goggles (35 credits): Do you don\\u2019t burn out your eyes.\r\n\\u2022 Tool harness (10 credits): For holding all of your tools on your person.",
+          "description": "You may use the various tools in a standard tool kit to reprogram a droid or to repair a damaged starship or vehicle. A standard toolkit is generally required for any use of the \u201crepair\u201d\n skills. The standard tool kit below, represents a broad collection\n of tools designed to take apart, analyze, modify, and rebuild\n almost any technological device. Note that each individual tool\n has its own cost and may be purchased piecemeal.",
+          "gameNote": "This toolkit (or a similar arsenal of tools) is required to\n use any \u201crepair\u201d skill.",
           "includes": {
             "vibropick": {
               "name": "Vibropick",
@@ -401,8 +401,8 @@
             "First Aide"
           ],
           "availability": "Readily Available",
-          "description": "Enhanced tool kits are designed for use with a specific repair\r\nskill (e.g. repulsorlift repair). Enhanced tool kits contain special,\r\nunique tools and small parts for repairing various systems and\r\ncomponents unique to their specialization. At gamemaster discretion, small components should be included, however, larger\r\nreplacement parts will have to be purchased additionally( e.g.\r\nhyperdrives, power couplings etc.).",
-          "gameNote": "This toolkit gives the user a bonus for repair work on\r\none specific repair skill (starfighter repair, aquatic vehicle repair,\r\nblaster repair, droid repair, equipment repair, walker repair, repulsorlift repair etc.) ranging from +1 to +1D based on the price\r\n(Requires all of the tools from the \\\"custom tool kit\\\")"
+          "description": "Enhanced tool kits are designed for use with a specific repair\n skill (e.g. repulsorlift repair). Enhanced tool kits contain special,\n unique tools and small parts for repairing various systems and\n components unique to their specialization. At gamemaster discretion, small components should be included, however, larger\n replacement parts will have to be purchased additionally( e.g.\n hyperdrives, power couplings etc.).",
+          "gameNote": "This toolkit gives the user a bonus for repair work on\n one specific repair skill (starfighter repair, aquatic vehicle repair,\n blaster repair, droid repair, equipment repair, walker repair, repulsorlift repair etc.) ranging from +1 to +1D based on the price"
         },
         "utilityBelt": {
           "name": "Utility Belt",
@@ -411,7 +411,7 @@
             "none"
           ],
           "availability": "Normally Available",
-          "description": "A utility belt has several pouches containing a three-day supply of food capsules, a medpac, a small tool kit, a spare power\r\npack, a spare energy cell, a glow rod, a comlink, a liquid cable\r\ndispenser with a small grappling hook, and a couple of empty\r\npouches for whatever else the wearer wants to add (up to 0.5 kg\r\nper pouch).",
+          "description": "A utility belt has several pouches containing a three-day supply of food capsules, a medpac, a small tool kit, a spare power\n pack, a spare energy cell, a glow rod, a comlink, a liquid cable\n dispenser with a small grappling hook, and a couple of empty\n pouches for whatever else the wearer wants to add (up to 0.5 kg\n per pouch).",
           "gameNote": "",
           "includes": {
             "foodCapsule": {
@@ -460,8 +460,8 @@
             "none"
           ],
           "availability": "Normally Available",
-          "description": "Since there are so many types of weapons, there are an\r\nequally large number of ammunition types. Depending upon the\r\nweapons the wearer carries, a bandolier may contain energy\r\ncells or power packs (blasters), clips (slugthrowers), explosive\r\nbolts (bowcasters), magazines (missile launchers), grenades,\r\nknives, or any other forms of ammunition.",
-          "gameNote": "A bandolier has 12 slots that can each hold a single\r\nsmall weapon (such as a grenade or a knife) or a single piece of\r\nequipment weighing up to about 0.5 kg. Any item on the bandolier\r\ncan be retrieved as a non-roll action.",
+          "description": "Since there are so many types of weapons, there are an\n equally large number of ammunition types. Depending upon the\n weapons the wearer carries, a bandolier may contain energy\n cells or power packs (blasters), clips (slugthrowers), explosive\n bolts (bowcasters), magazines (missile launchers), grenades,\n knives, or any other forms of ammunition.",
+          "gameNote": "A bandolier has 12 slots that can each hold a single\n small weapon (such as a grenade or a knife) or a single piece of\n equipment weighing up to about 0.5 kg. Any item on the bandolier\n can be retrieved as a non-roll action.",
           "includes": {
             "holseter": {
               "name": "Holster",
@@ -476,8 +476,8 @@
             "none"
           ],
           "availability": "Normally Available",
-          "description": "When installed in the helmet of a suit of armor, this electronic package allows the armor to grant the wearer a bonus to\r\nPerception checks in low-visibility situations, and a bonus to\r\nranged weapon skill uses against targets that move more than\r\n10 meters per round. It also includes an integrated hands-free\r\ncom link. Stormtrooper armor and its variants include such a\r\nsystem (MFTAS, or Multi-Frequency Target Acquisition System),\r\nalready included in its statistics. Installing a helmet package\r\ntakes 1 hour and a Moderate armor repair check.",
-          "gameNote": "Helmet contains tongue-activated comlink. Targeting\r\nsystem adds +1D to Perception checks in low-visibility situations,\r\nand +1D to ranged weapon skill uses against targets that move\r\nmore than 10 meters per round."
+          "description": "When installed in the helmet of a suit of armor, this electronic package allows the armor to grant the wearer a bonus to\n Perception checks in low-visibility situations, and a bonus to\n ranged weapon skill uses against targets that move more than\n 10 meters per round. It also includes an integrated hands-free\n com link. Stormtrooper armor and its variants include such a\n system (MFTAS, or Multi-Frequency Target Acquisition System),\n already included in its statistics. Installing a helmet package\n takes 1 hour and a Moderate armor repair check.",
+          "gameNote": "Helmet contains tongue-activated comlink. Targeting\n system adds +1D to Perception checks in low-visibility situations,\n and +1D to ranged weapon skill uses against targets that move\n more than 10 meters per round."
         },
         "hipHolster": {
           "name": "Holster (Hip)",
@@ -486,8 +486,8 @@
             "none"
           ],
           "availability": "Readily Available",
-          "description": "Holsters are generally available for smaller weapons. (Larger\r\nweapons are carried on shoulder straps or other convalescence\r\nthat cost as a hip holster.) A holster for a melee weapon is usually called a sheath.",
-          "gameNote": "This holster holds the weapon in an easily\r\naccessed-and easily seen-location."
+          "description": "Holsters are generally available for smaller weapons. (Larger\n weapons are carried on shoulder straps or other convalescences\n that cost as a hip holster.) A holster for a melee weapon is usually called a sheath.",
+          "gameNote": "This holster holds the weapon in an easily\n accessed-and easily seen-location."
         },
         "consealedHolster": {
           "name": "Holster (Consealed)",
@@ -496,8 +496,8 @@
             "Dexterity"
           ],
           "availability": "Readily Available",
-          "description": "Holsters are generally available for smaller weapons. (Larger\r\nweapons are carried on shoulder straps or other convalescence\r\nthat cost as a hip holster.) A holster for a melee weapon is usually called a sheath.",
-          "gameNote": "A concealed holster is designed to help\r\nkeep a weapon out of sight. In most cases, this is a shoulder holster (the weapon fits under the wearer\\u2019s armpit, presumably\r\nbeneath a jacket, vest, or cloak). Small weapons and single-bladed lightsabers can be carried in concealed waistband holsters\r\n(often placed inside the wearer\\u2019s waistband in the small of the\r\nback), or carried in ankle, boot, or wrist holsters.\r\nA concealed holster requires an Easy Dexterity skill roll to\r\ndraw the weapon, this is considered an action."
+          "description": "Holsters are generally available for smaller weapons. (Larger\n weapons are carried on shoulder straps or other convalescences\n that cost as a hip holster.) A holster for a melee weapon is usually called a sheath.",
+          "gameNote": "A concealed holster is designed to help\n keep a weapon out of sight. In most cases, this is a shoulder holster (the weapon fits under the wearer\u2019s armpit, presumably\n beneath a jacket, vest, or cloak). Small weapons and single-bladed lightsabers can be carried in concealed waistband holsters\n (often placed inside the wearer\u2019s waistband in the small of the\n back), or carried in ankle, boot, or wrist holsters.\n A concealed holster requires an Easy Dexterity skill roll to\n draw the weapon, this is considered an action."
         },
         "stdScope": {
           "name": "Standard Scope",
@@ -506,8 +506,8 @@
             "none"
           ],
           "availability": "Normally Available",
-          "description": "A targeting scope is a sighting device that makes it easier to\r\nhit distant targets. However, it affords a very limited field of\r\nview, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10\r\nminutes and an Easy equipment or blaster repair skill roll.",
-          "gameNote": "A standard targeting scope adds a bonus to medium- and long-range shots from blaster and slugthrowing rifles\r\nand carbines. However, you must aim at your target to gain this\r\nbenefit, and you lose the benefit if you change targets or lose\r\nline of sight to your target. Projected hologram crosshairs add 1D to blaster (or other ranged weapon skill) for up to long-range."
+          "description": "A targeting scope is a sighting device that makes it easier to\n hit distant targets. However, it affords a very limited field of\n view, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10\n minutes and an Easy equipment or blaster repair skill roll.",
+          "gameNote": "A standard targeting scope adds a bonus to medium- and long-range shots from blaster and slugthrowing rifles\n and carbines. However, you must aim at your target to gain this\n benefit, and you lose the benefit if you change targets or lose\n line of sight to your target."
         },
         "stdScopeLowLight": {
           "name": "Standard Scope (Low Light Vision)",
@@ -516,8 +516,8 @@
             "none"
           ],
           "availability": "Normally Available",
-          "description": "A targeting scope is a sighting device that makes it easier to\r\nhit distant targets. However, it affords a very limited field of\r\nview, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10\r\nminutes and an Easy equipment or blaster repair skill roll.",
-          "gameNote": "A low-light targeting scope functions\r\nthe same as a standard targeting scope in normal light. However, after aiming at a target, it allows the wielder to ignore cover\r\n(but not complete darkness) from darkness when attacking that\r\ntarget. Projected hologram crosshairs add 1D to blaster (or other ranged weapon skill) for up to long-range."
+          "description": "A targeting scope is a sighting device that makes it easier to\n hit distant targets. However, it affords a very limited field of\n view, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10\n minutes and an Easy equipment or blaster repair skill roll.",
+          "gameNote": "A low-light targeting scope functions\n the same as a standard targeting scope in normal light. However, after aiming at a target, it allows the wielder to ignore cover\n (but not complete darkness) from darkness when attacking that\n target."
         },
         "enhancedMacroscope": {
           "name": "Enhanced Macroscope",
@@ -526,8 +526,8 @@
             "sensors"
           ],
           "availability": "Normally Available",
-          "description": "A targeting scope is a sighting device that makes it easier to\r\nhit distant targets. However, it affords a very limited field of\r\nview, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10\r\nminutes and an Easy equipment or blaster repair skill roll.",
-          "gameNote": "An enhanced targeting scope adds +3D to medium- and long-range shots from blaster and slugthrowing rifles\r\nand carbines. Requires a Moderate sensors roll to sight-in a target. However, you must aim at your target to gain this benefit,\r\nand you lose the benefit if you change targets or lose line of\r\nsight to your target.Adds +3D to medium- and long-range shots from\r\nblaster and slugthrowing rifles and carbines. Requires a Moderate\r\nsensors roll to sight-in a target."
+          "description": "A targeting scope is a sighting device that makes it easier to\n hit distant targets. However, it affords a very limited field of\n view, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10\n minutes and an Easy equipment or blaster repair skill roll.",
+          "gameNote": "Adds +3D to medium- and long-range shots from\n blaster and slugthrowing rifles and carbines. Requires a Moderate\n sensors roll to sight-in a target."
         },
         "enhancedMacroscopeLowLight": {
           "name": "Enhanced Macroscope (Low Light Vision)",
@@ -536,9 +536,23 @@
             "sensors"
           ],
           "availability": "Normally Available",
-          "description": "A targeting scope is a sighting device that makes it easier to\r\nhit distant targets. However, it affords a very limited field of\r\nview, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10\r\nminutes and an Easy equipment or blaster repair skill roll.",
-          "gameNote": "An enhanced targeting scope adds +3D to medium- and long-range shots from blaster and slugthrowing rifles\r\nand carbines. Requires a Moderate sensors roll to sight-in a target. However, you must aim at your target to gain this benefit,\r\nand you lose the benefit if you change targets or lose line of\r\nsight to your target. Adds +3D to medium- and long-range shots from\r\nblaster and slugthrowing rifles and carbines. Requires a Moderate\r\nsensors roll to sight-in a target. A low-light targeting scope functions\r\nthe same as a standard targeting scope in normal light. However, after aiming at a target, it allows the wielder to ignore cover\r\n(but not complete darkness) from darkness when attacking that\r\ntarget."
+          "description": "A targeting scope is a sighting device that makes it easier to\n hit distant targets. However, it affords a very limited field of\n view, making it difficult to use unless in a steady aiming position. Installing a targeting scope on a rifle or pistol requires 10\n minutes and an Easy equipment or blaster repair skill roll.",
+          "gameNote": "Adds +3D to medium- and long-range shots from\n blaster and slugthrowing rifles and carbines. Requires a Moderate\n sensors roll to sight-in a target.A low-light targeting scope functions\n the same as a standard targeting scope in normal light. However, after aiming at a target, it allows the wielder to ignore cover\n (but not complete darkness) from darkness when attacking that\n target."
         }
       }
+    },
+    "custom": {
+      "category": "Choose one",
+      "item": {
+          "type": null,
+          "name": "Custom Gear",
+          "cost": null,
+          "skill": [
+            ""
+          ],
+          "availability": "Normally Available",
+          "description": "",
+          "gameNote": ""
+        }
     }
   }

@@ -48,7 +48,7 @@ include __DIR__ . "/../../views/header.php";
 
         <!-- Armor -->
         <details>
-            <summary class="defaultBtn button">Armor<span></span></summary>
+            <summary class="defaultBtn button">Armor</summary>
             <button class="cancelBtn">X</button>
             <details>
                 <summary class="defaultBtn subBtn button">Medium Battle Armor<span></span></summary>
@@ -158,7 +158,7 @@ include __DIR__ . "/../../views/header.php";
 
         <!-- Weapons -->
         <details>
-            <summary class="defaultBtn button">Weapons<span></span></summary>
+            <summary class="defaultBtn button">Weapons</summary>
             <section class="subBtnSection">
                 <button class="cancelBtn">X</button>
                 <details>
@@ -266,11 +266,43 @@ include __DIR__ . "/../../views/header.php";
 
         <!-- Field Gear -->
         <details>
-            <summary class="defaultBtn button">Field Gear<span></span></summary>
-            <section>
+            <summary class="defaultBtn button">Field Gear</summary>
+            <button class="cancelBtn">X</button>
+            <span class="amount">
+                x
+                <input type="number" value="1" />
+            </span>
+            <section class="gearSection">
+                <details>
+                    <?php $item = find_gear("Jet Pack", $gear);
+
+                    // $jsonString = json_encode($string);
+                    // var_dump(json_decode($jsonString), "test");
+                    load_gear_data($item);
+                    ?>
+
+                </details>
+
+            </section>
+            <button class="cancelBtn">X</button>
+            <span class="amount">
+                x
+                <input type="number" value="1" />
+            </span>
+            <section class="gearSection">
+                <details>
+                    <?php $item = find_gear("Medpac", $gear);
+
+                    // $jsonString = json_encode($string);
+                    // var_dump(json_decode($jsonString), "test");
+                    load_gear_data($item);
+                    ?>
+                </details>
+            </section>
+            <section class="addGear">
                 <select class="fieldLabel" name="dexSkill1">
                     <?php
-                    get_skills_dropdown_menu($dexteritySkills);
+                    get_gears_dropdown_menu($gear, "Custom Gear");
                     ?>
                 </select>
                 <section class="statsVlues">
@@ -280,7 +312,6 @@ include __DIR__ . "/../../views/header.php";
                     </span>
                     +
                     <input name="dex1PipValue" class="pipValue" value="0" type="number" max="2" min="0">
-                    <button class="cancelBtn">X</button>
                 </section>
             </section>
 
@@ -288,12 +319,29 @@ include __DIR__ . "/../../views/header.php";
         </details>
 
         <!-- Personal Gear -->
-        <details>
-            <summary class="defaultBtn button">Personal Gear<span></span></summary>
-            <section>
+        <details class="personalGear">
+            <summary class="defaultBtn button">Personal Gear</summary>
+            <button class="cancelBtn">X</button>
+            <span class="amount">
+                x
+                <input type="number" value="1" />
+            </span>
+            <section class="gearSection">
+                <details>
+                    <?php $item = find_gear("Standard Tool Kit", $gear);
+
+                    // $jsonString = json_encode($string);
+                    // var_dump(json_decode($jsonString), "test");
+                    load_gear_data($item);
+                    ?>
+
+                </details>
+
+            </section>
+            <section class="addGear">
                 <select class="fieldLabel" name="dexSkill1">
                     <?php
-                    get_skills_dropdown_menu($dexteritySkills);
+                    get_gears_dropdown_menu($gear, "Custom Gear");
                     ?>
                 </select>
                 <section class="statsVlues">
@@ -303,7 +351,6 @@ include __DIR__ . "/../../views/header.php";
                     </span>
                     +
                     <input name="dex1PipValue" class="pipValue" value="0" type="number" max="2" min="0">
-                    <button class="cancelBtn">X</button>
                 </section>
             </section>
 

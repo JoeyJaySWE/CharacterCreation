@@ -394,6 +394,34 @@ a.greenBtn:hover, button.greenBtn:hover{
                         }
                     }
                 }
+                .gearSection{
+                    position: relative;
+                    summary{
+                        margin-left: 0px;
+                    }
+                    select{
+                        max-width:200px;
+                    }
+                    h2{
+                        text-align: center;
+                        margin: auto;
+                    }
+                    p{
+                        text-align: start;
+                        padding-bottom: 15px;
+                    }
+                }
+                span.amount{
+                    position: absolute;
+                    margin-left: 140px;
+                    margin-top: 25px;
+                    color: $textBlueColor;
+
+                       
+                }
+                .addGear{
+                    display: none;
+                }
                 .armorStats>section{
                     margin-top:15px;
                 }
@@ -419,6 +447,12 @@ a.greenBtn:hover, button.greenBtn:hover{
                     display: flex;
 
                 }
+            }
+            details.personalGear{
+                margin-bottom: 30px;
+            }
+            section.navigation{
+                width: 100%;
             }
         }
     
