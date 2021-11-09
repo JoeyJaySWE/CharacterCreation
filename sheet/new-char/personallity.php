@@ -72,12 +72,6 @@ include __DIR__ . "/../../views/header.php";
             </div>
         </section>
 
-        <!-- Name -->
-        <section>
-            <label for="charName" class="fieldLabel">Name</label>
-            <input type="text" name="charName" id="charName" />
-        </section>
-
         <!-- Hobby -->
         <section>
             <h2 class="fieldLabel">Hobby</h2>
