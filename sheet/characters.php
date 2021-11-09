@@ -24,19 +24,13 @@ $nextPage = "Finish";
 // ----------------------------------------------------------------
 
 
-$armorsData = file_get_contents('../../app/JS/armor.json');
-$weaponsData = file_get_contents('../../app/JS/weapons.json');
-$gearData = file_get_contents('../../app/JS/gear.json');
 
 // var_dump($statsData);
 // die(var_dump($stats->knowledge->skills));
 
-$armors = json_decode($armorsData, true);
-$weapons = json_decode($weaponsData, true);
-$gear = json_decode($gearData, true);
 
 
-include __DIR__ . "/../../views/header.php";
+include __DIR__ . "/../views/header.php";
 
 
 ?>
@@ -47,6 +41,6 @@ include __DIR__ . "/../../views/header.php";
 
 <?php
 
-include __DIR__ . "/../../views/footer.php";
+include __DIR__ . "/../views/footer.php";
 
 ?>
