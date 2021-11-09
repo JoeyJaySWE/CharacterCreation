@@ -34,7 +34,7 @@ include __DIR__ . "/../../views/header.php";
 <section id="inputFields">
     <h1>Stats</h1>
 
-    <form action="skills.php" method="POST" class="statsFields">
+    <form action="" method="POST" class="statsFields">
 
         <!-- Dexterity -->
         <section>

@@ -44,7 +44,7 @@ include __DIR__ . "/../../views/header.php";
 <section id="inputFields">
     <h1>Inventory</h1>
 
-    <form action="skills.php" method="POST" class="inventoryFields">
+    <form action="" method="POST" class="inventoryFields">
 
         <!-- Armor -->
         <details>
