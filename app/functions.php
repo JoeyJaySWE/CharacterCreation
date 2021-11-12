@@ -110,6 +110,16 @@ function find_gear($name, $array)
     endforeach;
     return null;
 }
+function find_character($name, $array)
+{
+    foreach ($array as $character) {
+        if ($character['name'] === $name) {
+            return $character;
+        }
+    }
+    return null;
+}
+
 function load_gear_data($gear)
 {
     ?>

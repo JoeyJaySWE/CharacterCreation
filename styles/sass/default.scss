@@ -1,10 +1,10 @@
 @import url("css-reset.css");
 @font-face {
     font-family: 'Moonhouse';
-    src: url('http://vengefulscars.joeyjaydigital.com/fonts/moonhouse.eot'), /* IE9 Compat Modes */
-              url('http://vengefulscars.joeyjaydigital.com/fonts/moonhouse.woff2') format('woff2'), /* Super Modern Browsers */
-         url('http://vengefulscars.joeyjaydigital.com/fonts/moonhouse.woff') format('woff'), /* Pretty Modern Browsers */
-         url('http://vengefulscars.joeyjaydigital.com/fonts/moonhouse.ttf')  format('truetype'), /* Safari, Android, iOS */
+    src: url('../fonts/moonhouse.eot'), /* IE9 Compat Modes */
+              url('../fonts/moonhouse.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/moonhouse.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/moonhouse.ttf')  format('truetype'), /* Safari, Android, iOS */
   }
 $textBlueColor: #00C7F8;
 $boxHeaderColor: #C4C4C4;
@@ -76,12 +76,41 @@ input[type="number"]{
     background-color: rgba(0, 0, 0, 0.75);
     border: 3px solid #909090;
     width: 290px;
-    height: 395px;
+    height: 500px;
     display: flex;
     margin-top: 50px;
     flex-direction: column;
     align-items: center;
 
+    .scrollWrapper{
+        width: 290px;
+        display: flex;
+        height: 500px;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+        
+        summary{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    form:not(class){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        div{
+            display: flex;
+            align-items: baseline;
+
+            button{
+                margin-left:20px;
+            }
+        }
+    }
 
     h1{
         color: $textBlueColor;
