@@ -5,7 +5,8 @@
 $page_title = "Crew Sheets - User Page";
 $style = "styles/css/default.css";
 $userName = "Raas/Joya (Gsus)";
-
+$userId = 1;
+$deleteJS = 'app/JS/delete.js';
 // ----------------- [ META DATA ] --------------------------------
 
 $meta_title = "User Sheets";
@@ -27,15 +28,38 @@ include __DIR__ . "/views/header.php";
 ?>
 
 <div id="userBox">
-    <img class='avatar' src="https://via.placeholder.com/90x90/" />
-    <h2>Welcome<br /><span class="username"><?= $userName; ?></span></h2>
-    <details open>
-        <summary class="button defaultBtn">
-            Sheets
-        </summary>
+    <section class="scrollWrapper">
 
-        <a class='button greenBtn subBtn' href="sheet/new-char/personallity.php">+ Add</a>
-    </details>
+        <img class='avatar' src="https://via.placeholder.com/90x90/" />
+        <h2>Welcome<br /><span class="username"><?= $userName; ?></span></h2>
+        <details open>
+            <summary class="button defaultBtn">
+                Sheets
+            </summary>
+            <form action="sheet/character/personallity.php" method="POST">
+                <?php
+
+                $jsonCharacters = file_get_contents('app/JS/characters.json');
+                $fileChracters = json_decode($jsonCharacters, true);
+                if (array_key_exists($userId, $fileChracters)) :
+                    $characters = $fileChracters[$userId]['characters'];
+                    $i = 1;
+                    foreach ($characters as $character) : ?>
+                        <div>
+                            <button name="character" class="defaultBtn subBtn" value="<?= $character['name'] ?>"><?= $character['name'] ?></button>
+                            <button name="deleteCharacter" type="button" value="<?= $character['slug'] ?>" class="cancelBtn" id="deleteChar<?= $i; ?>">X</button>
+                        </div>
+                <?php
+                        $i++;
+                    endforeach;
+                endif;
+
+
+                ?>
+                <button name="newSheet" id="addSheetLnk" class='button greenBtn subBtn' href="sheet/new-char/personallity.php">+ Add</button>
+            </form>
+        </details>
+    </section>
 </div>
 
 <?php

@@ -120,41 +120,44 @@ include __DIR__ . "/../../views/header.php";
         </section>
 
         <!-- Controll -->
-        <section style="display:none">
-            <label class="fieldLabel" for="">Controll</label>
-            <section class="statsVlues">
-                <span>
-                    <input name="controllDValue" value="2" type="number" max="4" min="2">
-                    D
-                </span>
-                +
-                <input name="controllPipValue" value="0" type="number" max="2" min="0">
-            </section>
-        </section>
+        <section class="foreUserStats" style="display:none">
 
-        <!-- Sence -->
-        <section style="display:none">
-            <label class="fieldLabel" for="">Sence</label>
-            <section class="statsVlues">
-                <span>
-                    <input name="senceDValue" value="2" type="number" max="4" min="2">
-                    D
-                </span>
-                +
-                <input name="sencePipValue" value="0" type="number" max="2" min="0">
+            <section>
+                <label class="fieldLabel" for="">Controll</label>
+                <section class="statsVlues">
+                    <span>
+                        <input name="controllDValue" value="2" type="number" max="4" min="2">
+                        D
+                    </span>
+                    +
+                    <input name="controllPipValue" value="0" type="number" max="2" min="0">
+                </section>
             </section>
-        </section>
 
-        <!-- Alter -->
-        <section style="display:none">
-            <label class="fieldLabel" for="">Alter</label>
-            <section class="statsVlues">
-                <span>
-                    <input name="alterDValue" value="2" type="number" max="4" min="2">
-                    D
-                </span>
-                +
-                <input name="alterPipValue" value="0" type="number" max="2" min="0">
+            <!-- Sence -->
+            <section>
+                <label class="fieldLabel" for="">Sence</label>
+                <section class="statsVlues">
+                    <span>
+                        <input name="senceDValue" value="2" type="number" max="4" min="2">
+                        D
+                    </span>
+                    +
+                    <input name="sencePipValue" value="0" type="number" max="2" min="0">
+                </section>
+            </section>
+
+            <!-- Alter -->
+            <section>
+                <label class="fieldLabel" for="">Alter</label>
+                <section class="statsVlues">
+                    <span>
+                        <input name="alterDValue" value="2" type="number" max="4" min="2">
+                        D
+                    </span>
+                    +
+                    <input name="alterPipValue" value="0" type="number" max="2" min="0">
+                </section>
             </section>
         </section>
 

@@ -5,6 +5,8 @@
 $page_title = "Crew Sheets - Personallity";
 $style = "../../styles/css/default.css";
 $userName = "Raas/Joya (Gsus)";
+$userId = 1;
+$characterJSON = '../../app/JS/characters.json';
 
 // ----------------- [ META DATA ] --------------------------------
 
@@ -22,33 +24,70 @@ $nextPageUrl = "stats.php";
 $nextPage = "Stats";
 
 // ----------------------------------------------------------------
-
-
-
-
-
 include __DIR__ . "/../../views/header.php";
+
+$template = file_get_contents($characterJSON);
+$template = json_decode($template, true);
+if (isset($_POST['newSheet'])) {
+    // $template = file_get_contents('../../app/JS/characters.json');
+    // $template = json_decode($template);
+    // $templateData = $template->template;
+    // die(var_dump($template));
+    // $character[1] = $templateData;
+    // array_push($template, $character);
+
+    if (!array_key_exists($userId, $template)) {
+        var_dump("didn't find 2");
+        $templateData = $template['template'];
+        $character = $templateData;
+        $template[$userId] = $character;
+        $template[$userId]['username'] = $userName;
+    } else {
+        var_dump("Already exsists");
+        $templateData = $template['template']['characters']['emptyChar'];
+        $character = $templateData;
+        $charId = sizeof($template[$userId]['characters']);
+        var_dump($charId);
+        $template[$userId]['characters'][$charId] = $character;
+        $template[$userId]['characters'][$charId]['slug'] = $charId;
+        $template[$userId]['characters'][$charId]['name'] .= " " . $charId + 1;
+    }
+
+
+
+
+    // $template[$userId] = $character;
+    $jsonData = json_encode($template);
+    file_put_contents('../../app/JS/characters.json', $jsonData);
+    $characterName = "Character";
+} else {
+    $characterName = $_POST['character'];
+}
+$character = find_character($characterName, $template[$userId]['characters']);
+
+
+
 
 ?>
 
 <section id="inputFields">
     <h1>Personallity</h1>
 
-    <form action="" method="POST" class="personallityFields">
-
+    <form action="save.php" method="POST" class="personallityFields">
+        <input type="hidden" name="name" value="<?= $character['name'] ?>">
         <section>
             <h2 class="fieldLabel">Race</h2>
 
             <!-- Race -->
             <select name="race" id="race">
-                <option value="human">Human</option>
-                <option value="cyborg">Cyborg</option>
-                <option value="twilek">Twi'lek</option>
-                <option value="zabrack">Zabrack</option>
-                <option value="mirialan">Mirialan</option>
-                <option value="chiss">Chiss</option>
-                <option value="togruta">Togruta</option>
-                <option value="cathar">Cathar</option>
+                <option <?php if ($character['personallity']['race'] === "human") echo "selected" ?> value="human">Human</option>
+                <option <?php if ($character['personallity']['race'] === "cyborg") echo "selected" ?> value="cyborg">Cyborg</option>
+                <option <?php if ($character['personallity']['race'] === "twilek") echo "selected" ?> value="twilek">Twi'lek</option>
+                <option <?php if ($character['personallity']['race'] === "zabrack") echo "selected" ?> value="zabrack">Zabrack</option>
+                <option <?php if ($character['personallity']['race'] === "mirialan") echo "selected" ?> value="mirialan">Mirialan</option>
+                <option <?php if ($character['personallity']['race'] === "chiss") echo "selected" ?> value="chiss">Chiss</option>
+                <option <?php if ($character['personallity']['race'] === "togruta") echo "selected" ?> value="togruta">Togruta</option>
+                <option <?php if ($character['personallity']['race'] === "cathar") echo "selected" ?> value="cathar">Cathar</option>
             </select>
         </section>
 
@@ -57,17 +96,17 @@ include __DIR__ . "/../../views/header.php";
             <h2 class="fieldLabel">Gender</h2>
 
             <div>
-                <input type="radio" id="male" name="gender" value="male">
+                <input type="radio" id="male" name="gender" value="male" <?php if ($character['personallity']['gender'] === "male") echo "checked" ?>>
                 <label for="male">M</label>
             </div>
 
             <div>
-                <input type="radio" id="female" name="gender" value="female">
+                <input type="radio" id="female" name="gender" value="female" <?php if ($character['personallity']['gender'] === "female") echo "checked" ?>>
                 <label for="female">F</label>
             </div>
 
             <div>
-                <input type="radio" id="na" name="gender" value="na">
+                <input type="radio" id="na" name="gender" value="na" <?php if ($character['personallity']['gender'] === "na") echo "checked" ?>>
                 <label for="na">?</label>
             </div>
         </section>
@@ -147,9 +186,10 @@ include __DIR__ . "/../../views/header.php";
         </section>
 
         <section class="navigation">
-            <a style="opacity:0.0" href="<?= $previousPageUrl; ?>" class="button yellowBtn">&lt;<?= $previousPage; ?></a>
-            <a href="../../user.php" class="cancelBtn">X</a>
-            <a href="<?= $nextPageUrl; ?>" class="button greenBtn"><?= $nextPage; ?> &gt;</a>
+            <a disabled style="opacity:0.0" href="" class="button yellowBtn">&lt;<?= $previousPage; ?></a>
+            <button type="button" class="cancelBtn">X</button>
+            <input type="hidden" name="nextPage" value="next" />
+            <button name="personalityForm" value="<?= $character['name'] ?>" class="button greenBtn"><?= $nextPage; ?> &gt;</button>
         </section>
     </form>
 </section>
