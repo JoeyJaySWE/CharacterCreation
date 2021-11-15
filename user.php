@@ -1,12 +1,17 @@
 <?php
 
 // ----------------- [ PAGE VARIABLES ] ------------------ 
-
+session_start();
+$_SESSION['user'] = "Raas/Joya (Gsus)";
+$_SESSION['userId'] = 1;
 $page_title = "Crew Sheets - User Page";
 $style = "styles/css/default.css";
-$userName = "Raas/Joya (Gsus)";
-$userId = 1;
-$deleteJS = 'app/JS/delete.js';
+$userName = $_SESSION['user'];
+$userId = $_SESSION['userId'];
+
+// ----------------------------------------------------------------
+
+
 // ----------------- [ META DATA ] --------------------------------
 
 $meta_title = "User Sheets";
@@ -17,7 +22,6 @@ $meta_card_alt = "Vengeful Scars";
 
 // ----------------------------------------------------------------
 
-// ----------------------------------------------------------------
 
 
 
@@ -56,7 +60,7 @@ include __DIR__ . "/views/header.php";
 
 
                 ?>
-                <button name="newSheet" id="addSheetLnk" class='button greenBtn subBtn' href="sheet/new-char/personallity.php">+ Add</button>
+                <button name="newSheet" id="addSheetLnk" class='button greenBtn subBtn'>+ Add</button>
             </form>
         </details>
     </section>

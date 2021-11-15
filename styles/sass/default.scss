@@ -334,13 +334,37 @@ a.greenBtn:hover, button.greenBtn:hover{
             flex-direction: column;
             align-content: space-around;
 
+            .defaultBtn{
+                min-width: 130px;
+                width: auto;
+                max-width: 155px;
+            }
             details{
 
                 summary{
                     margin: auto;
                     margin-top:30px;
-                }
 
+                    span{
+                        font-size: 0.8rem;
+                        padding-left: 4px;
+                    }
+                }
+                .templateDex, .templateKnow, .templateMech, .templatePerc, .templateStr, .templateTech{
+                    display: none;
+
+                    
+                }
+                section.specilized{
+                    width: 50%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    
+                }
+                input.specName{
+                    width:130px;
+                    display: none;
+                }
                 .greenBtn{
                     margin-top:30px;
                 }
