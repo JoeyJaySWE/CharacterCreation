@@ -1,10 +1,13 @@
 <?php
+session_start();
 
 // ----------------- [ PAGE VARIABLES ] ------------------ 
 
 $page_title = "Crew Sheets - Stats";
 $style = "../../styles/css/default.css";
-$userName = "Raas/Joya (Gsus)";
+$userName = $_SESSION['user'];
+$userId = $_SESSION['userId'];
+
 
 // ----------------- [ META DATA ] --------------------------------
 
@@ -13,6 +16,8 @@ $meta_desc = "What makes your chracter tic? Well, we sure as hell don't know, so
 $meta_img = "http://vengefulscars.com/img/Flag_logo.png";
 $meta_card = "summary";
 $meta_card_alt = "Vengeful Scars";
+
+include __DIR__ . "/../../views/header.php";
 
 // -------------------[ NAVIGATIONAL DATA ]-----------------------
 
@@ -23,29 +28,37 @@ $nextPage = "Skills";
 
 // ----------------------------------------------------------------
 
+// ----------------- [ LOAD CHARCATER ] ------------------ 
+
+$template = file_get_contents($characterJSON);
+$template = json_decode($template, true);
+$character = $template[$_SESSION['userId']]['characters'][$_SESSION['charId']];
+
+// ----------------------------------------------------------------
 
 
 
+// die(print_r($character['personallity']));
 
-include __DIR__ . "/../../views/header.php";
 
 ?>
 
 <section id="inputFields">
     <h1>Stats</h1>
 
-    <form action="" method="POST" class="statsFields">
+    <form action="save.php" method="POST" class="statsFields">
+        <input type="hidden" name="name" value="<?= $character['name'] ?>">
 
         <!-- Dexterity -->
         <section>
             <label class="fieldLabel" for="">Dexterity</label>
             <section class="statsVlues">
                 <span>
-                    <input name="dexDValue" value="2" type="number" max="4" min="2">
+                    <input name="dexDValue" value="<?= $character['stats']['dexterity']['dice'] ?>" type="number" max="4" min="2">
                     D
                 </span>
                 +
-                <input name="dexPipValue" value="0" type="number" max="2" min="0">
+                <input name="dexPipValue" value="<?= $character['stats']['dexterity']['pips'] ?>" type="number" max="2" min="0">
             </section>
         </section>
 
@@ -54,11 +67,11 @@ include __DIR__ . "/../../views/header.php";
             <label class="fieldLabel" for="">Knowledge</label>
             <section class="statsVlues">
                 <span>
-                    <input name="knowDValue" value="2" type="number" max="4" min="2">
+                    <input name="knowDValue" value="<?= $character['stats']['knowledge']['dice'] ?>" type="number" max="4" min="2">
                     D
                 </span>
                 +
-                <input name="knowPipValue" value="0" type="number" max="2" min="0">
+                <input name="knowPipValue" value="<?= $character['stats']['knowledge']['pips'] ?>" type="number" max="2" min="0">
             </section>
         </section>
 
@@ -67,11 +80,11 @@ include __DIR__ . "/../../views/header.php";
             <label class="fieldLabel" for="">Mechanical</label>
             <section class="statsVlues">
                 <span>
-                    <input name="mechDValue" value="2" type="number" max="4" min="2">
+                    <input name="mechDValue" value="<?= $character['stats']['mechanical']['dice'] ?>" type="number" max="4" min="2">
                     D
                 </span>
                 +
-                <input name="mechPipValue" value="0" type="number" max="2" min="0">
+                <input name="mechPipValue" value="<?= $character['stats']['mechanical']['pips'] ?>" type="number" max="2" min="0">
             </section>
         </section>
 
@@ -80,11 +93,11 @@ include __DIR__ . "/../../views/header.php";
             <label class="fieldLabel" for="">Perception</label>
             <section class="statsVlues">
                 <span>
-                    <input name="percDValue" value="2" type="number" max="4" min="2">
+                    <input name="percDValue" value="<?= $character['stats']['perception']['dice'] ?>" type="number" max="4" min="2">
                     D
                 </span>
                 +
-                <input name="percPipValue" value="0" type="number" max="2" min="0">
+                <input name="percPipValue" value="<?= $character['stats']['perception']['pips'] ?>" type="number" max="2" min="0">
             </section>
         </section>
 
@@ -93,11 +106,11 @@ include __DIR__ . "/../../views/header.php";
             <label class="fieldLabel" for="">Strength</label>
             <section class="statsVlues">
                 <span>
-                    <input name="strDValue" value="2" type="number" max="4" min="2">
+                    <input name="strDValue" value="<?= $character['stats']['strength']['dice'] ?>" type="number" max="4" min="2">
                     D
                 </span>
                 +
-                <input name="strPipValue" value="0" type="number" max="2" min="0">
+                <input name="strPipValue" value="<?= $character['stats']['strength']['pips'] ?>" type="number" max="2" min="0">
             </section>
         </section>
 
@@ -106,21 +119,21 @@ include __DIR__ . "/../../views/header.php";
             <label class="fieldLabel" for="">Technical</label>
             <section class="statsVlues">
                 <span>
-                    <input name="techDValue" value="2" type="number" max="4" min="2">
+                    <input name="techDValue" value="<?= $character['stats']['technical']['dice'] ?>" type="number" max="4" min="2">
                     D
                 </span>
                 +
-                <input name="techPipValue" value="0" type="number" max="2" min="0">
+                <input name="techPipValue" value="<?= $character['stats']['technical']['pips'] ?>" type="number" max="2" min="0">
             </section>
         </section>
 
-        <section>
+        <section style="display:none">
             <label for="forceUser">Force user?</label>
             <input type="checkbox" name="forcie" style='margin-right:80px' />
         </section>
 
         <!-- Controll -->
-        <section class="foreUserStats" style="display:none">
+        <section class="forceUserStats" style="display:none">
 
             <section>
                 <label class="fieldLabel" for="">Controll</label>
@@ -168,9 +181,10 @@ include __DIR__ . "/../../views/header.php";
         </span>
 
         <section class="navigation">
-            <a href="<?= $previousPageUrl; ?>" class="button yellowBtn">&lt;<?= $previousPage; ?></a>
-            <a href="../../user.php" class="cancelBtn">X</a>
-            <a href="<?= $nextPageUrl; ?>" class="button greenBtn"><?= $nextPage; ?> &gt;</a>
+            <button name="statsForm" class="button yellowBtn">&lt;<?= $previousPage; ?></button>
+            <button name="statsForm" type="button" class="cancelBtn">X</button>
+            <input type="hidden" name="nextPage" value="next" />
+            <button name="statsForm" value="<?= $character['name'] ?>" class="button greenBtn"><?= $nextPage; ?> &gt;</button>
         </section>
     </form>
 </section>

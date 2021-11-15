@@ -1,7 +1,9 @@
 <?php
 
 include __DIR__ . "/../app/functions.php";
-
+$userName = "Raas/Joya (Gsus)";
+$userId = 1;
+$characterJSON = '../../app/JS/characters.json';
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,12 +1,15 @@
 <?php
 
 
-function get_skills_dropdown_menu(array $skills)
+function get_skills_dropdown_menu(array $skills, string $selected = null)
 {
     foreach ($skills as $skill) :
-        // die(var_dump($skill["name"]));
+        var_dump($skill['name'], $selected);
+
 ?>
-        <option value="<?= $skill["name"] ?>"><?= $skill["name"] ?></option>
+        <option <?php if ($skill['name'] === $selected) {
+                    echo "selected ";
+                } ?>value="<?= $skill["name"] ?>"><?= $skill["name"] ?></option>
         <!-- <?= $skill["name"] ?> -->
         <br />
     <?php
