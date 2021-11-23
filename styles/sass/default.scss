@@ -416,18 +416,19 @@ a.greenBtn:hover, button.greenBtn:hover{
                 margin-right: auto;
                 position: relative;
                 width: 100%;
-                
 
                 button.cancelBtn{
                     margin: unset;
                     position: absolute;
                     right: 20px;
                     margin-top: 25px;
+                    z-index:5;
                 }
 
                 summary{
                     margin-left: auto;
                     margin-right: auto;
+                    text-align:center;
                 }
 
                 details{
@@ -440,6 +441,28 @@ a.greenBtn:hover, button.greenBtn:hover{
                             flex-direction: row;
                             align-items: baseline;
                         }
+                    }
+                    .displayData{
+                        border: none;
+                        margin-top: 15px;
+                        max-height: 500px;
+                        height: 200px;
+                        width: 100%;
+                        font-family: 'Titillium Web';
+                        text-align: start;
+                    }
+                    .penalty{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: baseline;
+                        margin-top:15px;
+
+                        .armorValues{
+                            display: flex;
+                            flex-direction: row;
+                            align-items: baseline;
+                        }
+
                     }
                 }
                 details[open]{
@@ -460,6 +483,9 @@ a.greenBtn:hover, button.greenBtn:hover{
                         margin-top:15px;
                     }
                 }
+                .subBtnSection.template{
+                    display:none;
+                }
                 section{
                     width: 100%;
                     display: flex;
@@ -478,6 +504,7 @@ a.greenBtn:hover, button.greenBtn:hover{
                         }
                     }
                 }
+                
                 .gearSection{
                     position: relative;
                     summary{
@@ -531,6 +558,9 @@ a.greenBtn:hover, button.greenBtn:hover{
                     display: flex;
 
                 }
+            }
+            #armorTemplate, #weaponsTemplate, .template{
+                display: none;
             }
             details.personalGear{
                 margin-bottom: 30px;

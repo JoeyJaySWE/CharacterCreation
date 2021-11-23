@@ -12,17 +12,22 @@ function get_skills_dropdown_menu(array $skills, string $selected = null)
                 } ?>value="<?= $skill["name"] ?>"><?= $skill["name"] ?></option>
         <!-- <?= $skill["name"] ?> -->
         <br />
-    <?php
+        <?php
     endforeach;
 }
 
-function get_armor_dropdown_menu(array $menuItems)
+function get_armor_dropdown_menu(array $menuItems, string $selected = null)
 {
     foreach ($menuItems as $armor) :
-        // print_r($armor['name']);
-    ?>
-        <option value="<?= $armor["name"] ?>"><?= $armor["name"] ?> &dash; <?= number_format($armor['cost']); ?> credits</option>
-        <?php endforeach;
+        if ($armor['name'] === $selected) :    ?>
+
+            <option selected value="<?= $armor["name"] ?>"><?= $armor["name"] ?> &dash; <?= number_format($armor['cost']); ?> credits</option>
+
+        <?php else : ?>
+            <option value="<?= $armor["name"] ?>"><?= $armor["name"] ?> &dash; <?= number_format($armor['cost']); ?> credits</option>
+        <?php
+        endif;
+    endforeach;
 }
 
 function get_weapons_dropdown_menu(array $menuItems, string $selected = null, string $weaponName = null)
@@ -69,6 +74,54 @@ function find_weapon($name, $array)
     endforeach;
     return null;
 }
+
+function find_armor($name, $array)
+{
+    // die(var_dump($array));
+    foreach ($array as $armor) :
+        // die(print_r($category));
+        if ($armor['name'] === $name) {
+            return $armor;
+        }
+    endforeach;
+    return null;
+}
+function find_old_armor($name, $armors)
+{
+    // die(var_dump($armors));
+    foreach ($armors['armors'] as $key => $armor) :
+        if (sizeof($armor) === 1) {
+            continue;
+        }
+        // var_dump($items['name']);s
+        var_dump($armor['name']);
+
+        if ($armor['name'] === $name) {
+
+            return $key;
+        }
+
+    endforeach;
+}
+
+function find_old_weapon($name, $inventory)
+{
+    // die(var_dump($armors));
+    foreach ($inventory['weapons'] as $key => $weapon) :
+        if (sizeof($weapon) === 1) {
+            continue;
+        }
+        // var_dump($items['name']);s
+        var_dump($weapon['name']);
+
+        if ($weapon['name'] === $name) {
+
+            return $key;
+        }
+
+    endforeach;
+}
+
 function get_gears_dropdown_menu(array $menuItems, string $selected = null, string $gearName = null)
 {
 
@@ -138,29 +191,39 @@ function load_gear_data($gear)
         <p>
             <?= $gear['description']; ?>
         </p>
-        <?php endif;
+    <?php endif;
 }
-function get_weapons_data(array $weapons, string $weapon)
+function get_weapons_data(array $weapons, string $weapon, array $character, bool $oldWeapon = false, int $i = null)
 {
+
     if ($weapon !== "Custom Weapon") {
-        $weaponData = find_weapon($weapon, $weapons);
-        $weapon = $weaponData;
+        if ($oldWeapon) {
+            $weapon = $weapons;
+        } else {
+            $weapon = find_weapon($weapon, $weapons);
+        }
     } else {
         $weapon = $weapons['custom']['weapon'];
     }
-    if ($weapon['type'] === 'explosive') :
+    $weaponsAmount = sizeof($character['inventory']['weapons']);
 
-        if ($weapon['name'] === "Fragmentation Granade") :
+
+    // die(var_dump($weapon));
+    // Expllosive
+    // die(var_dump($weapon['type']));
+    if ($weapon['type'] === 'explosive') : ?>
+        <input type="hidden" value="explosive" name="weaponType[<?= $i ?>]">
+        <?php if ($weapon['name'] === "Fragmentation Granade") :
             // die(var_dump($weapon['name']));
         ?>
             <section class="grandeData">
+                <!-- PRICE -->
                 <section>
-                    <label class="fieldLabel">Type:</label>
-                    <select>
-                        <?php get_weapons_dropdown_menu($weapons, "", $weapon['name']); ?>
-                    </select>
+                    <label class="fieldLabel">Price:</label>
+                    <input type="text" value="<?= number_format($weapon['cost']); ?> credits" />
                 </section>
 
+                <!-- SKILLS -->
                 <section>
                     <label class="fieldLabel">Skills Required:</label>
                     <div class="weaponSkills">
@@ -171,11 +234,8 @@ function get_weapons_data(array $weapons, string $weapon)
                     </div>
                 </section>
 
-                <section>
-                    <label class="fieldLabel">Price:</label>
-                    <input type="text" value="<?= number_format($weapon['cost']); ?> credits" />
-                </section>
 
+                <!-- Availabillity -->
                 <section>
                     <label class="fieldLabel">Availabillity:</label>
                     <select>
@@ -186,51 +246,54 @@ function get_weapons_data(array $weapons, string $weapon)
                     </select>
                 </section>
 
+                <!-- Ranges -->
                 <section>
                     <label class="fieldLabel">Range:</label>
                     <section class="statsVlues">
                         <span class="dValue">
-                            <input name="shortMinValue" value="<?= $weapon['range']['short']['min'] ?>" type="number" min="0" max="<?= $weapon['range']['short']['max'] ?>">
+                            <input name="weaponShortMinValue[<?= $i ?>]" value="<?= $weapon['range']['short']['min'] ?>" type="number" min="0" max="<?= $weapon['range']['short']['max'] ?>">
                             -
-                            <input name="shortMaxValue" value="<?= $weapon['range']['short']['max'] ?>" type="number" min="<?= $weapon['range']['short']['min'] ?>">
+                            <input name="weaponShortMaxValue[<?= $i ?>]" value="<?= $weapon['range']['short']['max'] ?>" type="number" min="<?= $weapon['range']['short']['min'] ?>">
                             /
-                            <input name="mediumMaxValue" value="<?= $weapon['range']['medium']['max'] ?>" type="number" min="<?= $weapon['range']['medium']['min'] ?>">
+                            <input name="weaponMediumMaxValue[<?= $i ?>]" value="<?= $weapon['range']['medium']['max'] ?>" type="number" min="<?= $weapon['range']['medium']['min'] ?>">
                             /
-                            <input name="longMaxValue" value="<?= $weapon['range']['long']['max'] ?>" type="number" min="<?= $weapon['range']['long']['min'] ?>">
+                            <input name="weaponLongMaxValue[<?= $i ?>]" value="<?= $weapon['range']['long']['max'] ?>" type="number" min="<?= $weapon['range']['long']['min'] ?>">
                             m
                         </span>
                     </section>
                 </section>
 
+                <!-- Radious -->
                 <section>
                     <label class="fieldLabel">Blast Radious:</label>
                     <section class="statsVlues">
                         <span class="dValue">
-                            <input name="directMinValue" value="<?= $weapon['blastRadious']['direct']['min'] ?>" type="number" min="0" max="<?= $weapon['blastRadious']['direct']['max'] ?>">
+                            <input name="weaponBlastRadiousDirectMinValue[<?= $i ?>]" value="<?= $weapon['blastRadious']['direct']['min'] ?>" type="number" min="0" max="<?= $weapon['blastRadious']['direct']['max'] ?>">
                             -
-                            <input name="directMaxValue" value="<?= $weapon['blastRadious']['direct']['max'] ?>" type="number" min="<?= $weapon['blastRadious']['direct']['min'] ?>">
+                            <input name="weaponBlastRadiousDirectMaxValue[<?= $i ?>]" value="<?= $weapon['blastRadious']['direct']['max'] ?>" type="number" min="<?= $weapon['blastRadious']['direct']['min'] ?>">
                             /
-                            <input name="shortMaxValue" value="<?= $weapon['blastRadious']['short']['max'] ?>" type="number" min="<?= $weapon['blastRadious']['short']['min'] ?>">
+                            <input name="weaponBlastRadiousShortMaxValue[<?= $i ?>]" value="<?= $weapon['blastRadious']['short']['max'] ?>" type="number" min="<?= $weapon['blastRadious']['short']['min'] ?>">
                             /
-                            <input name="mediumMaxValue" value="<?= $weapon['blastRadious']['medium']['max'] ?>" type="number" min="<?= $weapon['blastRadious']['medium']['min'] ?>">
+                            <input name="weaponBlastRadiousMediumMaxValue[<?= $i ?>]" value="<?= $weapon['blastRadious']['medium']['max'] ?>" type="number" min="<?= $weapon['blastRadious']['medium']['min'] ?>">
                             /
-                            <input name="longMaxValue" value="<?= $weapon['blastRadious']['long']['max'] ?>" type="number" min="<?= $weapon['blastRadious']['long']['min'] ?>">
+                            <input name="weaponBlastRadiousLongMaxValue[<?= $i ?>]" value="<?= $weapon['blastRadious']['long']['max'] ?>" type="number" min="<?= $weapon['blastRadious']['long']['min'] ?>">
                             m
                         </span>
                     </section>
                 </section>
 
+                <!-- Damage -->
                 <section>
                     <label class="fieldLabel">Damage:</label>
                     <section class="statsVlues">
                         <span class="dValue">
-                            <input name="grandeDirectValue" value="<?= $weapon['damageBasedRange']['direct']['dice'] ?>" type="number" />
+                            <input name="weaponDirectValue[<?= $i ?>]" value="<?= $weapon['damageBasedRange']['direct']['dice'] ?>" type="number" />
                             D/
-                            <input name="grandeShortValue" value="<?= $weapon['damageBasedRange']['short']['dice'] ?>" type="number">
+                            <input name="weaponShortValue[<?= $i ?>]" value="<?= $weapon['damageBasedRange']['short']['dice'] ?>" type="number">
                             D/
-                            <input name="grandeMediumValue" value="<?= $weapon['damageBasedRange']['medium']['dice'] ?>" type="number">
+                            <input name="weaponMediumValue[<?= $i ?>]" value="<?= $weapon['damageBasedRange']['medium']['dice'] ?>" type="number">
                             D/
-                            <input name="granadeLongValue" value="<?= $weapon['damageBasedRange']['long']['dice'] ?>" type="number">
+                            <input name="weaponLongValue[<?= $i ?>]" value="<?= $weapon['damageBasedRange']['long']['dice'] ?>" type="number">
                             D
                         </span>
                     </section>
@@ -250,13 +313,14 @@ function get_weapons_data(array $weapons, string $weapon)
         <?php
         else : ?>
             <section class="grandeData">
+
+                <!-- PRICE -->
                 <section>
-                    <label class="fieldLabel">Type:</label>
-                    <select>
-                        <?php get_weapons_dropdown_menu($weapons, "", $weapon['name']); ?>
-                    </select>
+                    <label class="fieldLabel">Price:</label>
+                    <input type="text" value="<?= number_format($weapon['cost']); ?> credits" />
                 </section>
 
+                <!-- SKILLS -->
                 <section>
                     <label class="fieldLabel">Skills Required:</label>
                     <div class="weaponSkills">
@@ -267,11 +331,7 @@ function get_weapons_data(array $weapons, string $weapon)
                     </div>
                 </section>
 
-                <section>
-                    <label class="fieldLabel">Price:</label>
-                    <input type="text" value="<?= number_format($weapon['cost']); ?> credits" />
-                </section>
-
+                <!-- Availiabillity -->
                 <section>
                     <label class="fieldLabel">Availabillity:</label>
                     <select>
@@ -282,6 +342,7 @@ function get_weapons_data(array $weapons, string $weapon)
                     </select>
                 </section>
 
+                <!-- Game Note -->
                 <?php if ($weapon['gameNote'] !== "") : ?>
                     <section>
                         <label class="fieldLabel">Special Note:</label>
@@ -294,18 +355,21 @@ function get_weapons_data(array $weapons, string $weapon)
                 <?php endif; ?>
             </section>
         <?php
+            die();
         endif;
 
     // Ranged
     elseif ($weapon['type'] === "ranged") : ?>
         <section class="rangedData">
+            <input type="hidden" value="ranged" name="weaponType[<?= $i ?>]">
+
+            <!-- Cost -->
             <section>
-                <label class="fieldLabel">Type:</label>
-                <select>
-                    <?php get_weapons_dropdown_menu($weapons, "", $weapon['name']); ?>
-                </select>
+                <label class="fieldLabel">Price:</label>
+                <input type="text" value="<?= number_format($weapon['cost']); ?> credits" />
             </section>
 
+            <!-- Skills -->
             <section>
                 <label class="fieldLabel">Skills Required:</label>
                 <div class="weaponSkills">
@@ -316,16 +380,13 @@ function get_weapons_data(array $weapons, string $weapon)
                 </div>
             </section>
 
-            <section>
-                <label class="fieldLabel">Price:</label>
-                <input type="text" value="<?= number_format($weapon['cost']); ?> credits" />
-            </section>
-
+            <!-- Ammo -->
             <section>
                 <label class="fieldLabel">Ammo:</label>
-                <input type="number" value="<?= number_format($weapon['ammo']); ?>" />
+                <input type="number" name="weaponAmmo[<?= $i ?>]" value="<?= number_format($weapon['ammo']); ?>" />
             </section>
 
+            <!-- Availabillity -->
             <section>
                 <label class="fieldLabel">Availabillity:</label>
                 <select>
@@ -336,29 +397,31 @@ function get_weapons_data(array $weapons, string $weapon)
                 </select>
             </section>
 
+            <!-- Ranges -->
             <section>
                 <label class="fieldLabel">Range:</label>
                 <section class="statsVlues">
                     <span class="dValue">
-                        <input name="shortMinValue" value="<?= $weapon['range']['short']['min'] ?>" type="number" min="0" max="<?= $weapon['range']['short']['max'] ?>">
+                        <input name="weaponShortMinValue[<?= $i ?>]" value="<?= $weapon['range']['short']['min'] ?>" type="number" min="0" max="<?= $weapon['range']['short']['max'] ?>">
                         -
-                        <input name="shortMaxValue" value="<?= $weapon['range']['short']['max'] ?>" type="number" min="<?= $weapon['range']['short']['min'] ?>">
+                        <input name="weaponShortMaxValue[<?= $i ?>]" value="<?= $weapon['range']['short']['max'] ?>" type="number" min="<?= $weapon['range']['short']['min'] ?>">
                         /
-                        <input name="mediumMaxValue" value="<?= $weapon['range']['medium']['max'] ?>" type="number" min="<?= $weapon['range']['medium']['min'] ?>">
+                        <input name="weaponMediumMaxValue[<?= $i ?>]" value="<?= $weapon['range']['medium']['max'] ?>" type="number" min="<?= $weapon['range']['medium']['min'] ?>">
                         /
-                        <input name="longMaxValue" value="<?= $weapon['range']['long']['max'] ?>" type="number" min="<?= $weapon['range']['long']['min'] ?>">
+                        <input name="weaponLongMaxValue[<?= $i ?>]" value="<?= $weapon['range']['long']['max'] ?>" type="number" min="<?= $weapon['range']['long']['min'] ?>">
                         m
                     </span>
                 </section>
             </section>
 
+            <!-- Damage -->
             <section class="statsVlues">
                 <label class="fieldLabel">Damage:</label>
                 <span class="dValue">
-                    <input name="weaponDamgeDValue" value="3" type="number" min="2">
+                    <input name="weaponDamageDValue[<?= $i ?>]" value="<?= $weapon['damage']['dice'] ?>" type="number" min="0">
                     D
                     +
-                    <input name="weaponDamgePipValue" class="pipValue" value="0" type="number" max="2" min="0">
+                    <input name="weaponDamagePipValue[<?= $i ?>]" class="pipValue" value="<?= $weapon['damage']['pips'] ?>" type="number" max="2" min="0">
                 </span>
             </section>
 
@@ -377,14 +440,17 @@ function get_weapons_data(array $weapons, string $weapon)
     <?php
     // Mixed
     elseif ($weapon['type'] === "mixed") : ?>
+        <input type="hidden" value="mixed" name="weaponType[<?= $i ?>]">
+
         <section class="mixedData">
+
+            <!-- Cost -->
             <section>
-                <label class="fieldLabel">Type:</label>
-                <select>
-                    <?php get_weapons_dropdown_menu($weapons, "", $weapon['name']); ?>
-                </select>
+                <label class="fieldLabel">Price:</label>
+                <input type="text" value="<?= number_format($weapon['cost']); ?> credits" />
             </section>
 
+            <!-- Skills -->
             <section>
                 <label class="fieldLabel">Skills Required:</label>
                 <div class="weaponSkills">
@@ -395,16 +461,13 @@ function get_weapons_data(array $weapons, string $weapon)
                 </div>
             </section>
 
-            <section>
-                <label class="fieldLabel">Price:</label>
-                <input type="text" value="<?= number_format($weapon['cost']); ?> credits" />
-            </section>
-
+            <!-- Difficulty -->
             <section>
                 <label class="fieldLabel">Difficulty:</label>
-                <input type="text" value="<?= $weapon['difficulty'] ?>" />
+                <input type="text" name="weaponDifficulty[<?= $i ?>]" value="<?= $weapon['difficulty'] ?>" />
             </section>
 
+            <!-- Availabilllity -->
             <section>
                 <label class="fieldLabel">Availabillity:</label>
                 <select>
@@ -415,48 +478,53 @@ function get_weapons_data(array $weapons, string $weapon)
                 </select>
             </section>
 
+            <!-- Ranges -->
             <section>
                 <label class="fieldLabel">Range:</label>
                 <section class="statsVlues">
                     <span class="dValue">
-                        <input name="shortMinValue" value="<?= $weapon['range']['short']['min'] ?>" type="number" min="0" max="<?= $weapon['range']['short']['max'] ?>">
+                        <input name="weaponShortMinValue[<?= $i ?>]" value="<?= $weapon['range']['short']['min'] ?>" type="number" min="0" max="<?= $weapon['range']['short']['max'] ?>">
                         -
-                        <input name="shortMaxValue" value="<?= $weapon['range']['short']['max'] ?>" type="number" min="<?= $weapon['range']['short']['min'] ?>">
+                        <input name="weaponShortMaxValue[<?= $i ?>]" value="<?= $weapon['range']['short']['max'] ?>" type="number" min="<?= $weapon['range']['short']['min'] ?>">
                         /
-                        <input name="mediumMaxValue" value="<?= $weapon['range']['medium']['max'] ?>" type="number" min="<?= $weapon['range']['medium']['min'] ?>">
+                        <input name="weaponMediumMaxValue[<?= $i ?>]" value="<?= $weapon['range']['medium']['max'] ?>" type="number" min="<?= $weapon['range']['medium']['min'] ?>">
                         /
-                        <input name="longMaxValue" value="<?= $weapon['range']['long']['max'] ?>" type="number" min="<?= $weapon['range']['long']['min'] ?>">
+                        <input name="weaponLongMaxValue[<?= $i ?>]" value="<?= $weapon['range']['long']['max'] ?>" type="number" min="<?= $weapon['range']['long']['min'] ?>">
                         m
                     </span>
                 </section>
             </section>
 
+            <!-- Damage Melee -->
             <section class="statsVlues">
                 <label class="fieldLabel">Damage Melee:</label>
                 <span class="dValue">
                     <?php if ($weapon['damage']['melee']['attribute'] !== "") : ?>
-                        <?= $weapon['damage']['melee']['attribute']; ?> +
+                        <?= $character['stats']['strength']['dice']; ?>D + <?= $character['stats']['strength']['pips']; ?> +
                     <?php endif; ?>
-                    <input name="weaponDamgeDValue" value="<?= $weapon['damage']['melee']['dice'] ?>" type="number" min="2">
+                    <input name="weaponDamgeDValue[<?= $i ?>]" value="<?= $weapon['damage']['melee']['dice'] ?>" type="number" min="0">
                     D
                     +
-                    <input name="weaponDamgePipValue" class="pipValue" value="<?= $weapon['damage']['melee']['pips'] ?>" type="number" max="2" min="0">
+                    <input name="weaponDamgePipValue[<?= $i ?>]" class="pipValue" value="<?= $weapon['damage']['melee']['pips'] ?>" type="number" max="2" min="0">
                     <?php
                     if ($weapon['damage']['melee']['maxDice'] !== null) : ?>
-                        &lpar;max <?= $weapon['damage']['melee']['maxDice']; ?>D&rpar;
+                        <strong>&lpar;max <?= $weapon['damage']['melee']['maxDice']; ?>D&rpar;</strong>
                     <?php endif; ?>
-                </span>
-            </section>
-            <section class="statsVlues">
-                <label class="fieldLabel">Damage Trhwon:</label>
-                <span class="dValue">
-                    <input name="weaponDamgeDValue" value="<?= $weapon['damage']['thrown']['dice'] ?>" type="number" min="2">
-                    D
-                    +
-                    <input name="weaponDamgePipValue" class="pipValue" value="<?= $weapon['damage']['thrown']['pips'] ?>" type="number" max="2" min="0">
                 </span>
             </section>
 
+            <!-- Damage Thrown -->
+            <section class="statsVlues">
+                <label class="fieldLabel">Damage Thrown:</label>
+                <span class="dValue">
+                    <input name="thrownWeaponDamgeDValue[<?= $i ?>]" value="<?= $weapon['damage']['thrown']['dice'] ?>" type="number" min="0">
+                    D
+                    +
+                    <input name="thrownWeaponDamgePipValue[<?= $i ?>]" class="pipValue" value="<?= $weapon['damage']['thrown']['pips'] ?>" type="number" max="2" min="0">
+                </span>
+            </section>
+
+            <!-- Game Note -->
             <?php if ($weapon['gameNote'] !== "") : ?>
                 <section>
                     <label class="fieldLabel">Special Note:</label>
@@ -472,14 +540,17 @@ function get_weapons_data(array $weapons, string $weapon)
     <?php
     // Melee
     elseif ($weapon['type'] === "melee") : ?>
+        <input type="hidden" value="melee" name="weaponType[<?= $i ?>]">
+
         <section class="mixedData">
+
+            <!-- Cost -->
             <section>
-                <label class="fieldLabel">Type:</label>
-                <select>
-                    <?php get_weapons_dropdown_menu($weapons, "", $weapon['name']); ?>
-                </select>
+                <label class="fieldLabel">Price:</label>
+                <input type="text" value="<?= number_format($weapon['cost']); ?> credits" />
             </section>
 
+            <!-- Skills -->
             <section>
                 <label class="fieldLabel">Skills Required:</label>
                 <div class="weaponSkills">
@@ -490,16 +561,13 @@ function get_weapons_data(array $weapons, string $weapon)
                 </div>
             </section>
 
-            <section>
-                <label class="fieldLabel">Price:</label>
-                <input type="text" value="<?= number_format($weapon['cost']); ?> credits" />
-            </section>
-
+            <!-- Difficulty -->
             <section>
                 <label class="fieldLabel">Difficulty:</label>
-                <input type="text" value="<?= $weapon['difficulty']; ?>" />
+                <input type="text" name="weaponDifficulty[<?= $i ?>]" value="<?= $weapon['difficulty'] ?>" />
             </section>
 
+            <!-- Availabilllity -->
             <section>
                 <label class="fieldLabel">Availabillity:</label>
                 <select>
@@ -510,23 +578,25 @@ function get_weapons_data(array $weapons, string $weapon)
                 </select>
             </section>
 
+            <!-- Damage Melee -->
             <section class="statsVlues">
-                <label class="fieldLabel">Damage:</label>
+                <label class="fieldLabel">Damage Melee:</label>
                 <span class="dValue">
                     <?php if ($weapon['damage']['attribute'] !== "") : ?>
-                        <?= $weapon['damage']['attribute']; ?> +
+                        <?= $character['stats']['strength']['dice']; ?>D + <?= $character['stats']['strength']['pips']; ?> +
                     <?php endif; ?>
-                    <input name="weaponDamgeDValue" value="<?= $weapon['damage']['dice'] ?>" type="number" min="2">
+                    <input name="weaponDamgeDValue[<?= $i ?>]" value="<?= $weapon['damage']['dice'] ?>" type="number" min="0">
                     D
                     +
-                    <input name="weaponDamgePipValue" class="pipValue" value="<?= $weapon['damage']['pips'] ?>" type="number" max="2" min="0">
+                    <input name="weaponDamgePipValue[<?= $i ?>]" class="pipValue" value="<?= $weapon['damage']['pips'] ?>" type="number" max="2" min="0">
                     <?php
                     if ($weapon['damage']['maxDice'] !== null) : ?>
-                        &lpar;max <?= $weapon['damage']['maxDice']; ?>D&rpar;
+                        <strong>&lpar;max <?= $weapon['damage']['maxDice']; ?>D&rpar;</strong>
                     <?php endif; ?>
                 </span>
             </section>
 
+            <!-- Game Note -->
             <?php if ($weapon['gameNote'] !== "") : ?>
                 <section>
                     <label class="fieldLabel">Special Note:</label>
@@ -538,9 +608,11 @@ function get_weapons_data(array $weapons, string $weapon)
                 </section>
             <?php endif; ?>
         </section>
+
     <?php
+    // die("done with melee");
     // Custom
-    else : ?>
+    else : die("NO!"); ?>
         <section class="customSection">
             <section>
                 <label class="fieldLabel">Name:</label>

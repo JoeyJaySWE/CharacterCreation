@@ -712,6 +712,25 @@
                     "maxDice": null
                 },
                 "gameNote": "A stunning weapon that is smaller than a hold-out blaster. Increase the listed price to 1,500 credits for a model that adds +5 to the difficulty of any search or sensors rolls made to detect it."
+            },
+            "catharClaws":{
+                "type": "melee",
+                "name": "Cathar Claws",
+                "cost": null,
+                "skill": [
+                    "Brawling",
+                    "Melee Combat: knife"
+                ],
+                "availability": "Speclized Weapon",
+                "description": "The Claws of a Cathar, can be used in combat",
+                "difficulty": "Moderate",
+                "damage": {
+                    "attribute": "STR",
+                    "dice": 1,
+                    "pips": 0,
+                    "maxDice": null
+                },
+                "gameNote": "Cathars uses Brawling for his own claws and has a Very Easy difficulty check.\n\nOthers use melee combat: knife with Moderate difficulty"
             }
         }
     },
@@ -769,7 +788,7 @@
                             "pip": null
                         },
                         "medium":{
-                            "dice": 5,
+                            "dice": 3,
                             "pip": null
                         },
                         "long": {
