@@ -5,7 +5,9 @@ include(__DIR__ . '/../../app/functions.php');
 session_start();
 $userName = $_SESSION['user'];
 $userId = $_SESSION['userId'];
+// $_SESSION['charId'] = "emptyChar";
 $charId = $_SESSION['charId'];
+
 $characterJSON = '../../app/JS/characters.json';
 $JSONchars = file_get_contents($characterJSON);
 $charactersArray = json_decode($JSONchars, true);
@@ -564,7 +566,132 @@ if (isset($_POST)) {
 
         // ----------------------------------------------------------------
 
-        // die(var_dump("weapon done", $weaponsArray[1]));
+
+        // ----------------- [ GEAR ] ------------------ 
+        $gearsJSON = file_get_contents("../../app/JS/gear.json");
+        $gears = json_decode($gearsJSON, true);
+        var_dump("Gear");
+        // die(var_dump($_POST));
+        if (isset($_POST['fieldGearName'])) {
+            // die(var_dump(sizeof($_POST['fieldGearName'])));
+            $fieldGearsArray = $charactersArray[$userId]['characters'][$charId]['inventory']['fieldGear'];
+            $fieldGearsAmounts = sizeof($_POST['fieldGearName']);
+            if ($fieldGearsAmounts === sizeof($fieldGearsArray)) {
+                $fieldGearsAmounts++;
+            } else if ($fieldGearsAmounts < sizeof($fieldGearsArray)) {
+                // die("Less");
+                $fieldGearsAmounts++;
+                // var_dump("<br>", sizeof($armorsArray));
+                $oldAmountFieldGear = sizeof($fieldGearsArray);
+                for ($i = 1; $i < $oldAmountFieldGear; $i++) {
+                    echo $fieldGearsArray[$i]['name'] . "<br>";
+                    unset($fieldGearsArray[$i]);
+                }
+                // die(var_dump("<br>", sizeof($armorsArray)));
+            }
+            for ($i = 1; $i < $fieldGearsAmounts; $i++) {
+                // die(var_dump($weaponsAmounts));
+                // die(var_dump(sizeof($weaponsArray), $weaponsArray));
+                // die(var_dump($_POST['armorName'][$i]));
+                // die(var_dump($_POST['fieldGearName']));
+                $dbGear = find_gear($_POST['fieldGearName'][$i], $gears);
+                // die(var_dump($_POST['weaponsName']));
+                if ($_POST['newFieldGear'][$i] === "true") {
+                    var_dump("new Gear!");
+                    // die(var_dump("armors amount:", $armorAmounts));
+                    $fieldGearsArray[$fieldGearsAmounts - 1] = $dbGear;
+                } else {
+                    var_dump("old Gear");
+                    // die(var_dump($_POST['weaponType'][$i]));
+
+
+                    $fieldGearsArray[$i] = $dbGear;
+                }
+                if ($i === 1) {
+                    // die(var_dump($_POST['armorName'][$i], sizeof($armorsArray)));
+                    // die(var_dump($weaponsArray[$i]));
+                }
+                // die(var_dump("stop"));
+            }
+            $charactersArray[$userId]['characters'][$charId]['inventory']['fieldGear'] = $fieldGearsArray;
+        }
+        if (isset($_POST['personalGearName'])) {
+            // die(var_dump($_POST));
+            $personalGearsArray = $charactersArray[$userId]['characters'][$charId]['inventory']['personalGear'];
+            $personalGearsAmounts = sizeof($_POST['personalGearName']);
+            if ($personalGearsAmounts === sizeof($personalGearsArray)) {
+                $personalGearsAmounts++;
+            } else if ($personalGearsAmounts < sizeof($personalGearsArray)) {
+                // die("Less");
+                $personalGearsAmounts++;
+                // var_dump("<br>", sizeof($armorsArray));
+                $oldAmountPersonalGear = sizeof($personalGearsArray);
+                for ($i = 1; $i < $oldAmountPersonalGear; $i++) {
+                    echo $personalGearsArray[$i]['name'] . "<br>";
+                    unset($personalGearsArray[$i]);
+                }
+                // die(var_dump("<br>", sizeof($armorsArray)));
+            }
+            for ($i = 1; $i < $personalGearsAmounts; $i++) {
+                // die(var_dump($weaponsAmounts));
+                // die(var_dump(sizeof($weaponsArray), $weaponsArray));
+                // die(var_dump($_POST['armorName'][$i]));
+                $dbGear = find_gear($_POST['personalGearName'][$i], $gears);
+                // die(var_dump($_POST['weaponsName']));
+                if ($_POST['newPersonalGear'][$i] === "true") {
+                    var_dump("new Gear!");
+                    // die(var_dump("armors amount:", $armorAmounts));
+                    $personalGearsArray[$personalGearsAmounts - 1] = $dbGear;
+                } else {
+                    var_dump("old Gear");
+                    // die(var_dump($_POST['weaponType'][$i]));
+
+
+                    $personalGearsArray[$i] = $dbGear;
+                }
+                if ($i === 1) {
+                    // die(var_dump($_POST['personalGearName'][$i], sizeof($personalGearsArray)));
+                    // die(var_dump($personalGearsArray[$i]));
+                }
+                // die(var_dump("stop"));
+            }
+            $charactersArray[$userId]['characters'][$charId]['inventory']['personalGear'] = $personalGearsArray;
+        }
+        if (!isset($_POST['newFieldGear']) && sizeof($charactersArray[$userId]['characters'][$charId]['inventory']['fieldGear']) > 1) {
+            // die("delete fieldGear");
+            $fieldGearsArray = $charactersArray[$userId]['characters'][$charId]['inventory']['fieldGear'];
+            $oldAmountFieldGear = sizeof($fieldGearsArray);
+            for ($i = 1; $i < $oldAmountFieldGear; $i++) {
+                echo $fieldGearsArray[$i]['name'] . "<br>";
+                unset($fieldGearsArray[$i]);
+            }
+            $charactersArray[$userId]['characters'][$charId]['inventory']['fieldGear'] = $fieldGearsArray;
+        }
+        if (!isset($_POST['newPersonalGear']) && sizeof($charactersArray[$userId]['characters'][$charId]['inventory']['personalGear']) > 1) {
+            // die('delete personal gear');
+            $personalGearsArray = $charactersArray[$userId]['characters'][$charId]['inventory']['personalGear'];
+            $oldAmountPersonalGear = sizeof($personalGearsArray);
+            for ($i = 1; $i < $oldAmountPersonalGear; $i++) {
+                echo $personalGearsArray[$i]['name'] . "<br>";
+                unset($personalGearsArray[$i]);
+            }
+            $charactersArray[$userId]['characters'][$charId]['inventory']['personalGear'] = $personalGearsArray;
+        }
+        // die(var_dump($armorAmounts));
+        // die(var_dump($armorAmounts, sizeof($armorsArray)));
+
+
+
+
+
+
+
+        // die(var_dump($weaponsArray[1]));
+
+
+        // ----------------------------------------------------------------
+
+        // die(var_dump("Gear's done", $personalGearsArray));
         $jsonData = json_encode($charactersArray);
         file_put_contents('../../app/JS/characters.json', $jsonData);
 
@@ -590,6 +717,88 @@ if (isset($_POST)) {
 
         die(var_dump($armorAmounts));
         $armor = find_armor($_POST['armorName'][0], $armors);
+    } else if (isset($_POST['biographyForm'])) {
+
+        var_dump("<br>From: Biography!<br>");
+        // die(print_r($_POST));
+        $char['description'] = $_POST['charDescription'];
+        $char['quirks'] = $_POST['charQuriks'];
+        $char['backstory'] = $_POST['charBackstory'];
+
+        $goalsAmount = sizeof($_POST['goalCheck']);
+        for ($i = 1; $i <= $goalsAmount; $i++) {
+            $char['goals'][$i]['completed'] = $_POST['goalCheck'][$i];
+            $char['goals'][$i]['objective'] = $_POST['goalTask'][$i];
+        }
+        // die(print_r($char));
+        $charactersArray[$userId]['characters'][$charId]['biography'] = $char;
+
+        $jsonData = json_encode($charactersArray);
+        file_put_contents('../../app/JS/characters.json', $jsonData);
+
+        switch ($_POST['nextPage']) {
+            case 'next':
+                header($portraitPage);
+                break;
+            case 'back':
+                header($inventoryPage);
+                break;
+            case 'abort':
+                die(var_dump("abort triggered"));
+                header($userPage);
+                break;
+            case 'refresh':
+                header($biographyPage);
+
+            default:
+                die(var_dump("Default triggered"));
+                header($userPage);
+                break;
+        }
+    } else if (isset($_POST['portraitForm'])) {
+        var_dump("<br>From Portrait <br>");
+        $characterData['img'] = $_POST['avatarLnk'];
+        if ($_POST['charName'] !== '') {
+
+            $characterData['name'] = $_POST['charName'];
+            $characterData['slug'] = str_replace(' ', '', ucwords(str_replace('-', ' ', $_POST['charName'])));
+            $characterData['slug'][0] = strtolower($characterData['slug'][0]);
+            $charactersArray[$userId]['characters'][$characterData['slug']] = $characterData;
+            if (isset($charactersArray[$userId]['characters']['emptyChar'])) {
+
+                unset($charactersArray[$userId]['characters']['emptyChar']);
+                // die(print_r($charactersArray[$userId]['characters']));
+                $_SESSION['charId'] = $characterData['slug'];
+            }
+            // die(var_dump($_SESSION['charId']));
+        } else {
+
+            $charactersArray[$userId]['characters'][$charId] = $characterData;
+        }
+        // die(print_r($charactersArray));
+        $jsonData = json_encode($charactersArray);
+        file_put_contents('../../app/JS/characters.json', $jsonData);
+
+        switch ($_POST['nextPage']) {
+            case 'next':
+                header($userPage);
+                break;
+            case 'back':
+                header($biographyPage);
+                break;
+            case 'abort':
+                die(var_dump("abort triggered"));
+                header($userPage);
+                break;
+            case 'refresh':
+                header($portraitPage);
+
+            default:
+                die(var_dump("Default triggered"));
+                header($userPage);
+                break;
+        }
     }
     die(var_dump(print_r($_POST)));
 }
+// As a former slave galdiaotr, Raas won't easily be goaded into battle; but when needed, will turn into a fearsome opponent.
