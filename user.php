@@ -34,7 +34,7 @@ include __DIR__ . "/views/header.php";
 <div id="userBox">
     <section class="scrollWrapper">
 
-        <img class='avatar' src="https://via.placeholder.com/90x90/" />
+        <img class='avatar' src="https://cdn.discordapp.com/attachments/771005073056464926/864953362399363083/unknown.png" />
         <h2>Welcome<br /><span class="username"><?= $userName; ?></span></h2>
         <details open>
             <summary class="button defaultBtn">

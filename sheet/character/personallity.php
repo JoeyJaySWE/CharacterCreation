@@ -50,11 +50,14 @@ if (isset($_POST['newSheet'])) {
     $jsonData = json_encode($template);
     file_put_contents('../../app/JS/characters.json', $jsonData);
     $characterName = "Character";
+    // die(var_dump("stop"));
 } else if (isset($_POST['character'])) {
-
+    die(var_dump("wopp"));
     $characterName = $_POST['character'];
+} else if ($template[$_SESSION['userId']]['characters'][$_SESSION['charId']]['name'] !== "Character") {
+    $characterName = $template[$_SESSION['userId']]['characters'][$_SESSION['charId']]['name'];
 } else {
-
+    die(var_dump("here?"));
     $charName = $template[$_SESSION['userId']]['characters'][$_SESSION['charId']]['name'];
 }
 $character = find_character($characterName, $template[$userId]['characters']);
