@@ -6,6 +6,9 @@
 <script src="/wip/CharacterCreation/app/JS/delete.js"></script>
 <script src="/wip/CharacterCreation/app/JS/changes.js"></script>
 <script src="/wip/CharacterCreation/app/JS/skills.js"></script>
+<script src="/wip/CharacterCreation/app/JS/inventory.js"></script>
+<script src="/wip/CharacterCreation/app/JS/biography.js"></script>
+<script src="/wip/CharacterCreation/app/JS/portrait.js"></script>
 </body>
 
 </html>

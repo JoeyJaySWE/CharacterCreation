@@ -416,18 +416,19 @@ a.greenBtn:hover, button.greenBtn:hover{
                 margin-right: auto;
                 position: relative;
                 width: 100%;
-                
 
                 button.cancelBtn{
                     margin: unset;
                     position: absolute;
                     right: 20px;
                     margin-top: 25px;
+                    z-index:5;
                 }
 
                 summary{
                     margin-left: auto;
                     margin-right: auto;
+                    text-align:center;
                 }
 
                 details{
@@ -440,6 +441,28 @@ a.greenBtn:hover, button.greenBtn:hover{
                             flex-direction: row;
                             align-items: baseline;
                         }
+                    }
+                    .displayData{
+                        border: none;
+                        margin-top: 15px;
+                        max-height: 500px;
+                        height: 200px;
+                        width: 100%;
+                        font-family: 'Titillium Web';
+                        text-align: start;
+                    }
+                    .penalty{
+                        display: flex;
+                        flex-direction: row;
+                        align-items: baseline;
+                        margin-top:15px;
+
+                        .armorValues{
+                            display: flex;
+                            flex-direction: row;
+                            align-items: baseline;
+                        }
+
                     }
                 }
                 details[open]{
@@ -460,6 +483,9 @@ a.greenBtn:hover, button.greenBtn:hover{
                         margin-top:15px;
                     }
                 }
+                .subBtnSection.template{
+                    display:none;
+                }
                 section{
                     width: 100%;
                     display: flex;
@@ -478,8 +504,15 @@ a.greenBtn:hover, button.greenBtn:hover{
                         }
                     }
                 }
+                
                 .gearSection{
                     position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    width: 100%;
+                    justify-content: space-between;
+                    align-items: baseline;
                     summary{
                         margin-left: 0px;
                     }
@@ -494,6 +527,20 @@ a.greenBtn:hover, button.greenBtn:hover{
                         text-align: start;
                         padding-bottom: 15px;
                     }
+                    span.amount{
+                        display: flex;
+                        width: 50px;
+                        justify-content: space-around;
+                        align-items: baseline;
+                    }
+                    details[open]{
+                        border-bottom:2px solid;
+                        margin-bottom: 30px;
+                        
+                    }
+                    .threeWrod{
+                        font-size:0.7rem;
+                    }
                 }
                 span.amount{
                     position: absolute;
@@ -502,6 +549,9 @@ a.greenBtn:hover, button.greenBtn:hover{
                     color: $textBlueColor;
 
                        
+                }
+                .threeWrod{
+                    font-size:0.7rem;
                 }
                 .addGear{
                     display: none;
@@ -531,6 +581,9 @@ a.greenBtn:hover, button.greenBtn:hover{
                     display: flex;
 
                 }
+            }
+            #armorTemplate, #weaponsTemplate, #goalsTemplate, .template{
+                display: none;
             }
             details.personalGear{
                 margin-bottom: 30px;
@@ -564,6 +617,10 @@ a.greenBtn:hover, button.greenBtn:hover{
                     padding: 10px;
                     border:none;
                     display: flex;
+                }
+                textarea.completedTask{
+                    text-decoration: line-through;
+                    opacity:0.5;
                 }
                 textarea:focus-visible{
                     outline: none;
@@ -653,6 +710,11 @@ a.greenBtn:hover, button.greenBtn:hover{
             details.charBackstory{
                 margin-bottom: 30px;
             }
+            details.charGoals{
+                section.missionObjective#goalsTemplate{
+                    display: none;
+                }
+            }
             section.navigation{
                 width: 100%;
             }
@@ -665,16 +727,28 @@ a.greenBtn:hover, button.greenBtn:hover{
             width: 90%;
 
             figure{
-                border: 1px solid aqua;
                 width: 170px;
                 height: 270px;
                 display: flex;
                 margin-top: 30px;
                 flex-direction: column;
                 align-content: center;
+                position: relative;
 
+                img{
+                    border:1px solid $textBlueColor;
+                    height: 270px;
+                    width: 170px;
+                    object-fit: cover;
+                }
                 button{
-                    margin-top:100px;
+                    bottom:0px;
+                    left:20px;
+                    position: absolute;
+                    z-index: 2;
+                }
+                button.defaultBtn:hover{
+                    background-image: $slectedDefaultBtnBg;
                 }
             }
             input{
@@ -722,6 +796,8 @@ a.greenBtn:hover, button.greenBtn:hover{
                     margin-right: auto;
                     margin-bottom:30px;
                 }
+
+                
 
                 .subBtnSection{
                     display: flex;
