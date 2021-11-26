@@ -239,16 +239,6 @@
     "survivalGear": {
       "category": "Survival Gear",
       "items": {
-        "allTemperatureCloak": {
-          "name": "All-Temperature Cloak",
-          "cost": 100,
-          "skill": [
-            "none"
-          ],
-          "availability": "Normally Available",
-          "description": "This wrap-around cloak protects its wearer from the elements, providing a +1 pip bonus to its wearer’s survival skill rolls.",
-          "gameNote": "Adds +1 pip bonus to its wearer’s survival skill rolls"
-        },
         "fieldKit": {
           "name": "Field Kit",
           "cost": 1000,

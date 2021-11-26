@@ -563,12 +563,6 @@ a.greenBtn:hover, button.greenBtn:hover{
                 
                 .gearSection{
                     position: relative;
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: nowrap;
-                    width: 100%;
-                    justify-content: space-between;
-                    align-items: baseline;
                     summary{
                         margin-left: 0px;
                     }
@@ -583,20 +577,6 @@ a.greenBtn:hover, button.greenBtn:hover{
                         text-align: start;
                         padding-bottom: 15px;
                     }
-                    span.amount{
-                        display: flex;
-                        width: 50px;
-                        justify-content: space-around;
-                        align-items: baseline;
-                    }
-                    details[open]{
-                        border-bottom:2px solid;
-                        margin-bottom: 30px;
-                        
-                    }
-                    .threeWrod{
-                        font-size:0.7rem;
-                    }
                 }
                 span.amount{
                     position: absolute;
@@ -605,9 +585,6 @@ a.greenBtn:hover, button.greenBtn:hover{
                     color: $textBlueColor;
 
                        
-                }
-                .threeWrod{
-                    font-size:0.7rem;
                 }
                 .addGear{
                     display: none;
@@ -638,7 +615,7 @@ a.greenBtn:hover, button.greenBtn:hover{
 
                 }
             }
-            #armorTemplate, #weaponsTemplate, #goalsTemplate, .template{
+            #armorTemplate, #weaponsTemplate, .template{
                 display: none;
             }
             details.personalGear{
@@ -673,10 +650,6 @@ a.greenBtn:hover, button.greenBtn:hover{
                     padding: 10px;
                     border:none;
                     display: flex;
-                }
-                textarea.completedTask{
-                    text-decoration: line-through;
-                    opacity:0.5;
                 }
                 textarea:focus-visible{
                     outline: none;
@@ -766,11 +739,6 @@ a.greenBtn:hover, button.greenBtn:hover{
             details.charBackstory{
                 margin-bottom: 30px;
             }
-            details.charGoals{
-                section.missionObjective#goalsTemplate{
-                    display: none;
-                }
-            }
             section.navigation{
                 width: 100%;
             }
@@ -783,28 +751,16 @@ a.greenBtn:hover, button.greenBtn:hover{
             width: 90%;
 
             figure{
+                border: 1px solid aqua;
                 width: 170px;
                 height: 270px;
                 display: flex;
                 margin-top: 30px;
                 flex-direction: column;
                 align-content: center;
-                position: relative;
 
-                img{
-                    border:1px solid $textBlueColor;
-                    height: 270px;
-                    width: 170px;
-                    object-fit: cover;
-                }
                 button{
-                    bottom:0px;
-                    left:20px;
-                    position: absolute;
-                    z-index: 2;
-                }
-                button.defaultBtn:hover{
-                    background-image: $slectedDefaultBtnBg;
+                    margin-top:100px;
                 }
             }
             input{
@@ -852,8 +808,6 @@ a.greenBtn:hover, button.greenBtn:hover{
                     margin-right: auto;
                     margin-bottom:30px;
                 }
-
-                
 
                 .subBtnSection{
                     display: flex;

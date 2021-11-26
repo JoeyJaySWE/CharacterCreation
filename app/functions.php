@@ -155,12 +155,9 @@ function find_gear($name, $array)
 {
     // die(var_dump($name, $array));
     foreach ($array as $category) :
-        if ($category['category'] === "Choose one") {
-            continue;
-        }
-        // var_dump(print_r($category) . "<br><br>");
+        // die(print_r($category));
         foreach ($category['items'] as $key => $items) {
-            // var_dump($items['name'], "name: " . $name);
+            // var_dump($items['name']);s
             if ($items['name'] === $name) {
 
                 return $items;
@@ -190,59 +187,8 @@ function load_character($charId, $array)
 function load_gear_data($gear)
 {
     ?>
-    <summary class="defaultBtn subBtn button <?php if (strlen($gear['name']) > 20) {
-                                                    echo "threeWrod";
-                                                } ?>"><?= $gear['name']; ?></summary>
+    <summary class="defaultBtn subBtn button"><?= $gear['name']; ?></summary>
     <?php if ($gear['gameNote'] !== "") : ?>
-        <h2 class="fieldLabel">Game Note:</h2>
-        <p>
-            <?= $gear['description']; ?>
-        </p>
-    <?php endif;
-    if ($gear['description'] !== "") : ?>
-        <h2 class="fieldLabel">Description:</h2>
-        <p>
-            <?= $gear['description']; ?>
-        </p>
-        <?php endif;
-    if (isset($gear["includes"])) :
-        foreach ($gear['includes'] as $key => $incGear) :
-            $gearData = file_get_contents('../../app/JS/gear.json');
-            $gears = json_decode($gearData, true);
-        ?>
-            <section class="gearSection">
-                <details>
-                    <?php if (find_gear($incGear['name'], $gears) !== null) : ?>
-                        <?php load_included_gear_data($gears); ?>
-                    <?php else :  ?>
-                        <summary class="defaultBtn subBtn button disabled <?php if (strlen($gear['name']) > 20) {
-                                                                                echo "threeWrod";
-                                                                            } ?>"><?= $incGear['name'] ?></summary>
-                    <?php endif; ?>
-                </details>
-
-                <span class="amount">
-                    x
-                    <input type="number" value="<?= $incGear['amount'] ?>" />
-                </span>
-            </section>
-    <?php endforeach;
-    endif;
-}
-
-function load_included_gear_data(array $gear, array $gears = null)
-{
-
-    // die(var_dump($gear));
-    $gear = find_gear($gear['name'], $gears);
-    die(var_dump($gear));
-    ?>
-    <summary class="defaultBtn subBtn button <?php if (strlen($gear['name']) > 20) {
-                                                    echo "threeWrod";
-                                                } ?>"><?= $gear['name']; ?></summary>
-    <?php
-    die(var_dump($gear));
-    if ($gear['gameNote'] !== "") : ?>
         <h2 class="fieldLabel">Game Note:</h2>
         <p>
             <?= $gear['description']; ?>

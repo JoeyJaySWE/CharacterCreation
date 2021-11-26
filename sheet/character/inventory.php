@@ -72,7 +72,7 @@ $gear = json_decode($gearData, true);
 
                             <summary class="defaultBtn subBtn button"><?= $armor['name'] ?></summary>
                             <input type="hidden" name="armorName[<?= $index ?>]" value="<?= $armor['name'] ?>">
-                            <section>
+                            <section style="color:aqua">
                                 <input type="hidden" name="newArmor[<?= $index ?>]" value="false">
                                 <!-- Something around here makes form not submittiing named fields any more -->
                                 <h2 class="fieldLabel">Pirce:</h2>
@@ -241,7 +241,7 @@ $gear = json_decode($gearData, true);
             ?>
             <section class="subBtnSection" id="armorTemplate">
                 <input type="hidden" name="newArmor[]">
-                <section>
+                <section style="color:aqua">
                     <select class="fieldLabel" name="armor1">
                         <?php
                         get_armor_dropdown_menu($armors);
@@ -253,7 +253,7 @@ $gear = json_decode($gearData, true);
         </details>
 
         <!-- Weapons -->
-        <details name="weaponSection">
+        <details name="weaponSection" open>
             <summary class="defaultBtn button">Weapons</summary>
 
             <?php if (sizeof($character['inventory']['weapons']) > 1) :
@@ -267,7 +267,7 @@ $gear = json_decode($gearData, true);
                         <button type="button" class="cancelBtn">X</button>
                         <details>
                             <summary class="defaultBtn subBtn button"><?= $weapon['name'] ?></summary>
-                            <section>
+                            <section style="color:aqua">
                                 <section class="statsVlues">
                                     <input type="hidden" value="<?= $weapon['name'] ?>" name="weaponsName[<?= $index ?>]">
                                     <input type="hidden" value="false" name="newWeapon[<?= $index ?>]">
@@ -287,136 +287,6 @@ $gear = json_decode($gearData, true);
                 </select>
             </section>
             <button type="button" class="button greenBtn">+ Add</button>
-        </details>
-
-        <!-- Field Gear -->
-        <details name="fieldGearSection" data-field-amounts="<?= sizeof($character['inventory']['fieldGear']) ?>">
-            <summary class="defaultBtn button">Field Gear</summary>
-            <?php if (sizeof($character['inventory']['fieldGear']) > 1) :
-                $index = 1;
-                $printedGears = [];
-                foreach ($character['inventory']['fieldGear'] as $fieldGear) :
-                    if (sizeof($fieldGear) === 1) {
-                        continue;
-                    }
-                    $fieldGear['amount'] = 0;
-                    foreach ($character['inventory']['fieldGear'] as $fieldGearIndex) {
-                        // var_dump(sizeof($fieldGearIndex));
-                        if (sizeof($fieldGearIndex) === 1) {
-                            continue;
-                        };
-                        if ($fieldGearIndex['name'] === $fieldGear['name']) {
-                            $fieldGear['amount']++;
-                        }
-                    }
-
-                    // die(var_dump($fieldGear['amount']));
-            ?>
-                    <section class="gearSection">
-                        <input type="hidden" name="fieldGearName[<?= $index; ?>]" value="<?= $fieldGear['name'] ?>">
-                        <input type="hidden" name="newFieldGear[<?= $index; ?>]" value="false">
-                        <?php
-                        if (array_search($fieldGear['name'], $printedGears)) {
-                            echo "</section>";
-                            $index++;
-                            continue;
-                        } ?>
-                        <details>
-                            <?php
-
-                            // $jsonString = json_encode($string);
-                            // var_dump(json_decode($jsonString), "test");
-                            load_gear_data($fieldGear);
-                            $printedGears[$index] = $fieldGear['name'];
-
-                            ?>
-
-                        </details>
-                        <span class="amount">
-                            x
-                            <input type="number" value="<?= $fieldGear['amount'] ?>" />
-                        </span>
-                        <button type="button" class="cancelBtn">X</button>
-                    </section>
-            <?php $index++;
-                endforeach;
-            endif; ?>
-
-
-            <section class="addGear" id="fieldGearTemplate">
-                <input type="hidden" name="newFieldGear[<?= $index; ?>]" value="true">
-                <select class="fieldLabel" name="dexSkill1">
-                    <?php
-                    get_gears_dropdown_menu($gear, "Custom Gear");
-                    ?>
-                </select>
-            </section>
-            <button type="button" class="button greenBtn">+ Add</button>
-
-        </details>
-
-        <!-- Personal Gear -->
-        <details name="personalGearSection" data-personal-amounts="<?= sizeof($character['inventory']['personalGear']) ?>">
-            <summary class="defaultBtn button">Personal Gear</summary>
-            <?php if (sizeof($character['inventory']['personalGear']) > 1) :
-                $index = 1;
-                $printedGears = [];
-                foreach ($character['inventory']['personalGear'] as $personalGear) :
-                    // var_dump(sizeof($personalGear));
-                    if (sizeof($personalGear) === 1) {
-                        continue;
-                    }
-                    $personalGear['amount'] = 0;
-                    foreach ($character['inventory']['personalGear']  as $personalGearIndex) {
-                        if (sizeof($personalGearIndex) === 1) {
-                            continue;
-                        };
-                        if ($personalGearIndex['name'] === $personalGear['name']) {
-                            $personalGear['amount']++;
-                        }
-                    }
-                    // die(var_dump($fieldGear['amount']));
-            ?>
-                    <section class="gearSection">
-                        <input type="hidden" name="personalGearName[<?= $index; ?>]" value="<?= $personalGear['name'] ?>">
-                        <input type="hidden" name="newPersonalGear[<?= $index; ?>]" value="false">
-                        <?php
-                        if (array_search($personalGear['name'], $printedGears)) {
-                            echo "</section>";
-                            $index++;
-                            continue;
-                        } ?>
-                        <details>
-                            <?php
-
-                            // $jsonString = json_encode($string);
-                            // var_dump(json_decode($jsonString), "test");
-                            load_gear_data($personalGear);
-                            $printedGears[$index] = $personalGear['name'];
-                            ?>
-
-                        </details>
-                        <span class="amount">
-                            x
-                            <input type="number" value="<?= $personalGear['amount'] ?>" />
-                        </span>
-                        <button type="button" class="cancelBtn">X</button>
-                    </section>
-            <?php $index++;
-                endforeach;
-            endif; ?>
-
-
-            <section class="addGear" id="fieldGearTemplate">
-                <input type="hidden" name="newFieldGear[]" value="true">
-                <select class="fieldLabel" name="dexSkill1">
-                    <?php
-                    get_gears_dropdown_menu($gear, "Custom Gear");
-                    ?>
-                </select>
-            </section>
-            <button type="button" class="button greenBtn">+ Add</button>
-
         </details>
 
         <span class="info">
