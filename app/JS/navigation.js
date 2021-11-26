@@ -19,13 +19,12 @@ const skillPage = "http://localhost:8080/wip/CharacterCreation/sheet/character/s
 const inventoryPage = "http://localhost:8080/wip/CharacterCreation/sheet/character/inventory.php";
 const biographyPage = "http://localhost:8080/wip/CharacterCreation/sheet/character/biography.php";
 const portraitPage = "http://localhost:8080/wip/CharacterCreation/sheet/character/portrait.php";
-const chractersPage = "http://localhost:8080/wip/CharacterCreation/sheet/characters.php?character=raasPrudii";
 
 // ----------------------------------------------------------------
 
 console.log("navigation initilizing...");
 
-if(page !== userPage && page !== chractersPage){
+if(page !== userPage){
 
     abortBtn.addEventListener('click', () => {
         hiddenDirection.value = "abort";

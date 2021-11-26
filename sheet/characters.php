@@ -2,8 +2,8 @@
 
 // ----------------- [ PAGE VARIABLES ] ------------------ 
 
-$page_title = "Crew Profile";
-$style = "../styles/css/default.css";
+$page_title = "Crew Sheets - Portrait";
+$style = "../../styles/css/default.css";
 $userName = "Raas/Joya (Gsus)";
 
 // ----------------- [ META DATA ] --------------------------------
@@ -22,19 +22,6 @@ $nextPageUrl = "../../user.php";
 $nextPage = "Finish";
 
 // ----------------------------------------------------------------
-include __DIR__ . "/../views/header.php";
-// ----------------- [ LOAD CHARCATER ] ------------------ 
-
-$template = file_get_contents("../app/JS/characters.json");
-$template = json_decode($template, true);
-// die(var_dump($_SESSION['charId']));
-// $characterName = 
-$charId = parse_str($_SERVER['QUERY_STRING'], $query);
-// die(var_dump($query));
-$character = load_character($query['character'], $template);
-// die(var_dump($character));
-$page_title = $character['name'];
-// ----------------------------------------------------------------
 
 
 
@@ -43,43 +30,17 @@ $page_title = $character['name'];
 
 
 
+include __DIR__ . "/../views/header.php";
 
 
 ?>
-<section id="inputFields">
-    <h1>Profile</h1>
 
-    <section class="container">
 
-        <figure>
-            <img src="<?= $character['img'] ?>">
-        </figure>
-        <section class="introSection">
-            <h2><?= $character['name'] ?></h2>
-            <p> <?= $character['biography']['description'] ?></p>
-        </section>
+<h1 style="margin:auto">UNDER CONSTRUCTION</h1>
+<P style="margin:auto">Please check back later</P>
 
-        <details>
-            <summary class="defaultBtn button">Quirks</summary>
-            <p><?= $character['biography']['quirks'] ?></p>
-        </details>
+<?php
 
-        <details>
-            <summary class="defaultBtn button">Goals</summary>
-            <?php foreach ($character['biography']['goals'] as $goal) : ?>
-                <p <?php if ($goal['completed'] === "true") {
-                        echo "class='completedTask'";
-                    } ?>><?= $goal['objective'] ?></p>
-            <?php endforeach; ?>
-        </details>
+include __DIR__ . "/../views/footer.php";
 
-        <details>
-            <summary class="defaultBtn button">Backstory</summary>
-            <p><?= $character['biography']['backstory'] ?></p>
-        </details>
-    </section>
-    <?php
-
-    include __DIR__ . "/../views/footer.php";
-
-    ?>
+?>

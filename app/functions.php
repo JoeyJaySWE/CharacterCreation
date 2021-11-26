@@ -175,15 +175,7 @@ function find_character($name, $array)
     }
     return null;
 }
-function load_character($charId, $array)
-{
-    foreach ($array as $user) {
-        if (array_key_exists($charId, $user['characters'])) {
-            return $user['characters'][$charId];
-        }
-    }
-    return null;
-}
+
 function load_gear_data($gear)
 {
     ?>
