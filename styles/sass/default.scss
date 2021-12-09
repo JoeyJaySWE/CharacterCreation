@@ -168,6 +168,9 @@ input[type="number"]{
         border: 2px solid $textBlueColor;
         border-radius: 100%;
         margin-bottom: 15px;
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
     }
 }
 

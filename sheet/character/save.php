@@ -799,6 +799,6 @@ if (isset($_POST)) {
                 break;
         }
     }
-    die(var_dump(print_r($_POST)));
+    // die(var_dump(print_r($_POST)));
 }
 // As a former slave galdiaotr, Raas won't easily be goaded into battle; but when needed, will turn into a fearsome opponent.

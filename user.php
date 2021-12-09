@@ -28,7 +28,7 @@ $meta_card_alt = "Vengeful Scars";
 
 
 include __DIR__ . "/views/header.php";
-
+// $_SESSION['charId'] = "raasPrudii";
 ?>
 
 <div id="userBox">

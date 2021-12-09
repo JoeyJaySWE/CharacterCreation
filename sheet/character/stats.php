@@ -33,7 +33,7 @@ $nextPage = "Skills";
 $template = file_get_contents($characterJSON);
 $template = json_decode($template, true);
 $character = $template[$_SESSION['userId']]['characters'][$_SESSION['charId']];
-
+// die(var_dump($character));
 // ----------------------------------------------------------------
 
 
