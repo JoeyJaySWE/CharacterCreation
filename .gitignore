@@ -2,3 +2,7 @@ styles/css/*
 !styles/css/css-reset.css
 node_modukes
 app/JS/characters.json
+.env
+!.env-template
+vendor
+composer.lock
