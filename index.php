@@ -3,7 +3,8 @@
 // ----------------- [ PAGE VARIABLES ] ------------------ 
 
 $page_title = "Crew Sheets - Sign in";
-$style = "styles/css/default.css";
+$styleMobile = "styles/css/default.css";
+$styleDesktop = "styles/css/desktop.css";
 
 // ----------------- [ META DATA ] --------------------------------
 

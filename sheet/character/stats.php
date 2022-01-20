@@ -1,10 +1,16 @@
 <?php
 session_start();
-
+if (!isset($_POST)) {
+    header("Location: http://localhost:8080/wip/CharacterCreation/index.php");
+}
+if (!isset($_SESSION['user'])) {
+    header("Location: http://localhost:8080/wip/CharacterCreation/index.php");
+}
 // ----------------- [ PAGE VARIABLES ] ------------------ 
 
 $page_title = "Crew Sheets - Stats";
-$style = "../../styles/css/default.css";
+$styleMobile = "../../styles/css/default.css";
+$styleDesktop = "../../styles/css/desktop.css";
 $userName = $_SESSION['user'];
 $userId = $_SESSION['userId'];
 
@@ -32,7 +38,7 @@ $nextPage = "Skills";
 
 $template = file_get_contents($characterJSON);
 $template = json_decode($template, true);
-$character = $template[$_SESSION['userId']]['characters'][$_SESSION['charId']];
+$character = $template['characters'][$_SESSION['charId']];
 // die(var_dump($character));
 // ----------------------------------------------------------------
 

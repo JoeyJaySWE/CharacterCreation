@@ -3,7 +3,8 @@ session_start();
 // ----------------- [ PAGE VARIABLES ] ------------------ 
 
 $page_title = "Crew Sheets - skills";
-$style = "../../styles/css/default.css";
+$styleMobile = "../../styles/css/default.css";
+$styleDesktop = "../../styles/css/desktop.css";
 $userId = $_SESSION['userId'];
 
 
@@ -31,7 +32,7 @@ $template = file_get_contents($characterJSON);
 $template = json_decode($template, true);
 // die(var_dump($_SESSION['charId']));
 // $characterName = 
-$character = $template[$userId]['characters'][$_SESSION['charId']];
+$character = $template['characters'][$_SESSION['charId']];
 
 // ----------------------------------------------------------------
 

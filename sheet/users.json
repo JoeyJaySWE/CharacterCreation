@@ -1,0 +1,8 @@
+[
+	{ "userId": 0, "joined": "", "characters": [{ "id": null, "name": "" }] },
+	{
+		"userId": 1,
+		"joined": "2022-Jan-18",
+		"characters": [{ "id": 1, "name": "Character 1" }]
+	}
+]

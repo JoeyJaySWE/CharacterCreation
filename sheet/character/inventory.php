@@ -3,7 +3,8 @@ session_start();
 // ----------------- [ PAGE VARIABLES ] ------------------ 
 
 $page_title = "Crew Sheets - Inventory";
-$style = "../../styles/css/default.css";
+$styleMobile = "../../styles/css/default.css";
+$styleDesktop = "../../styles/css/desktop.css";
 $userName = "Raas/Joya (Gsus)";
 
 // ----------------- [ META DATA ] --------------------------------
@@ -31,7 +32,7 @@ $template = file_get_contents($characterJSON);
 $template = json_decode($template, true);
 // die(var_dump($_SESSION['charId']));
 // $characterName = 
-$character = $template[$_SESSION['userId']]['characters'][$_SESSION['charId']];
+$character = $template['characters'][$_SESSION['charId']];
 
 // ----------------------------------------------------------------
 

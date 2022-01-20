@@ -169,10 +169,10 @@ function find_gear($name, $array)
     endforeach;
     return null;
 }
-function find_character($name, $array)
+function find_character($charId, $array)
 {
     foreach ($array as $character) {
-        if ($character['name'] === $name) {
+        if ($character['slug'] === $charId) {
             return $character;
         }
     }
@@ -228,6 +228,20 @@ function load_gear_data($gear)
             </section>
     <?php endforeach;
     endif;
+}
+
+function isMobileDevice()
+{
+    return preg_match(
+        "/(android|avantgo|blackberry|bolt|boost|cricket|docomo
+|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i",
+        $_SERVER["HTTP_USER_AGENT"]
+    );
+}
+if (isMobileDevice()) {
+    return true;
+} else {
+    return false;
 }
 
 function load_included_gear_data(array $gear, array $gears = null)

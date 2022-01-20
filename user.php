@@ -2,10 +2,11 @@
 
 // ----------------- [ PAGE VARIABLES ] ------------------ 
 session_start();
-$_SESSION['user'] = "Raas/Joya (Gsus)";
-$_SESSION['userId'] = 1;
+$_SESSION['user'] = "Shadowland Viper";
+$_SESSION['userId'] = 2;
 $page_title = "Crew Sheets - User Page";
-$style = "styles/css/default.css";
+$styleMobile = "styles/css/default.css";
+$styleDesktop = "styles/css/desktop.css";
 $userName = $_SESSION['user'];
 $userId = $_SESSION['userId'];
 
@@ -23,6 +24,31 @@ $meta_card_alt = "Vengeful Scars";
 // ----------------------------------------------------------------
 
 
+$users = file_get_contents('sheet/users.json');
+$usersData = json_decode($users, true);
+$_SESSION['userId'] = 1;
+// $_SESSION['userId'] = sizeof($usersData);
+
+// die(var_dump($usersData[$_SESSION['userId']]));
+
+if (!isset($usersData[$_SESSION['userId']])) {
+    // die(var_dump('new user'));
+
+    $newUser = $usersData["0"];
+    $newUser['userId'] = $_SESSION['userId'];
+    $newUser['joined'] = date('Y-M-d');
+
+    $_SESSION['charId'] = 1;
+    $newUser['characters'][0]["id"] = $_SESSION['charId'];
+    $newUser['characters'][0]['name'] = "Character " . $_SESSION['charId'];
+    $usersData[$_SESSION['userId']] = $newUser;
+    $newUserData = json_encode($usersData);
+    file_put_contents('sheet/users.json', $newUserData);
+    $newChar = $_SESSION['charId'];
+} else {
+    $newChar = sizeof($usersData[$_SESSION['userId']]['characters']);
+    // die(var_dump($newChar));
+}
 
 
 
@@ -43,14 +69,17 @@ include __DIR__ . "/views/header.php";
             <form action="sheet/character/personallity.php" method="POST">
                 <?php
 
-                $jsonCharacters = file_get_contents('app/JS/characters.json');
+                $jsonCharacters = file_get_contents('sheet/characters/' . $_SESSION['userId'] . '.json');
                 $fileChracters = json_decode($jsonCharacters, true);
-                if (array_key_exists($userId, $fileChracters)) :
-                    $characters = $fileChracters[$userId]['characters'];
+                if (sizeof($fileChracters['characters']) > 1) :
+                    $characters = $fileChracters['characters'];
                     $i = 1;
-                    foreach ($characters as $character) : ?>
+                    foreach ($characters as $character) :
+                        if ($character['name'] === 'Character') {
+                            continue;
+                        } ?>
                         <div>
-                            <button name="character" class="defaultBtn subBtn" value="<?= $character['name'] ?>"><?= $character['name'] ?></button>
+                            <button name="character" type="button" class="defaultBtn subBtn" value="<?= $character['name'] ?>"><?= $character['name'] ?></button>
                             <button name="deleteCharacter" type="button" value="<?= $character['slug'] ?>" class="cancelBtn" id="deleteChar<?= $i; ?>">X</button>
                         </div>
                 <?php
@@ -60,7 +89,8 @@ include __DIR__ . "/views/header.php";
 
 
                 ?>
-                <button name="newSheet" id="addSheetLnk" class='button greenBtn subBtn'>+ Add</button>
+                <input type="hidden" value="<?= $newChar ?>" name="newChar" />
+                <button name="newSheet" type="button" id="addSheetLnk" class='button greenBtn subBtn'>+ Add</button>
             </form>
         </details>
     </section>

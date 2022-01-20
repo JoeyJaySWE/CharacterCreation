@@ -37,3 +37,26 @@ if(page !== userPage && page !== chractersPage){
         saveBtn.click();
     })
 }
+if(page === userPage){
+    const newCharBtn = document.querySelector('#addSheetLnk');
+    const charBtns = document.querySelectorAll('button[name="character"]');
+    const newCharId = document.querySelector('input[name="newChar"');
+    const characeterSelect = document.querySelector('form');
+    
+    console.log(characeterSelect.action);
+    
+    newCharBtn.addEventListener('click', ()=>{
+        console.log('add new char: ', newCharId.value);
+        characeterSelect.action += `?char=${newCharId.value}`;
+        console.log(characeterSelect.action);
+        window.location.href = characeterSelect.action;
+    });
+
+    charBtns.forEach((charBtn, index) => {
+        
+        charBtn.addEventListener('click', () => {
+            console.log('laod character ID: ', index+1 );
+            window.location.href=personallityPage+'?char='+(index+1);
+        })
+    });
+}

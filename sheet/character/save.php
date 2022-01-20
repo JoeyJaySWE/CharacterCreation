@@ -8,8 +8,8 @@ $userId = $_SESSION['userId'];
 // $_SESSION['charId'] = "emptyChar";
 $charId = $_SESSION['charId'];
 
-$characterJSON = '../../app/JS/characters.json';
-$JSONchars = file_get_contents($characterJSON);
+$characterPathJSON = '../characters/' . $_SESSION['userId'] . '.json';
+$JSONchars = file_get_contents($characterPathJSON);
 $charactersArray = json_decode($JSONchars, true);
 
 // ----------------------------------------------------------------
@@ -17,7 +17,7 @@ $charactersArray = json_decode($JSONchars, true);
 // ----------------- [ PAG URLs ] ------------------ 
 
 $userPage = "Location: http://localhost:8080/wip/CharacterCreation/user.php";
-$personallityPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/personallity.php";
+$personallityPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/personallity.php?char=" . $_SESSION['charId'];
 $statsPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/stats.php";
 $skillPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/skills.php";
 $inventoryPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/inventory.php";
@@ -29,10 +29,11 @@ $portraitPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/cha
 
 
 if (isset($_POST)) {
-    $JSONchars = file_get_contents($characterJSON);
+    // die(var_dump("save"));
+    $JSONchars = file_get_contents($characterPathJSON);
     $charactersArray = json_decode($JSONchars, true);
 
-    $characterData = $charactersArray[$userId]['characters'][$charId];
+    $characterData = $charactersArray['characters'][$charId];
 
     echo "You Got Mail! <br>";
     // print_r($_POST);
@@ -49,11 +50,11 @@ if (isset($_POST)) {
         $character['secondaryWeapons'] = $_POST['secWeapon'];
 
         $characterData['personallity'] = $character;
-        $charactersArray[$userId]['characters'][$charId] = $characterData;
+        $charactersArray['characters'][$charId] = $characterData;
         // die(print_r($charactersArray[$userId]['characters'][$charId]['personallity']));
         // print_r($jsonData);
         $jsonData = json_encode($charactersArray);
-        file_put_contents('../../app/JS/characters.json', $jsonData);
+        file_put_contents($characterPathJSON, $jsonData);
 
         switch ($_POST['nextPage']) {
             case 'next':
@@ -68,6 +69,7 @@ if (isset($_POST)) {
                 break;
         }
     } else if (isset($_POST['statsForm'])) {
+        var_dump("stats form");
         echo "From Stats <br><br>";
         $character = $characterData['stats'];
         $character['dexterity']['dice'] = (int)$_POST['dexDValue'];
@@ -89,9 +91,11 @@ if (isset($_POST)) {
         $character['technical']['pips'] = (int)$_POST['techPipValue'];
         $characterData['stats'] = $character;
 
-        $charactersArray[$userId]['characters'][$charId] = $characterData;
+        $charactersArray['characters'][$charId] = $characterData;
+        var_dump($characterData['stats']);
         $jsonData = json_encode($charactersArray);
-        file_put_contents('../../app/JS/characters.json', $jsonData);
+        file_put_contents($characterPathJSON, $jsonData);
+        // die(var_dump("end of code"));
 
         switch ($_POST['nextPage']) {
             case 'next':
@@ -108,6 +112,7 @@ if (isset($_POST)) {
                 break;
         }
     } else if (isset($_POST['skillsForm'])) {
+        var_dump("Skills");
         echo "From: skills<br/><br/>";
         // print_r($_POST['dexSkillName']);
         echo "<br><br/>";
@@ -116,7 +121,7 @@ if (isset($_POST)) {
         // ----------------- [ DEXTERITY SKILLS ] ------------------ 
 
         if (isset($_POST['dexSkillName'])) {
-
+            var_dump("Dex");
 
             $numbersOfDexSkills = sizeof($_POST['dexSkillName']);
             $dexSkillsArray = $characterData['stats']['dexterity']['skills'];
@@ -276,9 +281,11 @@ if (isset($_POST)) {
         // print_r($characterData['stats']['dexterity']);
         // echo "<br/><br/>";
 
-        $charactersArray[$_SESSION['userId']]['characters'][$characterData['slug']] = $characterData;
+        $charactersArray['characters'][$characterData['slug']] = $characterData;
+        var_dump($characterData['stats']['dexterity']);
         $jsonData = json_encode($charactersArray);
-        file_put_contents('../../app/JS/characters.json', $jsonData);
+        file_put_contents($characterPathJSON, $jsonData);
+        // die(var_dump("STOP"));
 
 
         switch ($_POST['nextPage']) {
@@ -297,13 +304,20 @@ if (isset($_POST)) {
                 break;
         }
     } else if (isset($_POST['inventoryForm'])) {
+        var_dump("inventory");
         echo "Inventory stuff";
+
+        // fetching armors
         $armorsJSON = file_get_contents("../../app/JS/armor.json");
         $armors = json_decode($armorsJSON, true);
-        $armorsArray = $charactersArray[$userId]['characters'][$charId]['inventory']['armors'];
-        $statsArray = $charactersArray[$userId]['characters'][$charId]['stats'];
+
+        // stores all armors from specific character
+        $armorsArray = $charactersArray['characters'][$charId]['inventory']['armors'];
+        // store the stats in a stats array to keep track of protection
+        $statsArray = $charactersArray['characters'][$charId]['stats'];
+        // check how many armors we got on chracter
         $armorAmounts = sizeof($_POST['armorName']);
-        // die(var_dump($armorAmounts));
+        die(var_dump('armor amounts: ', $armorAmounts));
         // die(var_dump($armorAmounts, sizeof($armorsArray)));
         if ($armorAmounts === sizeof($armorsArray)) {
             $armorAmounts++;
@@ -395,15 +409,16 @@ if (isset($_POST)) {
         // die(print_r($armorsArray));
         // var_dump('armors done');
         // die(var_dump($armorsArray));
-        $charactersArray[$userId]['characters'][$charId]['inventory']['armors'] = $armorsArray;
 
+        $charactersArray['characters'][$charId]['inventory']['armors'] = $armorsArray;
+        var_dump($charactersArray['characters'][$charId]['inventory']['armors']);
 
         // ----------------- [ WEAPONS ] ------------------ 
-
+        var_dump("Weapons....");
         $weaponsJSON = file_get_contents("../../app/JS/weapons.json");
         $weapons = json_decode($weaponsJSON, true);
-        $weaponsArray = $charactersArray[$userId]['characters'][$charId]['inventory']['weapons'];
-        $statsArray = $charactersArray[$userId]['characters'][$charId]['stats'];
+        $weaponsArray = $charactersArray['characters'][$charId]['inventory']['weapons'];
+        $statsArray = $charactersArray['characters'][$charId]['stats'];
         // die(var_dump($_POST['weaponsName']));
         if (isset($_POST['weaponsName'])) {
 
@@ -562,7 +577,9 @@ if (isset($_POST)) {
         }
 
         // die(var_dump($weaponsArray[1]));
-        $charactersArray[$userId]['characters'][$charId]['inventory']['weapons'] = $weaponsArray;
+        $charactersArray['characters'][$charId]['inventory']['weapons'] = $weaponsArray;
+        // die(var_dump("stop"));
+
 
         // ----------------------------------------------------------------
 
@@ -574,7 +591,7 @@ if (isset($_POST)) {
         // die(var_dump($_POST));
         if (isset($_POST['fieldGearName'])) {
             // die(var_dump(sizeof($_POST['fieldGearName'])));
-            $fieldGearsArray = $charactersArray[$userId]['characters'][$charId]['inventory']['fieldGear'];
+            $fieldGearsArray = $charactersArray['characters'][$charId]['inventory']['fieldGear'];
             $fieldGearsAmounts = sizeof($_POST['fieldGearName']);
             if ($fieldGearsAmounts === sizeof($fieldGearsArray)) {
                 $fieldGearsAmounts++;
@@ -613,11 +630,12 @@ if (isset($_POST)) {
                 }
                 // die(var_dump("stop"));
             }
-            $charactersArray[$userId]['characters'][$charId]['inventory']['fieldGear'] = $fieldGearsArray;
+            $charactersArray['characters'][$charId]['inventory']['fieldGear'] = $fieldGearsArray;
         }
         if (isset($_POST['personalGearName'])) {
             // die(var_dump($_POST));
-            $personalGearsArray = $charactersArray[$userId]['characters'][$charId]['inventory']['personalGear'];
+            var_dump("personal gear");
+            $personalGearsArray = $charactersArray['characters'][$charId]['inventory']['personalGear'];
             $personalGearsAmounts = sizeof($_POST['personalGearName']);
             if ($personalGearsAmounts === sizeof($personalGearsArray)) {
                 $personalGearsAmounts++;
@@ -655,28 +673,30 @@ if (isset($_POST)) {
                 }
                 // die(var_dump("stop"));
             }
-            $charactersArray[$userId]['characters'][$charId]['inventory']['personalGear'] = $personalGearsArray;
+            $charactersArray['characters'][$charId]['inventory']['personalGear'] = $personalGearsArray;
         }
-        if (!isset($_POST['newFieldGear']) && sizeof($charactersArray[$userId]['characters'][$charId]['inventory']['fieldGear']) > 1) {
+        if (!isset($_POST['newFieldGear']) && sizeof($charactersArray['characters'][$charId]['inventory']['fieldGear']) > 1) {
             // die("delete fieldGear");
-            $fieldGearsArray = $charactersArray[$userId]['characters'][$charId]['inventory']['fieldGear'];
+            $fieldGearsArray = $charactersArray['characters'][$charId]['inventory']['fieldGear'];
             $oldAmountFieldGear = sizeof($fieldGearsArray);
             for ($i = 1; $i < $oldAmountFieldGear; $i++) {
                 echo $fieldGearsArray[$i]['name'] . "<br>";
                 unset($fieldGearsArray[$i]);
             }
-            $charactersArray[$userId]['characters'][$charId]['inventory']['fieldGear'] = $fieldGearsArray;
+            $charactersArray['characters'][$charId]['inventory']['fieldGear'] = $fieldGearsArray;
         }
-        if (!isset($_POST['newPersonalGear']) && sizeof($charactersArray[$userId]['characters'][$charId]['inventory']['personalGear']) > 1) {
+        if (!isset($_POST['newPersonalGear']) && sizeof($charactersArray['characters'][$charId]['inventory']['personalGear']) > 1) {
             // die('delete personal gear');
-            $personalGearsArray = $charactersArray[$userId]['characters'][$charId]['inventory']['personalGear'];
+            $personalGearsArray = $charactersArray['characters'][$charId]['inventory']['personalGear'];
             $oldAmountPersonalGear = sizeof($personalGearsArray);
             for ($i = 1; $i < $oldAmountPersonalGear; $i++) {
                 echo $personalGearsArray[$i]['name'] . "<br>";
                 unset($personalGearsArray[$i]);
             }
-            $charactersArray[$userId]['characters'][$charId]['inventory']['personalGear'] = $personalGearsArray;
+            $charactersArray['characters'][$charId]['inventory']['personalGear'] = $personalGearsArray;
         }
+        // die(var_dump("stop"));
+
         // die(var_dump($armorAmounts));
         // die(var_dump($armorAmounts, sizeof($armorsArray)));
 
@@ -691,9 +711,9 @@ if (isset($_POST)) {
 
         // ----------------------------------------------------------------
 
-        // die(var_dump("Gear's done", $personalGearsArray));
         $jsonData = json_encode($charactersArray);
-        file_put_contents('../../app/JS/characters.json', $jsonData);
+        file_put_contents('../characters/' . $_SESSION['userId'] . '.json', $jsonData);
+        die(var_dump("Gear's done", $charactersArray['characters'][$charId]['inventory']));
 
         switch ($_POST['nextPage']) {
             case 'next':
@@ -799,6 +819,6 @@ if (isset($_POST)) {
                 break;
         }
     }
-    // die(var_dump(print_r($_POST)));
+    die(var_dump(print_r($_POST)));
 }
 // As a former slave galdiaotr, Raas won't easily be goaded into battle; but when needed, will turn into a fearsome opponent.

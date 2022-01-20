@@ -1,9 +1,15 @@
 <?php
 
 include __DIR__ . "/../app/functions.php";
-$userName = "Raas/Joya (Gsus)";
-$userId = 1;
-$characterJSON = '../../app/JS/characters.json';
+$userName = "Shadowland Viper";
+$userId = 2;
+$templateJSON = '../../app/JS/characters.json';
+$characterJSON = '../characters/' . $_SESSION['userId'] . '.json';
+if (isMobileDevice()) {
+    $style = $styleMobile;
+} else {
+    $style = $styleDesktop;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
