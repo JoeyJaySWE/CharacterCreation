@@ -5,7 +5,7 @@ if (!isset($_SESSION['user']) || !isset($_GET['char'])) {
     header("Location: http://localhost:8080/wip/CharacterCreation/index.php");
 }
 
-// ----------------- [ PAGE VARIABLES ] ------------------ 
+// ----------------- [ PAGE VARIABLES ] ------------------
 
 $page_title = "Crew Sheets - Personallity";
 $styleMobile = "../../styles/css/default.css";
@@ -34,29 +34,29 @@ $template = json_decode($template, true);
 $users = file_get_contents('../users.json');
 $usersData = json_decode($users, true);
 
+// sets up a new user cararters file if none exists.
 if (!file_exists('../characters/' . $_SESSION['userId'] . '.json')) {
-    $newCharacterFile = $template["template"];
+    // die(var_dump($template));
+    $newCharacterFile = $template;
+
+    $newCharacterFile['username'] = $_SESSION['user'];
     file_put_contents('../characters/' . $_SESSION['userId'] . '.json', json_encode($newCharacterFile));
 }
 
 // die(var_dump("user exsists: ,", $_SESSION['userId']));
 $template = file_get_contents('../characters/' . $_SESSION['userId'] . '.json');
 $template = json_decode($template, true);
-if (!isset($template['characters'][$_GET['char']]) && $_GET['char'] === sizeof($template['characters'])) {
 
-    $character =  $template['characters'][0];
+// checks if current chracter is new character
+if (isset($template['characters'][$_GET['char']-1]) && $template['characters'][$_GET['char']-1]['name'] === 'Character') {
+
+    $character = $template['characters'][0];
     // die("No character");
-    $_SESSION['charId'] = $_GET['char'];
+    $_SESSION['charId'] = (int)$_GET['char']-1;
     $template['characters'][$_SESSION['charId']] = $character;
-    $template['characters'][$_SESSION['charId']]['slug'] = $_SESSION['charId'];
-    $template['characters'][$_SESSION['charId']]['name'] .= " " . $_SESSION['charId'];
-    $template['username'] = $_SESSION['user'];
-    // die(var_dump($_SESSION));
-    // die(var_dump(
-    //     $template['username'],
-    //     $template['characters'][$_SESSION['charId']]['slug'],
-    //     $template['characters'][$_SESSION['charId']]['name']
-    // ));
+    $template['characters'][$_SESSION['charId']]['slug'] = $_SESSION['charId']+1;
+    $template['characters'][$_SESSION['charId']]['name'] .= " " . $_SESSION['charId']+1;
+
 
 
 
@@ -65,15 +65,11 @@ if (!isset($template['characters'][$_GET['char']]) && $_GET['char'] === sizeof($
     $characterName = "Character" . $_SESSION['charId'];
     // die(var_dump($jsonData[]));
 }
-if (!isset($template['characters'][$_GET['char']]) && $_GET['char'] !== sizeof($template['characters'])) {
-    var_dump(!isset($template['characters'][$_GET['char']]), $template['characters'][$_GET['char']], $_GET['char'] !== sizeof($template['characters']));
 
-    die(var_dump("STOP"));
-    header("Location: http://localhost:8080/wip/CharacterCreation/index.php");
-}
 
-// die(var_dump("no checks"));
-$_SESSION['charId'] = $_GET['char'];
+
+// die(var_dump("no cheßcks"));
+$_SESSION['charId'] = (int)$_GET['char']-1;
 $character = find_character($_SESSION['charId'], $template['characters']);
 // die(var_dump("character: ", $character));
 // $_SESSION['charsJSON'] = $template;

@@ -1,6 +1,6 @@
 <?php
 session_start();
-// ----------------- [ PAGE VARIABLES ] ------------------ 
+// ----------------- [ PAGE VARIABLES ] ------------------
 
 $page_title = "Crew Sheets - skills";
 $styleMobile = "../../styles/css/default.css";
@@ -26,12 +26,12 @@ include __DIR__ . "/../../views/header.php";
 
 // ----------------------------------------------------------------
 
-// ----------------- [ LOAD CHARCATER ] ------------------ 
+// ----------------- [ LOAD CHARCATER ] ------------------
 
 $template = file_get_contents($characterJSON);
 $template = json_decode($template, true);
 // die(var_dump($_SESSION['charId']));
-// $characterName = 
+// $characterName =
 $character = $template['characters'][$_SESSION['charId']];
 
 // ----------------------------------------------------------------
@@ -168,8 +168,8 @@ $technicalSkills = $stats["technical"]["skills"];
                                 <button type="button" class="cancelBtn">X</button>
                             </section>
                             <input type="text" name="specKnowName[]" <?php if ($skill['specName'] !== "") {
-                                                                            echo "style='display:flex;'";
-                                                                        } ?> value="<?= $skill['specName'] ?>" placeholder="Speclization..." class="specName">
+                                                                        echo "style='display:flex;'";
+                                                                    } ?> value="<?= $skill['specName'] ?>" placeholder="Speclization..." class="specName">
                             <section class="specilized">
 
                                 <h2 class="fieldLabel">Specialized?</h2>
@@ -182,19 +182,20 @@ $technicalSkills = $stats["technical"]["skills"];
                     endforeach; ?>
                 </section>
             <?php endif; ?>
+
             <section class="templateKnow">
-                <select class="fieldLabel" name="dexSkill1">
+                <select class="fieldLabel" name="knowSkill1">
                     <?php
                     get_skills_dropdown_menu($knowledgeSkills);
                     ?>
                 </select>
                 <section class="statsVlues">
                     <span class="dValue">
-                        <input name="dex1DValue" class="diceValue" value="0" type="number" min="0">
+                        <input name="know1DValue" class="diceValue" value="0" type="number" min="0">
                         D
                     </span>
                     +
-                    <input name="dex1PipValue" class="pipValue" value="0" type="number" max="2" min="0">
+                    <input name="know1PipValue" class="pipValue" value="0" type="number" max="2" min="0">
                     <button type="button" class="cancelBtn">X</button>
                 </section>
                 <input type="text" name="specKnowName[]" placeholder="Speclization..." class="specName">
@@ -217,6 +218,7 @@ $technicalSkills = $stats["technical"]["skills"];
                         if ($skill['name'] === "") {
                             continue;
                         }
+
 
 
                     ?>
@@ -290,9 +292,9 @@ $technicalSkills = $stats["technical"]["skills"];
                     ?>
 
                         <section>
-                            <select class="fieldLabel" name="knowSkill[]">
+                            <select class="fieldLabel" name="percSkill[]">
                                 <?php
-                                get_skills_dropdown_menu($knowledgeSkills, $skill['name']);
+                                get_skills_dropdown_menu($perceptionSkills, $skill['name']);
                                 ?>
                             </select>
                             <section class="statsVlues">

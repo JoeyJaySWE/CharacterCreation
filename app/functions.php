@@ -16,6 +16,22 @@ function get_skills_dropdown_menu(array $skills, string $selected = null)
     endforeach;
 }
 
+function reset_skills(array $skills): array{
+    // print_r($skills);
+    $keys = array_keys($skills);
+    $position = array_search("template", $keys);
+
+
+    // print_r($keys);
+    // die(var_dump($position));
+    $resetedSkill = array_slice($skills, 0, (int)$position+1, true);
+
+    var_dump($resetedSkill);
+    echo "<br><br>";
+    return $resetedSkill;
+
+}
+
 function get_armor_dropdown_menu(array $menuItems, string $selected = null)
 {
     foreach ($menuItems as $armor) :
@@ -171,9 +187,9 @@ function find_gear($name, $array)
 }
 function find_character($charId, $array)
 {
-    foreach ($array as $character) {
-        if ($character['slug'] === $charId) {
-            return $character;
+    foreach ($array as $character => $value) {
+        if ($character === $charId) {
+            return $value;
         }
     }
     return null;
@@ -234,14 +250,14 @@ function isMobileDevice()
 {
     return preg_match(
         "/(android|avantgo|blackberry|bolt|boost|cricket|docomo
-|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i",
+    |fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i",
         $_SERVER["HTTP_USER_AGENT"]
     );
-}
-if (isMobileDevice()) {
-    return true;
-} else {
-    return false;
+    if (isMobileDevice()) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function load_included_gear_data(array $gear, array $gears = null)

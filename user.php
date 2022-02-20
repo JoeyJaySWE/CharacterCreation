@@ -1,6 +1,6 @@
 <?php
 
-// ----------------- [ PAGE VARIABLES ] ------------------ 
+// ----------------- [ PAGE VARIABLES ] ------------------
 session_start();
 $_SESSION['user'] = "Shadowland Viper";
 $_SESSION['userId'] = 2;
@@ -26,7 +26,6 @@ $meta_card_alt = "Vengeful Scars";
 
 $users = file_get_contents('sheet/users.json');
 $usersData = json_decode($users, true);
-$_SESSION['userId'] = 1;
 // $_SESSION['userId'] = sizeof($usersData);
 
 // die(var_dump($usersData[$_SESSION['userId']]));
@@ -38,10 +37,10 @@ if (!isset($usersData[$_SESSION['userId']])) {
     $newUser['userId'] = $_SESSION['userId'];
     $newUser['joined'] = date('Y-M-d');
 
-    $_SESSION['charId'] = 1;
+    $_SESSION['charId'] = 0;
     $newUser['characters'][0]["id"] = $_SESSION['charId'];
     $newUser['characters'][0]['name'] = "Character " . $_SESSION['charId'];
-    $usersData[$_SESSION['userId']] = $newUser;
+    $usersData[$_SESSION['userId']] = $newUser['userId'];
     $newUserData = json_encode($usersData);
     file_put_contents('sheet/users.json', $newUserData);
     $newChar = $_SESSION['charId'];
@@ -55,6 +54,7 @@ if (!isset($usersData[$_SESSION['userId']])) {
 
 include __DIR__ . "/views/header.php";
 // $_SESSION['charId'] = "raasPrudii";
+// $_SESSION['userId'] = 1;
 ?>
 
 <div id="userBox">
@@ -69,18 +69,20 @@ include __DIR__ . "/views/header.php";
             <form action="sheet/character/personallity.php" method="POST">
                 <?php
 
+
+                if (file_exists('sheet/characters/' . $_SESSION['userId'] . '.json')) :
+
                 $jsonCharacters = file_get_contents('sheet/characters/' . $_SESSION['userId'] . '.json');
                 $fileChracters = json_decode($jsonCharacters, true);
-                if (sizeof($fileChracters['characters']) > 1) :
                     $characters = $fileChracters['characters'];
-                    $i = 1;
+                    $i = 0;
                     foreach ($characters as $character) :
                         if ($character['name'] === 'Character') {
                             continue;
                         } ?>
                         <div>
                             <button name="character" type="button" class="defaultBtn subBtn" value="<?= $character['name'] ?>"><?= $character['name'] ?></button>
-                            <button name="deleteCharacter" type="button" value="<?= $character['slug'] ?>" class="cancelBtn" id="deleteChar<?= $i; ?>">X</button>
+                            <button name="deleteCharacter" type="button" value="<?= $i ?>" class="cancelBtn" id="deleteChar<?= $i; ?>">X</button>
                         </div>
                 <?php
                         $i++;

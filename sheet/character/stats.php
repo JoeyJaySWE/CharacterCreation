@@ -1,12 +1,14 @@
 <?php
 session_start();
-if (!isset($_POST)) {
+if (!isset($_GET['char'])) {
+    die("no charID");
     header("Location: http://localhost:8080/wip/CharacterCreation/index.php");
 }
 if (!isset($_SESSION['user'])) {
+    die("no user");
     header("Location: http://localhost:8080/wip/CharacterCreation/index.php");
 }
-// ----------------- [ PAGE VARIABLES ] ------------------ 
+// ----------------- [ PAGE VARIABLES ] ------------------
 
 $page_title = "Crew Sheets - Stats";
 $styleMobile = "../../styles/css/default.css";
@@ -34,7 +36,7 @@ $nextPage = "Skills";
 
 // ----------------------------------------------------------------
 
-// ----------------- [ LOAD CHARCATER ] ------------------ 
+// ----------------- [ LOAD CHARCATER ] ------------------
 
 $template = file_get_contents($characterJSON);
 $template = json_decode($template, true);
@@ -45,7 +47,6 @@ $character = $template['characters'][$_SESSION['charId']];
 
 
 // die(print_r($character['personallity']));
-
 
 ?>
 
