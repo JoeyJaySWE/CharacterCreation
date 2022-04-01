@@ -3,7 +3,7 @@
 // 	    .then((response) => response.json());
 // }
 
-if (page === inventoryPage) {
+if (page.indexOf(inventoryPage) === 0 ){
 	console.log("Listining on inventory page...");
 
 	// ----------------- [ ARMOR ] ------------------

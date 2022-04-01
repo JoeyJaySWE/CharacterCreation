@@ -301,6 +301,8 @@ $gear = json_decode($gearData, true);
                         continue;
                     }
                     $fieldGear['amount'] = 0;
+
+                    // stack field gars
                     foreach ($character['inventory']['fieldGear'] as $fieldGearIndex) {
                         // var_dump(sizeof($fieldGearIndex));
                         if (sizeof($fieldGearIndex) === 1) {
@@ -327,6 +329,7 @@ $gear = json_decode($gearData, true);
 
                             // $jsonString = json_encode($string);
                             // var_dump(json_decode($jsonString), "test");
+
                             load_gear_data($fieldGear);
                             $printedGears[$index] = $fieldGear['name'];
 
@@ -345,7 +348,7 @@ $gear = json_decode($gearData, true);
 
 
             <section class="addGear" id="fieldGearTemplate">
-                <input type="hidden" name="newFieldGear[<?= $index; ?>]" value="true">
+                <input type="hidden" name="newFieldGear[0]" value="true">
                 <select class="fieldLabel" name="dexSkill1">
                     <?php
                     get_gears_dropdown_menu($gear, "Custom Gear");
@@ -399,7 +402,7 @@ $gear = json_decode($gearData, true);
                         </details>
                         <span class="amount">
                             x
-                            <input type="number" value="<?= $personalGear['amount'] ?>" />
+                            <input type="number" name="fieldGearAmount[]" value="<?= $personalGear['amount'] ?>" />
                         </span>
                         <button type="button" class="cancelBtn">X</button>
                     </section>

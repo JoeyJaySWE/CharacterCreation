@@ -7,6 +7,7 @@ $_SESSION['userId'] = 2;
 $page_title = "Crew Sheets - User Page";
 $styleMobile = "styles/css/default.css";
 $styleDesktop = "styles/css/desktop.css";
+$style = $styleDesktop;
 $userName = $_SESSION['user'];
 $userId = $_SESSION['userId'];
 
@@ -72,8 +73,8 @@ include __DIR__ . "/views/header.php";
 
                 if (file_exists('sheet/characters/' . $_SESSION['userId'] . '.json')) :
 
-                $jsonCharacters = file_get_contents('sheet/characters/' . $_SESSION['userId'] . '.json');
-                $fileChracters = json_decode($jsonCharacters, true);
+                    $jsonCharacters = file_get_contents('sheet/characters/' . $_SESSION['userId'] . '.json');
+                    $fileChracters = json_decode($jsonCharacters, true);
                     $characters = $fileChracters['characters'];
                     $i = 0;
                     foreach ($characters as $character) :

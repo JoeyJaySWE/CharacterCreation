@@ -16,7 +16,8 @@ function get_skills_dropdown_menu(array $skills, string $selected = null)
     endforeach;
 }
 
-function reset_skills(array $skills): array{
+function reset_skills(array $skills): array
+{
     // print_r($skills);
     $keys = array_keys($skills);
     $position = array_search("template", $keys);
@@ -24,12 +25,11 @@ function reset_skills(array $skills): array{
 
     // print_r($keys);
     // die(var_dump($position));
-    $resetedSkill = array_slice($skills, 0, (int)$position+1, true);
+    $resetedSkill = array_slice($skills, 0, (int)$position + 1, true);
 
     var_dump($resetedSkill);
     echo "<br><br>";
     return $resetedSkill;
-
 }
 
 function get_armor_dropdown_menu(array $menuItems, string $selected = null)
@@ -37,10 +37,10 @@ function get_armor_dropdown_menu(array $menuItems, string $selected = null)
     foreach ($menuItems as $armor) :
         if ($armor['name'] === $selected) :    ?>
 
-            <option selected value="<?= $armor["name"] ?>"><?= $armor["name"] ?> &dash; <?= number_format($armor['cost']); ?> credits</option>
+            <option selected value="<?= $armor["name"] ?>"><?= $armor["name"] ?> - <?= number_format($armor['cost']); ?> credits</option>
 
         <?php else : ?>
-            <option value="<?= $armor["name"] ?>"><?= $armor["name"] ?> &dash; <?= number_format($armor['cost']); ?> credits</option>
+            <option value="<?= $armor["name"] ?>"><?= $armor["name"] ?> - <?= number_format($armor['cost']); ?> credits</option>
         <?php
         endif;
     endforeach;
@@ -60,16 +60,16 @@ function get_weapons_dropdown_menu(array $menuItems, string $selected = null, st
         <?php else : ?>
 
 
-            <option disabled>&dash;<?= strtoupper($weapon['category']) ?>&dash;</option>
+            <option disabled>-<?= strtoupper($weapon['category']) ?>-</option>
             <?php
         endif;
         foreach ($weapon['weapons'] as $weapon) :
             if ($weapon['name'] === $weaponName || $weapon['name'] === "Custom Weapon") : ?>
-                <option selected value="<?= $weapon["name"] ?>"><?= $weapon["name"] ?> &dash; <?= number_format($weapon['cost']); ?> credits</option>
+                <option selected value="<?= $weapon["name"] ?>"><?= $weapon["name"] ?> - <?= number_format($weapon['cost']); ?> credits</option>
             <?php else : ?>
 
 
-                <option value="<?= $weapon["name"] ?>"><?= $weapon["name"] ?> &dash; <?= number_format($weapon['cost']); ?> credits</option>
+                <option value="<?= $weapon["name"] ?>"><?= $weapon["name"] ?> - <?= number_format($weapon['cost']); ?> credits</option>
         <?php
             endif;
         endforeach; ?>
@@ -152,16 +152,16 @@ function get_gears_dropdown_menu(array $menuItems, string $selected = null, stri
         <?php else : ?>
 
 
-            <option disabled>&dash;<?= strtoupper($gear['category']) ?>&dash;</option>
+            <option disabled>-<?= strtoupper($gear['category']) ?>-</option>
             <?php
         endif;
         foreach ($gear['items'] as $gear) :
             if ($gear['name'] === $gearName || $gear['name'] === "Custom gear") : ?>
-                <option selected value="<?= $gear["name"] ?>"><?= $gear["name"] ?> &dash; <?= number_format($gear['cost']); ?> credits</option>
+                <option selected value="<?= $gear["name"] ?>"><?= $gear["name"] ?> - <?= number_format($gear['cost']); ?> credits</option>
             <?php else : ?>
 
 
-                <option value="<?= $gear["name"] ?>"><?= $gear["name"] ?> &dash; <?= number_format($gear['cost']); ?> credits</option>
+                <option value="<?= $gear["name"] ?>"><?= $gear["name"] ?> - <?= number_format($gear['cost']); ?> credits</option>
         <?php
             endif;
         endforeach; ?>
@@ -169,6 +169,8 @@ function get_gears_dropdown_menu(array $menuItems, string $selected = null, stri
 }
 function find_gear($name, $array)
 {
+
+
     // die(var_dump($name, $array));
     foreach ($array as $category) :
         if ($category['category'] === "Choose one") {
@@ -222,14 +224,16 @@ function load_gear_data($gear)
         </p>
         <?php endif;
     if (isset($gear["includes"])) :
+        // die(var_dump(sizeof($gear['includes']))); 8
         foreach ($gear['includes'] as $key => $incGear) :
             $gearData = file_get_contents('../../app/JS/gear.json');
             $gears = json_decode($gearData, true);
+
         ?>
             <section class="gearSection">
                 <details>
                     <?php if (find_gear($incGear['name'], $gears) !== null) : ?>
-                        <?php load_included_gear_data($gears); ?>
+                        <?php load_included_gear_data(find_gear($incGear['name'], $gears), $gears); ?>
                     <?php else :  ?>
                         <summary class="defaultBtn subBtn button disabled <?php if (strlen($gear['name']) > 20) {
                                                                                 echo "threeWrod";
@@ -239,7 +243,7 @@ function load_gear_data($gear)
 
                 <span class="amount">
                     x
-                    <input type="number" value="<?= $incGear['amount'] ?>" />
+                    <input type="number" name="fieldGearIncAmount[]" value="<?= $incGear['amount'] ?>" />
                 </span>
             </section>
     <?php endforeach;
@@ -260,18 +264,23 @@ function isMobileDevice()
     }
 }
 
-function load_included_gear_data(array $gear, array $gears = null)
+function load_included_gear_data(array $gearList, array $gears = null)
 {
 
-    // die(var_dump($gear));
-    $gear = find_gear($gear['name'], $gears);
-    die(var_dump($gear));
+    // die(var_dump(array_keys($gearList)));
+
+
+    // if ($gearList['name'] === "Medpac") {
+    //     die(var_dump($gears));
+    // }
+    $gear = find_gear($gearList['name'], $gears);
+
     ?>
     <summary class="defaultBtn subBtn button <?php if (strlen($gear['name']) > 20) {
                                                     echo "threeWrod";
                                                 } ?>"><?= $gear['name']; ?></summary>
     <?php
-    die(var_dump($gear));
+    // die(var_dump($gear));
     if ($gear['gameNote'] !== "") : ?>
         <h2 class="fieldLabel">Game Note:</h2>
         <p>

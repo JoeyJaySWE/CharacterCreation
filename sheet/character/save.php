@@ -1,10 +1,9 @@
 <?php
 include(__DIR__ . '/../../app/functions.php');
 
-// ----------------- [ SESSION DATA ] ------------------
+// ----------------- [ SESSION DATA ] ------------------ 
 session_start();
 $userName = $_SESSION['user'];
-var_dump("Char ID: ", $_SESSION['charId']);
 $userId = $_SESSION['userId'];
 // $_SESSION['charId'] = "emptyChar";
 $charId = $_SESSION['charId'];
@@ -15,15 +14,15 @@ $charactersArray = json_decode($JSONchars, true);
 
 // ----------------------------------------------------------------
 
-// ----------------- [ PAG URLs ] ------------------
+// ----------------- [ PAG URLs ] ------------------ 
 
 $userPage = "Location: http://localhost:8080/wip/CharacterCreation/user.php";
-$personallityPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/personallity.php?char=" . $_SESSION['charId']+1;
-$statsPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/stats.php?char=" . $_SESSION['charId']+1;
-$skillPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/skills.php?char=" . $_SESSION['charId']+1;
-$inventoryPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/inventory.php?char=" . $_SESSION['charId']+1;
-$biographyPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/biography.php?char=" . $_SESSION['charId']+1;
-$portraitPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/portrait.php?char=" . $_SESSION['charId']+1;
+$personallityPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/personallity.php?char=" . $_SESSION['charId'];
+$statsPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/stats.php";
+$skillPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/skills.php";
+$inventoryPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/inventory.php";
+$biographyPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/biography.php";
+$portraitPage = "Location: http://localhost:8080/wip/CharacterCreation/sheet/character/portrait.php";
 
 // ----------------------------------------------------------------
 
@@ -39,8 +38,6 @@ if (isset($_POST)) {
     echo "You Got Mail! <br>";
     // print_r($_POST);
 
-
-    // ---------- [ PERSONALLITY PAGE ] -----------------
     if (isset($_POST['personalityForm'])) {
 
         echo "Personal data: " . $characterData['name'] . "<br>";
@@ -58,7 +55,7 @@ if (isset($_POST)) {
         // print_r($jsonData);
         $jsonData = json_encode($charactersArray);
         file_put_contents($characterPathJSON, $jsonData);
-        // die(var_dump("SHORT STOP"));
+
         switch ($_POST['nextPage']) {
             case 'next':
                 header($statsPage);
@@ -71,12 +68,8 @@ if (isset($_POST)) {
                 header($userPage);
                 break;
         }
-    }
-
-    // ---------- [ STATS PAGE ] -----------------
-     else if (isset($_POST['statsForm'])) {
+    } else if (isset($_POST['statsForm'])) {
         var_dump("stats form");
-        var_dump($charId);
         echo "From Stats <br><br>";
         $character = $characterData['stats'];
         $character['dexterity']['dice'] = (int)$_POST['dexDValue'];
@@ -99,10 +92,10 @@ if (isset($_POST)) {
         $characterData['stats'] = $character;
 
         $charactersArray['characters'][$charId] = $characterData;
-
+        var_dump($characterData['stats']);
         $jsonData = json_encode($charactersArray);
-        // die(var_dump("end of code"));
         file_put_contents($characterPathJSON, $jsonData);
+        // die(var_dump("end of code"));
 
         switch ($_POST['nextPage']) {
             case 'next':
@@ -118,41 +111,22 @@ if (isset($_POST)) {
                 header($userPage);
                 break;
         }
-    }
-
-    // ---------- [ SKILLS PAGE ] -----------------
-    else if (isset($_POST['skillsForm'])) {
+    } else if (isset($_POST['skillsForm'])) {
         var_dump("Skills");
-        // die(var_dump("short stop"));
         echo "From: skills<br/><br/>";
-        // print_r($_POST['dexSkill']);
+        // print_r($_POST['dexSkillName']);
         echo "<br><br/>";
-        // echo $_POST['dexSkill'][1] . "<br/>";
-        // print_r($_POST);
+        // echo $_POST['dexSkillName'][1] . "<br/>";
 
-        // reset skills
-        foreach($characterData['stats'] as $index => $stats){
+        // ----------------- [ DEXTERITY SKILLS ] ------------------ 
 
-            // die(var_dump(array_keys($characterData['stats'])));
+        if (isset($_POST['dexSkillName'])) {
+            var_dump("Dex");
 
-
-            if(isset($stats['skills']) && sizeof($stats['skills'])> 1){
-                // die(var_dump($stats['skills']));
-                var_dump($index);
-
-                $characterData['stats'][$index]['skills'] = reset_skills($stats['skills']);
-            }
-        }
-
-        // ----------------- [ DEXTERITY SKILLS ] ------------------
-
-        if (isset($_POST['dexSkill'])) {
-            // var_dump("\nDex");
-
-            $numbersOfDexSkills = sizeof($_POST['dexSkill']);
+            $numbersOfDexSkills = sizeof($_POST['dexSkillName']);
             $dexSkillsArray = $characterData['stats']['dexterity']['skills'];
             for ($i = 0; $i < $numbersOfDexSkills; $i++) {
-                $dexSkill['name'] = $_POST['dexSkill'][$i];
+                $dexSkill['name'] = $_POST['dexSkillName'][$i];
                 $dexSkill['dice'] = $_POST['dexSkillDice'][$i];
                 $dexSkill['pips'] = $_POST['dexSkillPips'][$i];
 
@@ -173,15 +147,14 @@ if (isset($_POST)) {
 
 
 
-        // ----------------- [ KNOWLEDGE SKILLS ] ------------------
+        // ----------------- [ KNOWLEDGE SKILLS ] ------------------ 
 
+        if (isset($_POST['knowSkillName'])) {
 
-        if (isset($_POST['knowSkill'])) {
-            // var_dump("\nKnow");
-            $numbersOfKnowSkills = sizeof($_POST['knowSkill']);
+            $numbersOfKnowSkills = sizeof($_POST['knowSkillName']);
             $knowSkillsArray = $characterData['stats']['knowledge']['skills'];
             for ($i = 0; $i < $numbersOfKnowSkills; $i++) {
-                $knowSkill['name'] = $_POST['knowSkill'][$i];
+                $knowSkill['name'] = $_POST['knowSkillName'][$i];
                 $knowSkill['dice'] = $_POST['knowSkillDice'][$i];
                 $knowSkill['pips'] = $_POST['knowSkillPips'][$i];
 
@@ -201,19 +174,13 @@ if (isset($_POST)) {
         // ----------------------------------------------------------------
 
 
-        // ----------------- [ MECHANICAL SKILLS ] ------------------
+        // ----------------- [ MECHANICAL SKILLS ] ------------------ 
 
-        if (isset($_POST['mechSkill'])) {
-            // var_dump("\nMech");
-            $numbersOfMechSkills = sizeof($_POST['mechSkill']);
+        if (isset($_POST['mechSkillName'])) {
+            $numbersOfMechSkills = sizeof($_POST['mechSkillName']);
             $mechSkillsArray = $characterData['stats']['mechanical']['skills'];
-
-            // $characterData['stats']['mechanical']['skills']
-
-            // die(var_dump("Temp stop", $characterData['stats']['mechanical']['skills']));
             for ($i = 0; $i < $numbersOfMechSkills; $i++) {
-
-                $mechSkill['name'] = $_POST['mechSkill'][$i];
+                $mechSkill['name'] = $_POST['mechSkillName'][$i];
                 $mechSkill['dice'] = $_POST['mechSkillDice'][$i];
                 $mechSkill['pips'] = $_POST['mechSkillPips'][$i];
 
@@ -224,28 +191,23 @@ if (isset($_POST)) {
                     $mechSkill['specialized'] = false;
                     $mechSkill['specName'] = "";
                 }
-                var_dump("size of array: ", $characterData['stats']['mechanical']['skills']);
-                $mechSkillsArray[$i] = $mechSkill;
-
+                $mechSkillsArray[$i + 1] = $mechSkill;
                 // $charactersArray[$_SESSION['user']['characters'][$_SESSION['character']['slug']]] = $character;
             }
             $characterData['stats']['mechanical']['skills'] = $mechSkillsArray;
-            // die(var_dump($characterData['stats']['mechanical']['skills'] ));
         }
 
         // ----------------------------------------------------------------
 
 
-        // ----------------- [ PERCEPTION SKILLS ] ------------------
+        // ----------------- [ PERCEPTION SKILLS ] ------------------ 
 
-        if (isset($_POST['percSkill'])) {
-            // var_dump("\nPerc");
+        if (isset($_POST['percSkillName'])) {
             // die(var_dump("Hold"));
-            $numbersOfPercSkills = sizeof($_POST['percSkill']);
+            $numbersOfPercSkills = sizeof($_POST['percSkillName']);
             $percSkillsArray = $characterData['stats']['perception']['skills'];
-            // die(var_dump($percSkillsArray));
             for ($i = 0; $i < $numbersOfPercSkills; $i++) {
-                $percSkill['name'] = $_POST['percSkill'][$i];
+                $percSkill['name'] = $_POST['percSkillName'][$i];
                 $percSkill['dice'] = $_POST['percSkillDice'][$i];
                 $percSkill['pips'] = $_POST['percSkillPips'][$i];
 
@@ -265,14 +227,13 @@ if (isset($_POST)) {
         // ----------------------------------------------------------------
 
 
-        // ----------------- [ STRENGTH SKILLS ] ------------------
+        // ----------------- [ STRENGTH SKILLS ] ------------------ 
 
-        if (isset($_POST['strSkill'])) {
-            // var_dump("\nStr");
-            $numbersOfStrSkills = sizeof($_POST['strSkill']);
+        if (isset($_POST['strSkillName'])) {
+            $numbersOfStrSkills = sizeof($_POST['strSkillName']);
             $strSkillsArray = $characterData['stats']['strength']['skills'];
             for ($i = 0; $i < $numbersOfStrSkills; $i++) {
-                $strSkill['name'] = $_POST['strSkill'][$i];
+                $strSkill['name'] = $_POST['strSkillName'][$i];
                 $strSkill['dice'] = $_POST['strSkillDice'][$i];
                 $strSkill['pips'] = $_POST['strSkillPips'][$i];
 
@@ -292,14 +253,13 @@ if (isset($_POST)) {
         // ----------------------------------------------------------------
 
 
-        // ----------------- [ TECHNICAL SKILLS ] ------------------
+        // ----------------- [ TECHNICAL SKILLS ] ------------------ 
 
-        if (isset($_POST['techSkill'])) {
-            // var_dump("\nTech");
-            $numbersOfTechSkills = sizeof($_POST['techSkill']);
+        if (isset($_POST['techSkillName'])) {
+            $numbersOfTechSkills = sizeof($_POST['techSkillName']);
             $techSkillsArray = $characterData['stats']['technical']['skills'];
             for ($i = 0; $i < $numbersOfTechSkills; $i++) {
-                $techSkill['name'] = $_POST['techSkill'][$i];
+                $techSkill['name'] = $_POST['techSkillName'][$i];
                 $techSkill['dice'] = $_POST['techSkillDice'][$i];
                 $techSkill['pips'] = $_POST['techSkillPips'][$i];
 
@@ -311,6 +271,7 @@ if (isset($_POST)) {
                     $techSkill['specName'] = "";
                 }
                 $techSkillsArray[$i + 1] = $techSkill;
+                // $charactersArray[$_SESSION['user']['characters'][$_SESSION['character']['slug']]] = $character;
             }
             $characterData['stats']['technical']['skills'] = $techSkillsArray;
         }
@@ -319,7 +280,9 @@ if (isset($_POST)) {
 
         // print_r($characterData['stats']['dexterity']);
         // echo "<br/><br/>";
-        $charactersArray['characters'][$charId] = $characterData;
+
+        $charactersArray['characters'][$characterData['slug']] = $characterData;
+        var_dump($characterData['stats']['dexterity']);
         $jsonData = json_encode($charactersArray);
         file_put_contents($characterPathJSON, $jsonData);
         // die(var_dump("STOP"));
@@ -340,12 +303,13 @@ if (isset($_POST)) {
                 header($userPage);
                 break;
         }
-    }
-
-    // ---------- [ INVENTORY PAGE ] -----------------
-    else if (isset($_POST['inventoryForm'])) {
+    } else if (isset($_POST['inventoryForm'])) {
         var_dump("inventory");
         echo "Inventory stuff";
+
+        echo "<p>" . print_r($_POST['armorName']) . "</p>";
+
+        // ----------------- [ ARMOR SECTION ] ------------------ 
 
         // fetching armors
         $armorsJSON = file_get_contents("../../app/JS/armor.json");
@@ -356,125 +320,147 @@ if (isset($_POST)) {
         // store the stats in a stats array to keep track of protection
         $statsArray = $charactersArray['characters'][$charId]['stats'];
         // check how many armors we got on chracter
-        $armorAmounts = sizeof($_POST['armorName']);
-        die(var_dump('armor amounts: ', $armorAmounts));
-        // die(var_dump($armorAmounts, sizeof($armorsArray)));
-        if ($armorAmounts === sizeof($armorsArray)) {
-            $armorAmounts++;
-        } else if ($armorAmounts < sizeof($armorsArray)) {
-            // die("Less");
-            $armorAmounts++;
-            // var_dump("<br>", sizeof($armorsArray));
+        if (isset($_POST['armorName'])) {
+            $armorAmounts = sizeof($_POST['armorName']);
+            // die(var_dump('armor amounts: ', $armorAmounts));
+            // die(var_dump($armorAmounts, sizeof($armorsArray)));
+
+            if ($armorAmounts === sizeof($armorsArray)) {
+                $armorAmounts++;
+            } else if ($armorAmounts < sizeof($armorsArray)) {
+                // die("Less");
+                $armorAmounts++;
+                // var_dump("<br>", sizeof($armorsArray));
+                $oldAmount = sizeof($armorsArray);
+                for ($i = 1; $i < $oldAmount; $i++) {
+                    echo $armorsArray[$i]['name'] . "<br>";
+                    unset($armorsArray[$i]);
+                }
+                // die(var_dump("<br>", sizeof($armorsArray)));
+            }
+            for ($i = 1; $i < $armorAmounts; $i++) {
+                // die(var_dump(sizeof($armorsArray)));
+                // die(var_dump($_POST['armorName'][$i]));
+                $dbArmor = find_armor($_POST['armorName'][$i], $armors);
+
+                if ($_POST['newArmor'][$i] === "true") {
+                    // var_dump("new armor!");
+                    $dbArmor = find_armor($_POST['armorName'][$i], $armors);
+                    // die(var_dump("armors amount:", $armorAmounts));
+                    $armorsArray[$armorAmounts - 1] = $dbArmor;
+                } else {
+                    // var_dump("old armor");
+                    $armor['name'] = $_POST['armorName'][$i];
+                    // die(var_dump($armorsArray));
+                    // $oldArmor = find_old_armor($armor['name'], $charactersArray[$userId]['characters'][$charId]['inventory']);
+                    // die(print_r($oldArmor['name']));
+                    if (sizeof($_POST['armorLegsEnergyPips']) !== $armorAmounts && $i > 1) {
+                        $loopIndex = $i;
+                        $i--;
+                    } else {
+                        $loopIndex = $i;
+                    }
+                    for ($statsIndex = 0; $statsIndex < sizeof($_POST['armorHeadPhysicalD']); $statsIndex++) {
+
+                        $armor['protection']['head']['physical']['stat'] = "str";
+                        $armor['protection']['head']['energy']['stat'] = "str";
+                        $armor['protection']['head']['physical']['dice'] = ($_POST['armorHeadPhysicalD'][$statsIndex] - $statsArray['strength']['dice']);
+                        $armor['protection']['head']['physical']['pips'] = ($_POST['armorHeadPhysicalPips'][$statsIndex] - $statsArray['strength']['pips']);
+                        $armor['protection']['head']['energy']['dice'] = ($_POST['armorHeadEnergyD'][$statsIndex] - $statsArray['strength']['dice']);
+                        $armor['protection']['head']['energy']['pips'] = ($_POST['armorHeadEnergyPips'][$statsIndex] - $statsArray['strength']['pips']);
+                        $armor['protection']['torso']['physical']['dice'] = ($_POST['armorTorsoPhysicalD'][$statsIndex] - $statsArray['strength']['dice']);
+                        $armor['protection']['torso']['physical']['pips'] = ($_POST['armorTorsoPhysicalPips'][$statsIndex] - $statsArray['strength']['pips']);
+                        $armor['protection']['torso']['energy']['dice'] = ($_POST['armorTorsoEnergyD'][$statsIndex] - $statsArray['strength']['dice']);
+                        $armor['protection']['torso']['energy']['pips'] = ($_POST['armorTorsoEnergyPips'][$statsIndex] - $statsArray['strength']['pips']);
+                        $armor['protection']['arms']['physical']['dice'] = ($_POST['armorArmsPhysicalD'][$statsIndex] - $statsArray['strength']['dice']);
+                        $armor['protection']['arms']['physical']['pips'] = ($_POST['armorArmsPhysicalPips'][$statsIndex] - $statsArray['strength']['pips']);
+                        $armor['protection']['arms']['energy']['dice'] = ($_POST['armorArmsEnergyD'][$statsIndex] - $statsArray['strength']['dice']);
+                        $armor['protection']['arms']['energy']['pips'] = ($_POST['armorArmsEnergyPips'][$statsIndex] - $statsArray['strength']['pips']);
+                        $armor['protection']['legs']['physical']['dice'] = ($_POST['armorLegsPhysicalD'][$statsIndex] - $statsArray['strength']['dice']);
+                        $armor['protection']['legs']['physical']['pips'] = ($_POST['armorLegsPhysicalPips'][$statsIndex] - $statsArray['strength']['pips']);
+                        $armor['protection']['legs']['energy']['dice'] = ($_POST['armorLegsEnergyD'][$statsIndex] - $statsArray['strength']['dice']);
+                        $armor['protection']['legs']['energy']['pips'] = ($_POST['armorLegsEnergyPips'][$statsIndex] - $statsArray['strength']['pips']);
+                    }
+                    $armor['protection']['element'] = $dbArmor['protection']['element'];
+                    $armor['cost'] = $dbArmor['cost'];
+                    // $armor['cost'] = $_POST['armorCost'][$i];
+
+                    $armor['description'] = $_POST['armorDescription'][$i];
+                    $armor['gameNote'] = $_POST['armorGameNote'][$i];
+                    $armor['availabillity'] = $dbArmor['availabillity'];
+
+
+                    $armor['penalties']['dexterity']['dice'] = $_POST['armorDexterityPenaltyD'][$i];
+                    $armor['penalties']['dexterity']['pips'] = $_POST['armorDexterityPenaltyPips'][$i];
+                    $armor['penalties']['knowledge']['dice'] = $_POST['armorKnowledgePenaltyD'][$i];
+                    $armor['penalties']['knowledge']['pips'] = $_POST['armorKnowledgePenaltyPips'][$i];
+                    $armor['penalties']['mechanical']['dice'] = $_POST['armorMechanicalPenaltyD'][$i];
+                    $armor['penalties']['mechanical']['pips'] = $_POST['armorMechanicalPenaltyPips'][$i];
+                    $armor['penalties']['perception']['dice'] = $_POST['armorPerceptionPenaltyD'][$i];
+                    $armor['penalties']['perception']['pips'] = $_POST['armorPerceptionPenaltyPips'][$i];
+                    $armor['penalties']['strength']['dice'] = $_POST['armorStrengthPenaltyD'][$i];
+                    $armor['penalties']['strength']['pips'] = $_POST['armorStrengthPenaltyPips'][$i];
+                    $armor['penalties']['technical']['dice'] = $_POST['armorTechnicalPenaltyD'][$i];
+                    $armor['penalties']['technical']['pips'] = $_POST['armorTechnicalPenaltyPips'][$i];
+                    // $armor['penalities']
+                    // die(print_r($oldArmor));
+                    $armorsArray[$loopIndex] = $armor;
+                }
+                if ($i === 1) {
+                    // die(var_dump($_POST['armorName'][$i], sizeof($armorsArray)));
+                    // die(var_dump($armorsArray));
+                }
+                // die(var_dump("stop"));
+            }
+            // die(print_r($armorsArray));
+            // var_dump('armors done');
+            // die(var_dump($armorsArray));
+
+            $charactersArray['characters'][$charId]['inventory']['armors'] = $armorsArray;
+            // var_dump($charactersArray['characters'][$charId]['inventory']['armors'][1]);
+            // ----------------------------------------------------------------
+        } else {
             $oldAmount = sizeof($armorsArray);
             for ($i = 1; $i < $oldAmount; $i++) {
                 echo $armorsArray[$i]['name'] . "<br>";
                 unset($armorsArray[$i]);
             }
-            // die(var_dump("<br>", sizeof($armorsArray)));
         }
-        for ($i = 1; $i < $armorAmounts; $i++) {
-            // die(var_dump(sizeof($armorsArray)));
-            // die(var_dump($_POST['armorName'][$i]));
-            $dbArmor = find_armor($_POST['armorName'][$i], $armors);
+        echo "<p>Armors done!</p>";
 
-            if ($_POST['newArmor'][$i] === "true") {
-                // var_dump("new armor!");
-                $dbArmor = find_armor($_POST['armorName'][$i], $armors);
-                // die(var_dump("armors amount:", $armorAmounts));
-                $armorsArray[$armorAmounts - 1] = $dbArmor;
-            } else {
-                // var_dump("old armor");
-                $armor['name'] = $_POST['armorName'][$i];
-                // die(var_dump($armorsArray));
-                // $oldArmor = find_old_armor($armor['name'], $charactersArray[$userId]['characters'][$charId]['inventory']);
-                // die(print_r($oldArmor['name']));
-                if (sizeof($_POST['armorLegsEnergyPips']) !== $armorAmounts && $i > 1) {
-                    $loopIndex = $i;
-                    $i--;
-                } else {
-                    $loopIndex = $i;
-                }
-                for ($statsIndex = 0; $statsIndex < sizeof($_POST['armorHeadPhysicalD']); $statsIndex++) {
+        // ----------------- [ WEAPONS ] ------------------ 
+        echo "Weapons...";
 
-                    $armor['protection']['head']['physical']['stat'] = "str";
-                    $armor['protection']['head']['energy']['stat'] = "str";
-                    $armor['protection']['head']['physical']['dice'] = ($_POST['armorHeadPhysicalD'][$statsIndex] - $statsArray['strength']['dice']);
-                    $armor['protection']['head']['physical']['pips'] = ($_POST['armorHeadPhysicalPips'][$statsIndex] - $statsArray['strength']['pips']);
-                    $armor['protection']['head']['energy']['dice'] = ($_POST['armorHeadEnergyD'][$statsIndex] - $statsArray['strength']['dice']);
-                    $armor['protection']['head']['energy']['pips'] = ($_POST['armorHeadEnergyPips'][$statsIndex] - $statsArray['strength']['pips']);
-                    $armor['protection']['torso']['physical']['dice'] = ($_POST['armorTorsoPhysicalD'][$statsIndex] - $statsArray['strength']['dice']);
-                    $armor['protection']['torso']['physical']['pips'] = ($_POST['armorTorsoPhysicalPips'][$statsIndex] - $statsArray['strength']['pips']);
-                    $armor['protection']['torso']['energy']['dice'] = ($_POST['armorTorsoEnergyD'][$statsIndex] - $statsArray['strength']['dice']);
-                    $armor['protection']['torso']['energy']['pips'] = ($_POST['armorTorsoEnergyPips'][$statsIndex] - $statsArray['strength']['pips']);
-                    $armor['protection']['arms']['physical']['dice'] = ($_POST['armorArmsPhysicalD'][$statsIndex] - $statsArray['strength']['dice']);
-                    $armor['protection']['arms']['physical']['pips'] = ($_POST['armorArmsPhysicalPips'][$statsIndex] - $statsArray['strength']['pips']);
-                    $armor['protection']['arms']['energy']['dice'] = ($_POST['armorArmsEnergyD'][$statsIndex] - $statsArray['strength']['dice']);
-                    $armor['protection']['arms']['energy']['pips'] = ($_POST['armorArmsEnergyPips'][$statsIndex] - $statsArray['strength']['pips']);
-                    $armor['protection']['legs']['physical']['dice'] = ($_POST['armorLegsPhysicalD'][$statsIndex] - $statsArray['strength']['dice']);
-                    $armor['protection']['legs']['physical']['pips'] = ($_POST['armorLegsPhysicalPips'][$statsIndex] - $statsArray['strength']['pips']);
-                    $armor['protection']['legs']['energy']['dice'] = ($_POST['armorLegsEnergyD'][$statsIndex] - $statsArray['strength']['dice']);
-                    $armor['protection']['legs']['energy']['pips'] = ($_POST['armorLegsEnergyPips'][$statsIndex] - $statsArray['strength']['pips']);
-                }
-                $armor['protection']['element'] = $dbArmor['protection']['element'];
-                $armor['cost'] = $dbArmor['cost'];
-                // $armor['cost'] = $_POST['armorCost'][$i];
-
-                $armor['description'] = $_POST['armorDescription'][$i];
-                $armor['gameNote'] = $_POST['armorGameNote'][$i];
-                $armor['availabillity'] = $dbArmor['availabillity'];
-
-
-                $armor['penalties']['dexterity']['dice'] = $_POST['armorDexterityPenaltyD'][$i];
-                $armor['penalties']['dexterity']['pips'] = $_POST['armorDexterityPenaltyPips'][$i];
-                $armor['penalties']['knowledge']['dice'] = $_POST['armorKnowledgePenaltyD'][$i];
-                $armor['penalties']['knowledge']['pips'] = $_POST['armorKnowledgePenaltyPips'][$i];
-                $armor['penalties']['mechanical']['dice'] = $_POST['armorMechanicalPenaltyD'][$i];
-                $armor['penalties']['mechanical']['pips'] = $_POST['armorMechanicalPenaltyPips'][$i];
-                $armor['penalties']['perception']['dice'] = $_POST['armorPerceptionPenaltyD'][$i];
-                $armor['penalties']['perception']['pips'] = $_POST['armorPerceptionPenaltyPips'][$i];
-                $armor['penalties']['strength']['dice'] = $_POST['armorStrengthPenaltyD'][$i];
-                $armor['penalties']['strength']['pips'] = $_POST['armorStrengthPenaltyPips'][$i];
-                $armor['penalties']['technical']['dice'] = $_POST['armorTechnicalPenaltyD'][$i];
-                $armor['penalties']['technical']['pips'] = $_POST['armorTechnicalPenaltyPips'][$i];
-                // $armor['penalities']
-                // die(print_r($oldArmor));
-                $armorsArray[$loopIndex] = $armor;
-            }
-            if ($i === 1) {
-                // die(var_dump($_POST['armorName'][$i], sizeof($armorsArray)));
-                // die(var_dump($armorsArray));
-            }
-            // die(var_dump("stop"));
-        }
-        // die(print_r($armorsArray));
-        // var_dump('armors done');
-        // die(var_dump($armorsArray));
-
-        $charactersArray['characters'][$charId]['inventory']['armors'] = $armorsArray;
-        var_dump($charactersArray['characters'][$charId]['inventory']['armors']);
-
-        // ----------------- [ WEAPONS ] ------------------
-        var_dump("Weapons....");
+        // Fetching the various weapons and put in array
         $weaponsJSON = file_get_contents("../../app/JS/weapons.json");
         $weapons = json_decode($weaponsJSON, true);
+        // make an array of all the chars weapons
         $weaponsArray = $charactersArray['characters'][$charId]['inventory']['weapons'];
+        // make an array with all the chracters stats
         $statsArray = $charactersArray['characters'][$charId]['stats'];
         // die(var_dump($_POST['weaponsName']));
-        if (isset($_POST['weaponsName'])) {
 
+        // Check the number of weapons we got
+        if (isset($_POST['weaponsName'])) {
+            echo "<p>Adding weapon data..</p>";
             $weaponsAmounts = sizeof($_POST['weaponsName']);
         } else {
             $weaponsAmounts = 0;
         }
         // die(var_dump($armorAmounts));
         // die(var_dump($armorAmounts, sizeof($weaponsArray)));
+
+        // we have one template that isn't rendered at index 0, so if 0 we need to set it to 1.
         if ($weaponsAmounts === sizeof($weaponsArray)) {
             $weaponsAmounts++;
         } else if ($weaponsAmounts < sizeof($weaponsArray)) {
             // die("Less");
             // die(var_dump($weaponsAmounts, sizeof($weaponsArray)));
             $weaponsAmounts++;
-            var_dump("<br>", sizeof($weaponsArray));
+            // var_dump("<br>", sizeof($weaponsArray));
+
+            // If we didn't send any weapon data from page
+            // then we want to delete all but template 0 from our sheet.
             $oldAmount = sizeof($weaponsArray);
             for ($i = 1; $i < $oldAmount; $i++) {
                 echo $weaponsArray[$i]['name'] . "<br>";
@@ -482,18 +468,24 @@ if (isset($_POST)) {
             }
             // die(var_dump("<br>", sizeof($weaponsArray)));
         }
+        // now we add the new wepons (minus the template)
         for ($i = 1; $i < $weaponsAmounts; $i++) {
             // die(var_dump($weaponsAmounts));
             // die(var_dump(sizeof($weaponsArray), $weaponsArray));
             // die(var_dump($_POST['armorName'][$i]));
             $dbWeapon = find_weapon($_POST['weaponsName'][$i], $weapons);
             // die(var_dump($_POST['weaponsName']));
+
+            // check if it's a new weapon or modified weapon
+            // if so fetch weapon data from db
             if ($_POST['newWeapon'][$i] === "true") {
                 var_dump("new Weapon!");
                 $dbWeapon = find_weapon($_POST['weaponsName'][$i], $weapons);
                 // die(var_dump("armors amount:", $armorAmounts));
                 $weaponsArray[$weaponsAmounts - 1] = $dbWeapon;
             } else {
+
+                // else we already have a weapon and simply need to replace the data.
                 var_dump("old weapon");
                 // die(var_dump($_POST['weaponType'][$i]));
                 $weapon['name'] = $_POST['weaponsName'][$i];
@@ -617,28 +609,37 @@ if (isset($_POST)) {
         }
 
         // die(var_dump($weaponsArray[1]));
+
+        // prepare to save the chars weapons data to sheet
         $charactersArray['characters'][$charId]['inventory']['weapons'] = $weaponsArray;
         // die(var_dump("stop"));
+        print_r($weaponsArray[1]);
 
-
+        echo "<p>Armors done!</p>";
         // ----------------------------------------------------------------
 
 
-        // ----------------- [ GEAR ] ------------------
+        // ----------------- [ GEAR ] ------------------ 
         $gearsJSON = file_get_contents("../../app/JS/gear.json");
         $gears = json_decode($gearsJSON, true);
-        var_dump("Gear");
+        // die(var_dump("Gear"));
         // die(var_dump($_POST));
+
+        // If we got gear on sheet, fetch it
         if (isset($_POST['fieldGearName'])) {
             // die(var_dump(sizeof($_POST['fieldGearName'])));
             $fieldGearsArray = $charactersArray['characters'][$charId]['inventory']['fieldGear'];
             $fieldGearsAmounts = sizeof($_POST['fieldGearName']);
+
+            // Template checker
             if ($fieldGearsAmounts === sizeof($fieldGearsArray)) {
                 $fieldGearsAmounts++;
             } else if ($fieldGearsAmounts < sizeof($fieldGearsArray)) {
                 // die("Less");
                 $fieldGearsAmounts++;
                 // var_dump("<br>", sizeof($armorsArray));
+
+                // reset fieldGears
                 $oldAmountFieldGear = sizeof($fieldGearsArray);
                 for ($i = 1; $i < $oldAmountFieldGear; $i++) {
                     echo $fieldGearsArray[$i]['name'] . "<br>";
@@ -646,6 +647,8 @@ if (isset($_POST)) {
                 }
                 // die(var_dump("<br>", sizeof($armorsArray)));
             }
+
+            // if we got any field gears, we fetch the data from the db
             for ($i = 1; $i < $fieldGearsAmounts; $i++) {
                 // die(var_dump($weaponsAmounts));
                 // die(var_dump(sizeof($weaponsArray), $weaponsArray));
@@ -663,6 +666,33 @@ if (isset($_POST)) {
 
 
                     $fieldGearsArray[$i] = $dbGear;
+
+
+                    // ----------------- [ LOOK INTO LATER PATCH ] ------------------ 
+
+
+                    // if we have changed the amounts we update them to the sheet.
+                    // if (isset($fieldGearsArray[$i]['includes'])) {
+                    //     echo "<p>" . $fieldGearsArray[$i]['name'] . "</p>";
+
+                    //     foreach ($fieldGearsArray[$i]['includes'] as $incGear) {
+                    //         for ($index = 0; $index < sizeof($fieldGearsArray[$i]['includes']); $index++) {
+
+                    //             // die(var_dump($incGear['name'], $_POST['fieldGearIncAmount'][$index]));
+                    //             if (!isset($incGear['amount']) || $incGear['amount'] !== $_POST['fieldGearIncAmount'][$index]) {
+                    //                 $incGear['amount'] = $_POST['fieldGearIncAmount'][$index];
+                    //             }
+                    //         }
+                    //     }
+                    // }
+                    // if (!isset($fieldGearsArray[$i]['amount']) || $fieldGearsArray[$i]['amount'] !== $_POST['fieldGearAmount'][$i]) {
+                    //     print_r($_POST);
+                    //     $fieldGearsArray[$i]['amount'] = $_POST['fieldGearAmount'][$i];
+                    // }
+
+                    // ----------------------------------------------------------------
+
+
                 }
                 if ($i === 1) {
                     // die(var_dump($_POST['armorName'][$i], sizeof($armorsArray)));
@@ -671,6 +701,19 @@ if (isset($_POST)) {
                 // die(var_dump("stop"));
             }
             $charactersArray['characters'][$charId]['inventory']['fieldGear'] = $fieldGearsArray;
+        } else {
+            $fieldGearsArray = $charactersArray['characters'][$charId]['inventory']['fieldGear'];
+
+
+
+            // reset fieldGears
+            $oldAmountFieldGear = sizeof($fieldGearsArray);
+            for ($i = 1; $i < $oldAmountFieldGear; $i++) {
+                echo $fieldGearsArray[$i]['name'] . "<br>";
+                unset($fieldGearsArray[$i]);
+            }
+            // die(var_dump("<br>", sizeof($armorsArray)));
+
         }
         if (isset($_POST['personalGearName'])) {
             // die(var_dump($_POST));
@@ -753,7 +796,7 @@ if (isset($_POST)) {
 
         $jsonData = json_encode($charactersArray);
         file_put_contents('../characters/' . $_SESSION['userId'] . '.json', $jsonData);
-        die(var_dump("Gear's done", $charactersArray['characters'][$charId]['inventory']));
+        // die(var_dump("Gear's done", $charactersArray['characters'][$charId]['inventory']));
 
         switch ($_POST['nextPage']) {
             case 'next':
@@ -777,10 +820,7 @@ if (isset($_POST)) {
 
         die(var_dump($armorAmounts));
         $armor = find_armor($_POST['armorName'][0], $armors);
-    }
-
-    // ---------- [ BIOGRAPHY PAGE ] -----------------
-    else if (isset($_POST['biographyForm'])) {
+    } else if (isset($_POST['biographyForm'])) {
 
         var_dump("<br>From: Biography!<br>");
         // die(print_r($_POST));
@@ -818,10 +858,7 @@ if (isset($_POST)) {
                 header($userPage);
                 break;
         }
-    }
-
-    // ---------- [ PORTRAIT PAGE ] -----------------
-    else if (isset($_POST['portraitForm'])) {
+    } else if (isset($_POST['portraitForm'])) {
         var_dump("<br>From Portrait <br>");
         $characterData['img'] = $_POST['avatarLnk'];
         if ($_POST['charName'] !== '') {
